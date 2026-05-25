@@ -972,6 +972,16 @@ Table of Contents
               2026, <https://datatracker.ietf.org/doc/html/draft-wmz-
               nmrg-agent-ndt-arch-04>.
 
+   [IG1251G]  "IP Network AN Level 4 Agentic Architecture for Multi-
+              Scenario Autonomy", May 2026,
+              <https://projects.tmforum.org/wiki/pages/
+              viewpage.action?pageId=401824956>.
+
+   [IG1507]   "IG1507 Intervention and Control for Agentic Operation
+              V1.0.0 DRAFT", May 2026,
+              <https://projects.tmforum.org/wiki/pages/
+              viewpage.action?pageId=411641744>.
+
    [MCP]      "Model Context Protocol", November 2024,
               <https://modelcontextprotocol.io/>.
 
