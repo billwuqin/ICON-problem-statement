@@ -229,7 +229,7 @@ Table of Contents
 
    The deployment of autonomous agents within production network
    environments highlights a growing structural mismatch between
-   machine- speed execution and human-speed oversight.  This gap
+   machine-speed execution and human-speed oversight.  This gap
    manifests in several distinct problem areas:
 
 3.1.  Lack of Protocol-Level Universality
