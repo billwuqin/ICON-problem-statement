@@ -488,7 +488,7 @@ Table of Contents
 
    Whether security control (specifically control mechanisms, not
    broader security governance) should fall within the scope of I&C
-   requires further discussion across TM Forum project streams.
+   requires further discussion.
 
    Current industry approaches to agent security primarily focus on
    protecting the agent from malicious interference to ensure that the
@@ -856,12 +856,12 @@ Table of Contents
    interaction models, governance mechanisms, and protocol-level
    extensions, highlighting the cross-cutting nature of I&C across the
    system stack.  The intent is to identify foundational areas that
-   require further study and alignment within TM Forum Autonomous
-   Networks work items and the broader CSP transformation towards AI-
-   native operations.  Note that some of these items can span
-   development across multiple stages - for example Stage 1 - Service
-   Description/Requirements, Stage 2 - Technical Realization, Stage 3 -
-   Protocol Level extensions (e.g. A2A-T)
+   require further study and alignment within IETF Autonomous Networks
+   work items and the broader CSP transformation towards AI-native
+   operations.  Note that some of these items can span development
+   across multiple stages - for example Stage 1 - Service Description/
+   Requirements, Stage 2 - Technical Realization, Stage 3 - Protocol
+   Level extensions (e.g. A2A-T)
 
    *  Agent Intervention and Control Architecture: Define/Formalize the
       structural extensions required to the current AN Agent
