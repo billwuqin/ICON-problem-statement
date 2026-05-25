@@ -97,24 +97,24 @@ Table of Contents
      4.1.  Guardrails
      4.2.  Agent Drift Detection
      4.3.  Quality Gates
-   5.  Intervention Approaches
-     5.1.  Security I&C Approaches
-     5.2.  Trust I&C Approaches
-       5.2.1.  Trust Delegation Across Agents
-       5.2.2.  Intervention and Control Relevance
-   6.  Gaps in the Current Approaches
-     6.1.  Limitations of Guardrails
-     6.2.  Limitations of Agent Drift Analysis
-     6.3.  Limitations of Quality gates
-     6.4.  Limitations of Trust I&C
-     6.5.  Limitations of Security I&C
-     6.6.  Limitations of Intervention Approaches
-   7.  Standardization Area
-   8.  Security Considerations
-   9.  IANA Considerations
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
+     4.4.  Intervention Approaches
+     4.5.  Security I&C Approaches
+     4.6.  Trust I&C Approaches
+       4.6.1.  Trust Delegation Across Agents
+       4.6.2.  Intervention and Control Relevance
+   5.  Gaps in the Current Approaches
+     5.1.  Limitations of Guardrails
+     5.2.  Limitations of Agent Drift Analysis
+     5.3.  Limitations of Quality gates
+     5.4.  Limitations of Trust I&C
+     5.5.  Limitations of Security I&C
+     5.6.  Limitations of Intervention Approaches
+   6.  Standardization Area
+   7.  Security Considerations
+   8.  IANA Considerations
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -452,7 +452,7 @@ Table of Contents
    logic.  So most of the techniques that exist today are agent
    framework specific.
 
-5.  Intervention Approaches
+4.4.  Intervention Approaches
 
    The intervention mechanisms that exist today in agentic systems are
    mostly implementation-specific, tied to individual frameworks, and
@@ -484,7 +484,7 @@ Table of Contents
       Governance Toolkit, but its interoperability across different
       agent frameworks is not proven.
 
-5.1.  Security I&C Approaches
+4.5.  Security I&C Approaches
 
    Whether security control (specifically control mechanisms, not
    broader security governance) should fall within the scope of I&C
@@ -526,7 +526,7 @@ Table of Contents
    retrieved data, using intent classifiers to detect hidden or
    malicious instructions in non-instructional inputs.
 
-5.2.  Trust I&C Approaches
+4.6.  Trust I&C Approaches
 
    TR270 defines Trust as "An assessment by an agent in a trustor role
    that another agent in a trustee role can satisfy a request to perform
@@ -613,7 +613,7 @@ Table of Contents
    and access assigned to agent.  The definition and management of agent
    identity are beyond the scope of this document.
 
-5.2.1.  Trust Delegation Across Agents
+4.6.1.  Trust Delegation Across Agents
 
    Trust delegation between agents has a governance challenge that is
    distinct from single agent trust models.  When an orchestrating agent
@@ -667,7 +667,7 @@ Table of Contents
    accepting and executing delegated tasks.  Refer to link for more
    details.
 
-5.2.2.  Intervention and Control Relevance
+4.6.2.  Intervention and Control Relevance
 
    From an I&C perspective, both single-agent trust models and multi-
    agent trust delegation scenarios require a shift from static access
@@ -687,9 +687,9 @@ Table of Contents
    observability into the agent actions so that I&C system can intervene
    to control based on trust score and associated risks.
 
-6.  Gaps in the Current Approaches
+5.  Gaps in the Current Approaches
 
-6.1.  Limitations of Guardrails
+5.1.  Limitations of Guardrails
 
    There are many areas where guardrails cannot provide adequate control
    based on the current capabilities.
@@ -728,7 +728,7 @@ Table of Contents
       balance required between flexibility of agent execution and
       reasoning, with the boundary of execution which is subjective.
 
-6.2.  Limitations of Agent Drift Analysis
+5.2.  Limitations of Agent Drift Analysis
 
    Agent drift is hard to detect as it seldom produce a failure event,
    only the effect of the drift can be observed through continuous
@@ -740,7 +740,7 @@ Table of Contents
    Anomaly management.  So a potential direction is to leverage some of
    the techniques used in Anomaly management applied to Agents.
 
-6.3.  Limitations of Quality gates
+5.3.  Limitations of Quality gates
 
    Three limitations characterize current implementation of quality
    gate.
@@ -770,7 +770,7 @@ Table of Contents
       monitor, escalate, or resolve.  The gate operates in isolation
       from the broader governance stack.
 
-6.4.  Limitations of Trust I&C
+5.4.  Limitations of Trust I&C
 
    Current trust models are implementation-specific and lack
    interoperability across agent frameworks.  Advanced approaches
@@ -785,7 +785,7 @@ Table of Contents
    agent, it is unclear what level of trust the sub-agent should
    inherit, or what constraints should govern the delegated authority.
 
-6.5.  Limitations of Security I&C
+5.5.  Limitations of Security I&C
 
    From the I&C perspective following are some of the key limitations in
    incorporating Security controls in agent.
@@ -809,7 +809,7 @@ Table of Contents
       or vendor implementations, leading to fragmented and non-
       interoperable approaches.
 
-6.6.  Limitations of Intervention Approaches
+5.6.  Limitations of Intervention Approaches
 
    As highlighted above intervention mechanisms exist in primitive and
    framework-specific forms.  They have the following limitations.
@@ -836,7 +836,7 @@ Table of Contents
       and automatically triggers a proportionate intervention response
       when a deviation is detected
 
-7.  Standardization Area
+6.  Standardization Area
 
    As highlighted in previous sections, the realization of I&C
    capabilities needs to move toward a more uniform approach aligned
@@ -932,7 +932,7 @@ Table of Contents
          enabling human-in-the-loop interactions by standardizing how
          escalation and intervention requests are communicated.
 
-8.  Security Considerations
+7.  Security Considerations
 
    There are no security considerations for this document.  It does
    discuss a number of security issues in the course of problem
@@ -941,13 +941,13 @@ Table of Contents
    for Agent Intervention and Control are discussed separately in
    [I-D.wmz-nmrg-agent-ndt-arch].
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  References
+9.  References
 
-10.1.  Normative References
+9.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -958,7 +958,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-10.2.  Informative References
+9.2.  Informative References
 
    [A2A]      "Agent2Agent (A2A) protocol", April 2025, <https://google-
               a2a.github.io/A2A/#/documentation?id=agent2agent-protocol-
