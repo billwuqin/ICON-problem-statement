@@ -2,7 +2,7 @@
 
 
 
-WG Working Group                                                   Q. Wu
+Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                               25 May 2026
 Expires: 26 November 2026
@@ -10,7 +10,7 @@ Expires: 26 November 2026
 
  Problem Statement for Observability, Intervention and Control (I&C) in
                     Multi-Agent Autonomous Networks
-                   draft-nair-icon-problem-statement
+                draft-nair-icon-problem-statement-latest
 
 Abstract
 
@@ -33,16 +33,13 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-nair-icon-
-   problem/.
-
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   https://billwuqin.github.io/ICON-problem-statement/draft-nair-icon-
+   problem-statement.html.  Status information for this document may be
+   found at https://datatracker.ietf.org/doc/draft-nair-icon-problem-
+   statement/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/billwuqin/ICON-problem-statement.
 
 Status of This Memo
 
@@ -90,7 +87,7 @@ Table of Contents
      4.1.  Guardrails
      4.2.  Agent Drift Detection
      4.3.  Quality Gates
-   5.  Invenvention Approaches
+   5.  Intervention Approaches
      5.1.  Security I&C Approaches
      5.2.  Trust I&C Approaches
        5.2.1.  Trust Delegation Across Agents
@@ -392,7 +389,7 @@ Table of Contents
    logic.  So most of the techniques that exist today are agent
    framework specific.
 
-5.  Invenvention Approaches
+5.  Intervention Approaches
 
    The intervention mechanisms that exist today in agentic systems are
    mostly implementation-specific, tied to individual frameworks, and
