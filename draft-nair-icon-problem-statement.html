@@ -1253,13 +1253,13 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-limitations-of-quality-gate" class="internal xref">Limitations of Quality gates</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
-                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-limitations-of-trust-ic" class="internal xref">Limitations of Trust I&amp;C</a></p>
+                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-limitations-of-intervention" class="internal xref">Limitations of Intervention Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5">
                 <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-limitations-of-security-ic" class="internal xref">Limitations of Security I&amp;C</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.6">
-                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-limitations-of-intervention" class="internal xref">Limitations of Intervention Approaches</a></p>
+                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-limitations-of-trust-ic" class="internal xref">Limitations of Trust I&amp;C</a></p>
 </li>
             </ul>
 </li>
@@ -1892,17 +1892,32 @@ escalate, or resolve. The gate operates in isolation from the broader governance
         </ul>
 </section>
 </div>
-<div id="limitations-of-trust-ic">
+<div id="limitations-of-intervention-approaches">
 <section id="section-5.4">
-        <h3 id="name-limitations-of-trust-ic">
-<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-limitations-of-trust-ic" class="section-name selfRef">Limitations of Trust I&amp;C</a>
+        <h3 id="name-limitations-of-intervention">
+<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-limitations-of-intervention" class="section-name selfRef">Limitations of Intervention Approaches</a>
         </h3>
-<p id="section-5.4-1">Current trust models are implementation-specific and lack interoperability across agent frameworks. Advanced approaches highlighted
-above, such as dynamic trust scoring, evaluate agent behavior within the context of a single framework, rather than considering
-interactions across collaborating agents. A key limitation in existing trust control models is the handling of delegated trust which
-is the trust relationship that arises when an orchestrating agent delegates authority to a sub-agent. Current frameworks do not provide
-a consistent approach to this. For example, when a highly trusted orchestrator assigns a task to a sub-agent, it is unclear what level
-of trust the sub-agent should inherit, or what constraints should govern the delegated authority.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+<p id="section-5.4-1">As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5.4-2.1">
+            <p id="section-5.4-2.1.1">Absence of a standardised external interface that allows an authorized governance authority outside the framework or outside the
+agent application to signal intervention and receive a guaranteed response<a href="#section-5.4-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.4-2.2">
+            <p id="section-5.4-2.2.1">Current practice of intervention (leveraging infrastructure level interventions) is largely binary: either the agent runs or it
+does not. It lacks mechanisms that are flexible and applied across spectrum of scenarios - soft redirect, scope restriction,
+checkpoint, task suspension, rollback, hard termination<a href="#section-5.4-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.4-2.3">
+            <p id="section-5.4-2.3.1">When current intervention mechanisms stop an agent , whether through process termination, task cancellation, or API revocation,
+they do not systematically preserve the agent's execution state in a form that enables recovery.<a href="#section-5.4-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.4-2.4">
+            <p id="section-5.4-2.4.1">Current intervention mechanism requires either a human decision or a pre-coded condition to trigger it. There is no mechanism
+that continuously monitors agent behaviour against governance policies and automatically triggers a proportionate intervention
+response when a deviation is detected<a href="#section-5.4-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
 </section>
 </div>
 <div id="limitations-of-security-ic">
@@ -1930,32 +1945,17 @@ non-interoperable approaches.<a href="#section-5.5-2.3.1" class="pilcrow">¶</a>
         </ul>
 </section>
 </div>
-<div id="limitations-of-intervention-approaches">
+<div id="limitations-of-trust-ic">
 <section id="section-5.6">
-        <h3 id="name-limitations-of-intervention">
-<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-limitations-of-intervention" class="section-name selfRef">Limitations of Intervention Approaches</a>
+        <h3 id="name-limitations-of-trust-ic">
+<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-limitations-of-trust-ic" class="section-name selfRef">Limitations of Trust I&amp;C</a>
         </h3>
-<p id="section-5.6-1">As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.<a href="#section-5.6-1" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="section-5.6-2.1">
-            <p id="section-5.6-2.1.1">Absence of a standardised external interface that allows an authorized governance authority outside the framework or outside the
-agent application to signal intervention and receive a guaranteed response<a href="#section-5.6-2.1.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-5.6-2.2">
-            <p id="section-5.6-2.2.1">Current practice of intervention (leveraging infrastructure level interventions) is largely binary: either the agent runs or it
-does not. It lacks mechanisms that are flexible and applied across spectrum of scenarios - soft redirect, scope restriction,
-checkpoint, task suspension, rollback, hard termination<a href="#section-5.6-2.2.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-5.6-2.3">
-            <p id="section-5.6-2.3.1">When current intervention mechanisms stop an agent , whether through process termination, task cancellation, or API revocation,
-they do not systematically preserve the agent's execution state in a form that enables recovery.<a href="#section-5.6-2.3.1" class="pilcrow">¶</a></p>
-</li>
-          <li class="normal" id="section-5.6-2.4">
-            <p id="section-5.6-2.4.1">Current intervention mechanism requires either a human decision or a pre-coded condition to trigger it. There is no mechanism
-that continuously monitors agent behaviour against governance policies and automatically triggers a proportionate intervention
-response when a deviation is detected<a href="#section-5.6-2.4.1" class="pilcrow">¶</a></p>
-</li>
-        </ul>
+<p id="section-5.6-1">Current trust models are implementation-specific and lack interoperability across agent frameworks. Advanced approaches highlighted
+above, such as dynamic trust scoring, evaluate agent behavior within the context of a single framework, rather than considering
+interactions across collaborating agents. A key limitation in existing trust control models is the handling of delegated trust which
+is the trust relationship that arises when an orchestrating agent delegates authority to a sub-agent. Current frameworks do not provide
+a consistent approach to this. For example, when a highly trusted orchestrator assigns a task to a sub-agent, it is unclear what level
+of trust the sub-agent should inherit, or what constraints should govern the delegated authority.<a href="#section-5.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
