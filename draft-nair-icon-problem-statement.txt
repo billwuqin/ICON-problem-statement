@@ -934,7 +934,12 @@ Table of Contents
 
 8.  Security Considerations
 
-   TODO Security
+   There are no security considerations for this document.  It does
+   discuss a number of security issues in the course of problem
+   analysis, such as Identity and Access Management, Trust Delegation
+   across Agent, Trust Level Assignment.  The security considerations
+   for Agent Intervention and Control are discussed separately in
+   [I-D.wmz-nmrg-agent-ndt-arch].
 
 9.  IANA Considerations
 
@@ -958,6 +963,14 @@ Table of Contents
    [A2A]      "Agent2Agent (A2A) protocol", April 2025, <https://google-
               a2a.github.io/A2A/#/documentation?id=agent2agent-protocol-
               a2a>.
+
+   [I-D.wmz-nmrg-agent-ndt-arch]
+              Wu, Q., Zhou, C., Contreras, L. M., Han, S., and Y. Hong,
+              "Network Digital Twin and Agentic AI based Architecture
+              for AI driven Network Operations", Work in Progress,
+              Internet-Draft, draft-wmz-nmrg-agent-ndt-arch-04, 21 May
+              2026, <https://datatracker.ietf.org/doc/html/draft-wmz-
+              nmrg-agent-ndt-arch-04>.
 
    [MCP]      "Model Context Protocol", November 2024,
               <https://modelcontextprotocol.io/>.
