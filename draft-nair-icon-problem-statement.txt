@@ -4,8 +4,9 @@
 
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
-Intended status: Informational                               25 May 2026
-Expires: 26 November 2026
+Intended status: Informational                                   M. Nair
+Expires: 26 November 2026                                     NetCracker
+                                                             25 May 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -116,7 +117,7 @@ Table of Contents
      9.1.  Normative References
      9.2.  Informative References
    Acknowledgments
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -989,8 +990,13 @@ Acknowledgments
 
    TODO acknowledge.
 
-Author's Address
+Authors' Addresses
 
    Qin Wu
    Huawei
    Email: bill.wu@huawei.com
+
+
+   Manoj Nair
+   NetCracker
+   Email: manoj.k.nair@netcracker.com
