@@ -14,19 +14,25 @@ Expires: 26 November 2026
 
 Abstract
 
-   The modern network management archiecture are transitioning toward an
-   AI-native operational paradigm.  Autonomous AI agents increasingly
-   orchestrate and execute closed-loop workflows across heterogeneous
-   network domains.  These systems operate in a goal- driven, non-
-   deterministic manner, introducing new operational risks and emergent
-   failure modes.
+   This document provides an overview of the issues associated with the
+   deployment of the observability, intervention, and control of
+   autonomous agent pipelines in large-scale heterogeneous network
+   environments.  The term "Intervention and Control" is used to
+   describe a set of automated and human-initiated mechanisms that
+   guarantee the capability to observe, constrain, correct, and
+   terminate AI agents at any point, for any reason, irrespective of
+   their level of autonomy under which it operates, to ensure
+   resilience, recovery, and operational continuity.
 
-   This document describes a problem statement for the observability,
-   intervention, and control of autonomous agent pipelines.  It
-   identifies architectural gaps in current framework-specific
-   implementations and outlines the requirements for standardizing
-   external human agent interaction interfaces, runtime contracts, and
-   human-agent signalling protocols.
+   The set of enabled observability, intervention and control reflects
+   operator service offerings to ensure that autonomous operations can
+   be stopped, or safely redirected when required and is designed in
+   conjunction with agent to agent, agent to tools, agent to human
+   interaction and service and network policy.
+
+   This document also identifies several key areas that the Agent
+   Observability, Intervention and Control group will investigate to
+   guide its architectural and protocol work and associated documents.
 
 About This Document
 

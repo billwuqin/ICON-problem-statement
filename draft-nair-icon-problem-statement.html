@@ -6,19 +6,23 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</title>
 <meta content="Qin Wu" name="author">
-<meta content="
-       The modern network management archiecture are transitioning
-toward an AI-native operational paradigm. Autonomous AI agents
-increasingly orchestrate and execute closed-loop workflows across
-heterogeneous network domains. These systems operate in a goal-
-driven, non-deterministic manner, introducing new operational risks
-and emergent failure modes. 
-       This document describes a problem statement for the observability,
-intervention, and control of autonomous agent pipelines. It identifies
-architectural gaps in current framework-specific implementations and
-outlines the requirements for standardizing external human agent interaction
-interfaces, runtime contracts, and human-agent signalling protocols. 
-    " name="description">
+<meta content='
+       This document provides an overview of the issues associated with the
+deployment of the observability, intervention, and control of autonomous
+agent pipelines in large-scale heterogeneous network environments.  The
+term "Intervention and Control" is used to describe a set of automated and
+human-initiated mechanisms that guarantee the capability to observe, constrain,
+correct, and terminate AI agents at any point, for any reason, irrespective of
+their level of autonomy under which it operates, to ensure resilience, recovery,
+and operational continuity. 
+       The set of enabled observability, intervention and control reflects operator
+service offerings to ensure that autonomous operations can be stopped, or safely
+redirected when required and is designed in conjunction with agent to agent, agent
+to tools, agent to human interaction and service and network policy. 
+       This document also identifies several key areas that the Agent Observability,
+Intervention and Control group will investigate to guide its
+architectural and protocol work and associated documents. 
+    ' name="description">
 <meta content="xml2rfc 3.33.0" name="generator">
 <meta content="next generation" name="keyword">
 <meta content="unicorn" name="keyword">
@@ -1092,17 +1096,21 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The modern network management archiecture are transitioning
-toward an AI-native operational paradigm. Autonomous AI agents
-increasingly orchestrate and execute closed-loop workflows across
-heterogeneous network domains. These systems operate in a goal-
-driven, non-deterministic manner, introducing new operational risks
-and emergent failure modes.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
-<p id="section-abstract-2">This document describes a problem statement for the observability,
-intervention, and control of autonomous agent pipelines. It identifies
-architectural gaps in current framework-specific implementations and
-outlines the requirements for standardizing external human agent interaction
-interfaces, runtime contracts, and human-agent signalling protocols.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document provides an overview of the issues associated with the
+deployment of the observability, intervention, and control of autonomous
+agent pipelines in large-scale heterogeneous network environments.  The
+term "Intervention and Control" is used to describe a set of automated and
+human-initiated mechanisms that guarantee the capability to observe, constrain,
+correct, and terminate AI agents at any point, for any reason, irrespective of
+their level of autonomy under which it operates, to ensure resilience, recovery,
+and operational continuity.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">The set of enabled observability, intervention and control reflects operator
+service offerings to ensure that autonomous operations can be stopped, or safely
+redirected when required and is designed in conjunction with agent to agent, agent
+to tools, agent to human interaction and service and network policy.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-3">This document also identifies several key areas that the Agent Observability,
+Intervention and Control group will investigate to guide its
+architectural and protocol work and associated documents.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
