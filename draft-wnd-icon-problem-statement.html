@@ -1450,9 +1450,10 @@ frequently delegate critical planning paths and execution decisions to
 Large Language Models (LLMs) or specialized downstream AI models. This
 delegation creates an optimization barrier, offering limited
 transparency into how specific decisions are reached or how complex
-action sequences are generated. Without an out-of-band mechanism to
-inspect this reasoning layer, operators cannot validate the safety or
-intent of an agent's planned mutations before they hit the infrastructure.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+action sequences are generated.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">Without an out-of-band mechanism to inspect this reasoning layer, operators
+cannot validate the safety or intent of an agent's planned mutations before
+they hit the infrastructure.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="velocity-mismatch-and-observation-deficit">
@@ -1476,12 +1477,13 @@ of the data points involved in active agent pipelines.<a href="#section-3.3-1" c
         </h3>
 <p id="section-3.4-1">A distinct functional asymmetry has emerged between operational
 capabilities and governance mechanisms. Core features such as multi-agent
-execution, advanced interoperability frameworks (e.g., Agent-to-Agent
-<span>[<a href="#A2A" class="cite xref">A2A</a>]</span> and Model Context Protocol <span>[<a href="#MCP" class="cite xref">MCP</a>]</span>), and long-running autonomous actions
-are advancing rapidly. Conversely, essential governance enablers—including
-runtime intervention controls, deterministic transaction rollback, and
-cross-agent lineage traceability—remain highly immature and lack clear
-standardisation paths.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+execution, advanced interoperability frameworks for agent to agent, agent to tools
+communication (e.g., Agent-to-Agent <span>[<a href="#A2A" class="cite xref">A2A</a>]</span> and Model Context Protocol <span>[<a href="#MCP" class="cite xref">MCP</a>]</span>),
+and long-running autonomous actions are advancing rapidly.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-2">Conversely, essential governance enablers including runtime intervention
+controls, deterministic transaction rollback, and cross-agent lineage
+traceability, agent behavior traceability remain highly immature and lack
+clear standardisation paths.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="fragmentation-across-heterogeneous-integration-layers">
@@ -1505,11 +1507,11 @@ clients and never designed to handle AI-driven, autonomous agency.<a href="#sect
 <a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-obsolescence-of-identity-an" class="section-name selfRef">Obsolescence of Identity and Authorization Models</a>
         </h3>
 <p id="section-3.6-1">Existing trust and authorization models have failed to evolve in step with
-dynamic agentic architectures. Traditional Identity and Access Management
+dynamic agentic AI architectures. Traditional Identity and Access Management
 (IAM) frameworks were designed exclusively for human operators or static,
 deterministic software processes. These frameworks cannot securely govern
-emerging dynamic agent personas—which are frequently defined on the fly through
-custom skills—nor can they safely manage downstream sub-agent permission
+emerging dynamic agent personas which are frequently defined on the fly through
+custom skills, nor can they safely manage downstream sub-agent permission
 delegation or context-dependent privilege escalation.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
