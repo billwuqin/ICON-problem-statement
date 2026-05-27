@@ -1236,7 +1236,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-network-" class="internal xref">Solution Space for Network Management Agent Observability, Intervention and Control</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
-                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-guardrails" class="internal xref">Guardrails</a></p>
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-ai-guardrails" class="internal xref">AI Guardrails</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-agent-drift-detection" class="internal xref">Agent Drift Detection</a></p>
@@ -1267,7 +1267,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-gaps-in-the-current-approac" class="internal xref">Gaps in the Current Approaches</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-limitations-of-guardrails" class="internal xref">Limitations of Guardrails</a></p>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-limitations-of-ai-guardrail" class="internal xref">Limitations of AI Guardrails</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-limitations-of-agent-drift-" class="internal xref">Limitations of Agent Drift Analysis</a></p>
@@ -1602,12 +1602,12 @@ to an evolving network context.<a href="#section-3.3.3-1" class="pilcrow">¶</a>
       <h2 id="name-solution-space-for-network-">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-solution-space-for-network-" class="section-name selfRef">Solution Space for Network Management Agent Observability, Intervention and Control</a>
       </h2>
-<div id="guardrails">
+<div id="ai-guardrails">
 <section id="section-4.1">
-        <h3 id="name-guardrails">
-<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-guardrails" class="section-name selfRef">Guardrails</a>
+        <h3 id="name-ai-guardrails">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-ai-guardrails" class="section-name selfRef">AI Guardrails</a>
         </h3>
-<p id="section-4.1-1">These are most mature, and most operationally familiar AI governance mechanism in production today. Guardrail
+<p id="section-4.1-1">These are most mature, and most operationally familiar AI governance mechanism in production today. AI Guardrail
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation. Currently, Guardrails are realized through 4 different mechanisms.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
@@ -1870,10 +1870,10 @@ actions so that I&amp;C system can intervene to control based on trust score and
       <h2 id="name-gaps-in-the-current-approac">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-gaps-in-the-current-approac" class="section-name selfRef">Gaps in the Current Approaches</a>
       </h2>
-<div id="limitations-of-guardrails">
+<div id="limitations-of-ai-guardrails">
 <section id="section-5.1">
-        <h3 id="name-limitations-of-guardrails">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-limitations-of-guardrails" class="section-name selfRef">Limitations of Guardrails</a>
+        <h3 id="name-limitations-of-ai-guardrail">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-limitations-of-ai-guardrail" class="section-name selfRef">Limitations of AI Guardrails</a>
         </h3>
 <p id="section-5.1-1">There are many areas where guardrails cannot provide adequate control based on the current capabilities.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
