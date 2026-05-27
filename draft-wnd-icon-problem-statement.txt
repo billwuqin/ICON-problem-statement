@@ -6,6 +6,8 @@ Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                                   M. Nair
 Expires: 28 November 2026                                     NetCracker
+                                                           D. Ceccarelli
+                                                                   Cisco
                                                              27 May 2026
 
 
@@ -1003,3 +1005,8 @@ Authors' Addresses
    Manoj Nair
    NetCracker
    Email: manoj.k.nair@netcracker.com
+
+
+   Daniele Ceccarelli
+   Cisco
+   Email: daniele.ietf@gmail.com
