@@ -86,15 +86,18 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  Problem Space
-     3.1.  Inadequacy of Deterministic Constraints
-     3.2.  Limited Transparency in Planning and Decision-Making
-     3.3.  Velocity Mismatch and Observation Deficit
-     3.4.  Maturity Asymmetry in Governance Enablers
-     3.5.  Fragmentation Across Heterogeneous Integration Layers
-     3.6.  Obsolescence of Identity and Authorization Models
-     3.7.  Ambiguity of Lineage and Accountability Attribution
-     3.8.  Externalization of Governance Chains
-     3.9.  Emergence of Novel Failure Modes
+     3.1.  The Observability Deficit
+       3.1.1.  Limited Transparency in Planning and Decision-Making
+       3.1.2.  High-Velocity Data Ingestion
+       3.1.3.  Ambiguity of Lineage and Accountability Attribution
+     3.2.  The Invention Impasse
+       3.2.1.  Static IAM Failures
+       3.2.2.  Multi-Vendor Dependency Risks
+       3.2.3.  Fragmentation Across Heterogeneous Integration Layers
+     3.3.  The Control Fallback Gap
+       3.3.1.  Inadequacy of Deterministic Constraints
+       3.3.2.  Maturity Asymmetry in Governance Enablers
+       3.3.3.  AI-Native Failure Emergence
    4.  Solution Space for Network Management Agent Observability,
            Intervention and Control
      4.1.  Guardrails
@@ -254,17 +257,9 @@ Table of Contents
    execution and human-speed oversight.  This gap manifests in several
    distinct problem areas:
 
-3.1.  Inadequacy of Deterministic Constraints
+3.1.  The Observability Deficit
 
-   Agent behavior cannot be reliably constrained using predefined,
-   deterministic rules or traditional static guardrails.  Because agents
-   rely on dynamic reasoning patterns to achieve declarative goals,
-   their exact execution trajectories remain non-deterministic.  This
-   intrinsic variability makes operational outcomes significantly less
-   predictable during runtime execution, bypassing legacy input/output
-   filters that fail to account for real-time contextual adaptation.
-
-3.2.  Limited Transparency in Planning and Decision-Making
+3.1.1.  Limited Transparency in Planning and Decision-Making
 
    As agents increasingly execute complex operational tasks, they
    frequently delegate critical planning paths and execution decisions
@@ -277,7 +272,7 @@ Table of Contents
    operators cannot validate the safety or intent of an agent's planned
    mutations before they hit the infrastructure.
 
-3.3.  Velocity Mismatch and Observation Deficit
+3.1.2.  High-Velocity Data Ingestion
 
    Agents are explicitly designed to operate with high degrees of
    autonomy, speed, and scale.  However, CSPs currently lack the
@@ -288,7 +283,67 @@ Table of Contents
    impractical due to the sheer volume and velocity of the data points
    involved in active agent pipelines.
 
-3.4.  Maturity Asymmetry in Governance Enablers
+3.1.3.  Ambiguity of Lineage and Accountability Attribution
+
+   In distributed multi-agent topologies, operational responsibility for
+   an ultimate network outcome is scattered across an extended chain of
+   coordinating agents, foundational models, and abstraction layers.
+   When system failures, performance degradations, or unintended
+   consequences occur, attributing accountability to a specific agent
+   entity, localized model decision, or human-in-the-loop anchor becomes
+   highly ambiguous.  This lack of clear lineage creates severe
+   complications for post-incident root-cause analysis and regulatory
+   compliance reporting.
+
+3.2.  The Invention Impasse
+
+3.2.1.  Static IAM Failures
+
+   Existing trust and authorization models have failed to evolve in step
+   with dynamic agentic AI architectures.  Traditional Identity and
+   Access Management (IAM) frameworks were designed exclusively for
+   human operators or static, deterministic software processes.  These
+   frameworks cannot securely govern emerging dynamic agent personas
+   which are frequently defined on the fly through custom skills, nor
+   can they safely manage downstream sub-agent permission delegation or
+   context-dependent privilege escalation.
+
+3.2.2.  Multi-Vendor Dependency Risks
+
+   As CSPs begin sourcing agentic capabilities from diverse third-party
+   vendors, independent software providers, and hyperscalers,
+   operational accountability becomes externalized in ways that are
+   difficult to technically or contractually enforce.  A typical
+   production agent implementation features highly fragmented dependency
+   chains spanning completely separate vendor ecosystems, including LLM/
+   AI model providers, infrastructure hosts, core agent frameworks,
+   tool/API repositories, and interconnection fabrics.
+
+3.2.3.  Fragmentation Across Heterogeneous Integration Layers
+
+   Agentic systems operating across mixed Operational Support Systems
+   (OSS) and Network Management domains must interact with a highly
+   heterogeneous mix of legacy systems, modern APIs, and third-party
+   platforms.  Establishing consistent, bounded governance across these
+   disparate integration layers is exceptionally complex.  Agents
+   routinely invoke actions or retrieve sensitive network data through
+   emerging pathways (e.g., MCP endpoints) that were originally
+   engineered for standard software clients and never designed to handle
+   AI-driven, autonomous agency.
+
+3.3.  The Control Fallback Gap
+
+3.3.1.  Inadequacy of Deterministic Constraints
+
+   Agent behavior cannot be reliably constrained using predefined,
+   deterministic rules or traditional static guardrails.  Because agents
+   rely on dynamic reasoning patterns to achieve declarative goals,
+   their exact execution trajectories remain non-deterministic.  This
+   intrinsic variability makes operational outcomes significantly less
+   predictable during runtime execution, bypassing legacy input/output
+   filters that fail to account for real-time contextual adaptation.
+
+3.3.2.  Maturity Asymmetry in Governance Enablers
 
    A distinct functional asymmetry has emerged between operational
    capabilities and governance mechanisms.  Core features such as multi-
@@ -302,53 +357,7 @@ Table of Contents
    agent lineage traceability, agent behavior traceability remain highly
    immature and lack clear standardisation paths.
 
-3.5.  Fragmentation Across Heterogeneous Integration Layers
-
-   Agentic systems operating across mixed Operational Support Systems
-   (OSS) and Network Management domains must interact with a highly
-   heterogeneous mix of legacy systems, modern APIs, and third-party
-   platforms.  Establishing consistent, bounded governance across these
-   disparate integration layers is exceptionally complex.  Agents
-   routinely invoke actions or retrieve sensitive network data through
-   emerging pathways (e.g., MCP endpoints) that were originally
-   engineered for standard software clients and never designed to handle
-   AI-driven, autonomous agency.
-
-3.6.  Obsolescence of Identity and Authorization Models
-
-   Existing trust and authorization models have failed to evolve in step
-   with dynamic agentic AI architectures.  Traditional Identity and
-   Access Management (IAM) frameworks were designed exclusively for
-   human operators or static, deterministic software processes.  These
-   frameworks cannot securely govern emerging dynamic agent personas
-   which are frequently defined on the fly through custom skills, nor
-   can they safely manage downstream sub-agent permission delegation or
-   context-dependent privilege escalation.
-
-3.7.  Ambiguity of Lineage and Accountability Attribution
-
-   In distributed multi-agent topologies, operational responsibility for
-   an ultimate network outcome is scattered across an extended chain of
-   coordinating agents, foundational models, and abstraction layers.
-   When system failures, performance degradations, or unintended
-   consequences occur, attributing accountability to a specific agent
-   entity, localized model decision, or human-in-the-loop anchor becomes
-   highly ambiguous.  This lack of clear lineage creates severe
-   complications for post-incident root-cause analysis and regulatory
-   compliance reporting.
-
-3.8.  Externalization of Governance Chains
-
-   As CSPs begin sourcing agentic capabilities from diverse third-party
-   vendors, independent software providers, and hyperscalers,
-   operational accountability becomes externalized in ways that are
-   difficult to technically or contractually enforce.  A typical
-   production agent implementation features highly fragmented dependency
-   chains spanning completely separate vendor ecosystems, including LLM/
-   AI model providers, infrastructure hosts, core agent frameworks,
-   tool/API repositories, and interconnection fabrics.
-
-3.9.  Emergence of Novel Failure Modes
+3.3.3.  AI-Native Failure Emergence
 
    Agentic systems introduce an entirely new class of complex, systemic
    failure modes that legacy operational risk frameworks are blind to
