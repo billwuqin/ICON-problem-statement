@@ -506,7 +506,7 @@ Table of Contents
 
    Whether security control (specifically control mechanisms, not
    broader security governance) should fall within the scope of I&C
-   requires further discussion.
+   (Intervention and Control) requires further discussion.
 
    Current industry approaches to agent security primarily focus on
    protecting the agent from malicious interference to ensure that the
