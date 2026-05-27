@@ -5,8 +5,8 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                                   M. Nair
-Expires: 26 November 2026                                     NetCracker
-                                                             25 May 2026
+Expires: 28 November 2026                                     NetCracker
+                                                             27 May 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -63,7 +63,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 November 2026.
+   This Internet-Draft will expire on 28 November 2026.
 
 Copyright Notice
 
@@ -200,20 +200,21 @@ Table of Contents
       provides a goal and the agent autonomously figures out how to
       achieve it.
 
-   *  Observability: Enabling network behavioral assessment through
-      analysis of observed operational network data (logs, metrics,
-      traces, etc.) with the aim of detecting symptoms of network
-      behavior, and to identify anomalies and their causes.
+   *  Observability: The visibility into an agent's internal state,
+      decision-making logic, and workflow execution from its external
+      telemetry outputs (e.g., logs, traces, metrics), enabling human
+      operators or monitoring systems to understand what the agent is
+      doing and why it behaves in a specific manner.
 
-   *  Intervention: Operates when something has gone wrong, is going
-      wrong, or is about to go wrong that provides humans with the
-      ability to detect, interrupt, correct, and recover from agent
-      behavior that is not anticipated by control mechanism.
+   *  Intervention: A reactive, emergency action to intervene or take
+      control of an agent with boundary violations, anomalies, failures,
+      or risks, so as to block harmful decisions, disrupt hazards, and
+      promptly mitigate losses.
 
-   *  Control: Operates before and during agent action execution
-      defining what an agent is permitted to do, enforcing boundaries,
-      and structuring the environment so that harmful or unauthorized
-      actions are difficult or impossible to execute.
+   *  Control: Establish a deterministic operational boundary for the
+      agent before execution.  By pre-defining the agent's behavior
+      scopes, operational constraints, and security baselines, it
+      fundamentally mitigates abnormal behaviors from agents.
 
    *  Evaluation:Using Trajectory record to assess the performance and
       understand how an gent solves problem,e.g.,Checking if the agent
@@ -978,7 +979,7 @@ Table of Contents
               <https://projects.tmforum.org/wiki/pages/
               viewpage.action?pageId=401824956>.
 
-   [IG1507]   "IG1507 Intervention and Control for Agentic Operation
+   [IG1548]   "IG1507 Intervention and Control for Agentic Operation
               V1.0.0 DRAFT", May 2026,
               <https://projects.tmforum.org/wiki/pages/
               viewpage.action?pageId=411641744>.
