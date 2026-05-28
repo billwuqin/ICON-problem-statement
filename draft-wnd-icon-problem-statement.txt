@@ -5,10 +5,10 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                                   M. Nair
-Expires: 28 November 2026                                     NetCracker
+Expires: 29 November 2026                                     NetCracker
                                                            D. Ceccarelli
                                                                    Cisco
-                                                             27 May 2026
+                                                             28 May 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 November 2026.
+   This Internet-Draft will expire on 29 November 2026.
 
 Copyright Notice
 
@@ -279,9 +279,9 @@ Table of Contents
    corresponding telemetry and control infrastructure required to
    observe, evaluate, and intercept these systems at the same machine-
    speed pace.  Consequently, effective real-time oversight becomes
-   functionally impossible.  Relying on human escalation paradigms is
-   impractical due to the sheer volume and velocity of the data points
-   involved in active agent pipelines.
+   functionally impossible.  Always relying on human escalation
+   paradigms is usually impractical due to the sheer volume and velocity
+   of the data points involved in active agent pipelines.
 
 3.1.3.  Ambiguity of Lineage and Accountability Attribution
 
