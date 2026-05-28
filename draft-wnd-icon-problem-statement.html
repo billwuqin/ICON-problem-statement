@@ -1652,7 +1652,7 @@ accuracy of the working context deteriorates; reasoning drift when there is a de
 decision-making capability, and collaboration drift when the effectiveness of interactions with tools, external APIs,
 or other agents degrades.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">Agent drift is a well-recognized problem in academic research and agent frameworks. However, there is no universally
-applicable governance or control mechanism that addresses all scenarios in practice. A key reason for this is the
+applicable control mechanism that addresses all scenarios in practice. A key reason for this is the
 strong dependence on domain-specific expertise and observability mechanisms to detect, diagnose, and mitigate drift
 effectively. Many of these also may require fine-tuning the base model with revised data sets. So a runtime control of
 drift needs to be addressed in a case-by-case basis. Some of the practices followed for addressing the Agent drift are
@@ -1683,21 +1683,23 @@ by fixing the issues with tool/API/agent interactions.<a href="#section-4.2-3.4.
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-quality-gates" class="section-name selfRef">Quality Gates</a>
         </h3>
 <p id="section-4.3-1">Quality gates are checkpoints that evaluate whether an operation should proceed or not, or should be conditionally
-allowed. Unlike guardrails which enforce policy constraints at defined boundaries of Agent implementation, quality
+allowed.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">Unlike guardrails which enforce policy constraints at defined boundaries of Agent implementation, quality
 gates assess whether the work product of one stage meets a defined quality standard before permitting progression to
-the next.  The concept is borrowed from DevOps practice i.e. quality gates in CI/CD pipelines that prevent code from
-advancing through build, test, and deployment stages unless it meets defined quality criteria. While guardrails govern
-crossing points i.e. what enters and exits defined zones, quality gates govern progression points - whether work of
-sufficient quality advances to the next stage. Quality gates are the ideal mechanism to involve humans for agent tasks
-execution quality and escalations - i.e. at stage transitions where the accumulated work product of a whole reasoning
+the next. The concept is borrowed from DevOps practice i.e. quality gates in CI/CD pipelines that prevent code from
+advancing through build, test, and deployment stages unless it meets defined quality criteria. While guardrails determine
+crossing points i.e. what enters and exits defined zones, quality gates determine progression points - whether work of
+sufficient quality advances to the next stage.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-3">Quality gates are the ideal mechanism to involve humans for agent tasks
+execution quality and escalations,i.e., at stage transitions where the accumulated work product of a whole reasoning
 stage is ready for assessment where the human is presented with a complete plan, a complete risk assessment, and a
-specific decision to make.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3-2">Currently none of the available agent frameworks have a named capability called quality gate. However, some of the
+specific decision to make.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+<p id="section-4.3-4">Currently none of the available agent frameworks have a named capability called quality gate. However, some of the
 existing functionality can be leveraged for realizing this. For example LangGraph has concept of conditional edges that
 enable dynamic, non-linear workflows which allows routing execution to different nodes based on a state-evaluating
 function or if-else statements. Similarly, Google ADK (Agent Development Kit) provides callback that can be invoked
 before or after tool use and implement quality gate logic. So most of the techniques that exist today are agent
-framework specific.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+framework specific.<a href="#section-4.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="intervention-approaches">
@@ -1765,7 +1767,7 @@ inputs.<a href="#section-4.5-4" class="pilcrow">¶</a></p>
 <p id="section-4.6-1">TR270 defines Trust as "An assessment by an agent in a trustor role that another agent in a trustee role can satisfy a
 request to perform an action or provide information with acceptable expected outcomes and risk". Trust in autonomous
 agents spans multiple dimensions, including identity (who the agent is), authorization (what it is allowed to do),
-control(how its actions are governed during execution), behavior (whether it acts in alignment with expected goals
+control (how its actions are governed during execution), behavior (whether it acts in alignment with expected goals
 and produces correct outcomes), and context (under what conditions it operates). There are also different scope of
 trust under discussion across industry including
 - Trust at the individual agent and multi-agent execution and operational behavior, focusing on execution reliability,
