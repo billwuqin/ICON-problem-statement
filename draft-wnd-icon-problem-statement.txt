@@ -8,6 +8,8 @@ Intended status: Informational                                   M. Nair
 Expires: 29 November 2026                                     NetCracker
                                                            D. Ceccarelli
                                                                    Cisco
+                                                                   Z. Li
+                                                                    CMCC
                                                              28 May 2026
 
 
@@ -1030,3 +1032,8 @@ Authors' Addresses
    Daniele Ceccarelli
    Cisco
    Email: daniele.ietf@gmail.com
+
+
+   Zhenqiang Li
+   CMCC
+   Email: li_zhenqiang@hotmail.com
