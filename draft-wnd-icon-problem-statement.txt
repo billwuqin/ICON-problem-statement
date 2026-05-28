@@ -304,9 +304,11 @@ Table of Contents
    Access Management (IAM) frameworks were designed exclusively for
    human operators or static, deterministic software processes.  These
    frameworks cannot securely govern emerging dynamic agent personas
-   which are frequently defined on the fly through custom skills, nor
-   can they safely manage downstream sub-agent permission delegation or
-   context-dependent privilege escalation.
+   such as autonomous entity identities and behavioral profiles which
+   are frequently created and modified on the fly through metadata
+   information to describe functional capabilities, nor can they safely
+   manage downstream sub-agent permission delegation or context-
+   dependent privilege escalation.
 
 3.2.2.  Multi-Vendor Dependency Risks
 
