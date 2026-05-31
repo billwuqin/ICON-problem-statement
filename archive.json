@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-05-28T02:26:05.394535+00:00",
+  "timestamp": "2026-05-31T02:40:51.335885+00:00",
   "repo": "billwuqin/ICON-problem-statement",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOSm5Pfs8AAAABDorLlg",
+      "title": "Do we need to use Governance to describe problem space",
+      "url": "https://github.com/billwuqin/ICON-problem-statement/issues/1",
+      "state": "OPEN",
+      "author": "billwuqin",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-05-28T08:32:25Z",
+      "updatedAt": "2026-05-28T08:32:25Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
