@@ -92,7 +92,7 @@ Table of Contents
        3.1.1.  Limited Transparency in Planning and Decision-Making
        3.1.2.  High-Velocity Data Ingestion
        3.1.3.  Ambiguity of Lineage and Accountability Attribution
-     3.2.  The Invention Impasse
+     3.2.  The Intervention Impasse
        3.2.1.  Static IAM Failures
        3.2.2.  Multi-Vendor Dependency Risks
        3.2.3.  Fragmentation Across Heterogeneous Integration Layers
@@ -297,7 +297,7 @@ Table of Contents
    complications for post-incident root-cause analysis and regulatory
    compliance reporting.
 
-3.2.  The Invention Impasse
+3.2.  The Intervention Impasse
 
 3.2.1.  Static IAM Failures
 
