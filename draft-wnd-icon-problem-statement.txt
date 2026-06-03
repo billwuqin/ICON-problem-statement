@@ -5,12 +5,12 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                                   M. Nair
-Expires: 29 November 2026                                     NetCracker
+Expires: 5 December 2026                                      NetCracker
                                                            D. Ceccarelli
                                                                    Cisco
                                                                    Z. Li
                                                                     CMCC
-                                                             28 May 2026
+                                                             3 June 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -67,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 November 2026.
+   This Internet-Draft will expire on 5 December 2026.
 
 Copyright Notice
 
@@ -132,16 +132,16 @@ Table of Contents
    network management Agent applications at the network level and
    service level.  Since AI native operations may be non-deterministic,
    when network management agents misbehave or deviate from what Agents
-   are expected to do, Current AI safety technologies, often referred to
-   as "AI guardrails" are introduced to constrain the behavior of AI
+   are expected to do, current AI safety technologies (often referred to
+   as "AI guardrails") are introduced to constrain the behavior of AI
    agents within operational and compliance boundaries, prevent AI from
-   producing harmful results or taking wrong actions, e.g.,escalate a
+   producing harmful results or taking wrong actions, e.g., escalate a
    decision to a human for a high-risk network operation, defend against
    malicious attacks, e.g., prompt injection.  These guardrails
    typically operate at the input/output/pre-action filter level or
    through static boundary alignment.
 
-   However as AI systems are increasingly integrated into autonomous
+   However, as AI systems are increasingly integrated into autonomous
    workflows and critical infrastructure, these static measures are
    proving insufficient for the full operational lifecycle, e.g.,
 
@@ -151,7 +151,7 @@ Table of Contents
    *  Network operators usually lack an equivalent infrastructure for
       human oversight;
 
-   *  Provide continuous, monitoring of an AI system’s internal logic or
+   *  Provide continuous, monitoring of an AI system's internal logic or
       its long-running execution paths that match the speed and scale of
       the network management Agent applications, e.g., network failure
       or security risk is hard to detect and control, occurring at
@@ -209,11 +209,11 @@ Table of Contents
       provides a goal and the agent autonomously figures out how to
       achieve it.
 
-   *  Observability: The visibility into an agent's internal state,
-      decision-making logic, and workflow execution from its external
-      telemetry outputs (e.g., logs, traces, metrics), enabling human
-      operators or monitoring systems to understand what the agent is
-      doing and why it behaves in a specific manner.
+   *  Agent Observability: The visibility into an agent's internal
+      state, decision-making logic, and workflow execution from its
+      external telemetry outputs (e.g., logs, traces, metrics), enabling
+      human operators or monitoring systems to understand what the agent
+      is doing and why it behaves in a specific manner.
 
    *  Intervention: A reactive, emergency action to intervene or take
       control of an agent with boundary violations, anomalies, failures,
@@ -225,15 +225,15 @@ Table of Contents
       scopes, operational constraints, and security baselines, it
       fundamentally mitigates abnormal behaviors from agents.
 
-   *  Evaluation:Using Trajectory record to assess the performance and
-      understand how an gent solves problem,e.g.,Checking if the agent
-      took the shortest sequence of actions or wasted resources on
-      redundant tool or Analyzing specific segments of the trajectory to
-      see if the agent excels at information retrieval but struggles
+   *  Evaluation: Using Trajectory Record to assess the performance and
+      understand how an Agent solves problems, e.g., checking if the
+      agent took the shortest sequence of actions or wasted resources on
+      redundant tools or analyzing specific segments of the trajectory
+      to see if the agent excels at information retrieval but struggles
       with mathematical synthesis.
 
    *  Human Oversight: The practice of keeping humans actively involved
-      in continuously monitoring of AI agents.In agent trajectory
+      in continuously monitoring of AI agents.  In agent trajectory
       management, it ensures that network management agents do not go
       off the rails, violate safety protocols, or waste resources.  It
       transforms a fully autonomous "black box" into a controllable and
@@ -243,10 +243,10 @@ Table of Contents
       takes to achieve a specific goal such as reasoning sequence, the
       sequence and logic of execution paths.
 
-   *  Trajectory record: Keep track of Agent behaviour and produce audit
+   *  Trajectory Record: Keep track of Agent behaviour and produce audit
       log or trace information to Capture the entire "flight path" or
       reasoning sequence the agent followed to reach its conclusion
-      using using a structured Thought,Action,Observation loop.
+      using a structured Thought,Action,Observation loop.
 
 3.  Problem Space
 
@@ -254,10 +254,10 @@ Table of Contents
    Service Provider (CSP) networks introduces fundamental operational,
    architectural, and governance challenges.  Current network management
    paradigms are built on deterministic models that assume predictable,
-   rule-based behaviors.  The shift toward non-deterministic, AI-native
-   architectures creates a structural mismatch between machine-speed
-   execution and human-speed oversight.  This gap manifests in several
-   distinct problem areas:
+   rule-based behaviors.  The shift toward non-deterministic
+   (probabilistic), AI-native architectures creates a structural
+   mismatch between machine-speed execution and human-speed oversight.
+   This gap manifests in several distinct problem areas:
 
 3.1.  The Observability Deficit
 
@@ -408,13 +408,13 @@ Table of Contents
 
 4.2.  Agent Drift Detection
 
-   Agent drift refers to the gradual degradation in an agent’s
+   Agent drift refers to the gradual degradation in an agent's
    performance and alignment with intended behavior over time in
    production environments.  It exists in many forms depending on the
    aspect of the system affected.  For example, goal drift occurs when
    the quality of goal execution deviates from expectations, context
    drift when the relevance or accuracy of the working context
-   deteriorates; reasoning drift when there is a decline in the agent’s
+   deteriorates; reasoning drift when there is a decline in the agent's
    planning and decision-making capability, and collaboration drift when
    the effectiveness of interactions with tools, external APIs, or other
    agents degrades.
@@ -464,7 +464,7 @@ Table of Contents
    quality advances to the next stage.
 
    Quality gates are the ideal mechanism to involve humans for agent
-   tasks execution quality and escalations,i.e., at stage transitions
+   tasks execution quality and escalations, i.e., at stage transitions
    where the accumulated work product of a whole reasoning stage is
    ready for assessment where the human is presented with a complete
    plan, a complete risk assessment, and a specific decision to make.
@@ -507,7 +507,7 @@ Table of Contents
       provides mechanism to conditionally execute task or allows
       defining maximum iterations for task execution which prevents from
       getting into infinite loops.  The kill-switch functionality (halt
-      or restrict an agent’s execution when predefined risk, policy, or
+      or restrict an agent's execution when predefined risk, policy, or
       trust conditions are violated) is supported in the Microsoft Agent
       Governance Toolkit, but its interoperability across different
       agent frameworks is not proven.
@@ -529,7 +529,7 @@ Table of Contents
    It is believed that the security and I&C should be treated as
    distinct disciplines, with separate tooling and governance
    responsibilities, but closely coordinated.  Security acts as the
-   first line of defense, preserving the integrity of the agent’s inputs
+   first line of defense, preserving the integrity of the agent's inputs
    and reasoning.  I&C serves as the operational control layer,
    governing agent behaviour regardless of whether decisions are valid
    or compromised.  Another way to view this is: when an agent's
@@ -537,20 +537,20 @@ Table of Contents
    layer to prevent or detect this.  However, if the security layer is
    bypassed (when adversarial techniques evolve) and if agent still
    proceeds to action execution, I&C functions as the governance
-   backstop, that intervenes to constrain or correct the agent’s
+   backstop, that intervenes to constrain or correct the agent's
    actions.  I&C ensures that there is a minimum level of control is in
    place to control agent behavior when such security issues emerge and
    bypassed.
 
    From an I&C perspective, a prominent way to manage agent security
-   risk is to sandbox the agent’s execution environment.  This means
+   risk is to sandbox the agent's execution environment.  This means
    running the agent in a restricted environment so it cannot cross
    trust boundaries, even if it is compromised.  Dynamically limiting
-   the execution boundary can be achieved by adjusting the agent’s
+   the execution boundary can be achieved by adjusting the agent's
    runtime environment, permissions, and accessible resources in real
    time based on task context and trust level.  In addition, several
    guardrail-based techniques are applied, such as sanitizing inputs
-   before they enter the agent’s context, verifying the source of
+   before they enter the agent's context, verifying the source of
    retrieved data, using intent classifiers to detect hidden or
    malicious instructions in non-instructional inputs.
 
@@ -706,7 +706,7 @@ Table of Contents
    override, or terminate actions based on contextual risk, policy
    compliance, and business impact.  This includes defining autonomy
    levels (e.g., observe-only, human-in-the-loop, human-on-the-loop,
-   fully autonomous) that dynamically adjust based on the agent’s trust
+   fully autonomous) that dynamically adjust based on the agent's trust
    score, task criticality, and operational context.  Control mechanisms
    need to also support dynamic constraint injection, that allows
    permissions, and execution boundaries (e.g., budget, scope, data
