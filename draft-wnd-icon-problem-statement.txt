@@ -168,7 +168,7 @@ Table of Contents
       and state recovery during boundary violations by agents.
 
    This document provides a problem statement for protocol on agent
-   observability, intervation and control.  We list the properties the
+   observability, intervention and control.  We list the properties the
    protocol should have, then explain why those properties are
    necessary.  We describe why a new protocol is the best solution for
    the more general problem of identifying and characterizing trajectory
