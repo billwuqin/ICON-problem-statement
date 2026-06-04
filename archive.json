@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-02T02:47:35.066043+00:00",
+  "timestamp": "2026-06-04T02:51:23.906095+00:00",
   "repo": "billwuqin/ICON-problem-statement",
   "labels": [
     {
@@ -67,5 +67,48 @@
       "comments": []
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDOSm5Pfs7h1qdz",
+      "title": "Fix grammar and formatting issues in problem statement",
+      "url": "https://github.com/billwuqin/ICON-problem-statement/pull/2",
+      "state": "MERGED",
+      "author": "bclaise",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Corrected grammar, punctuation, and formatting issues throughout the document for clarity and consistency.",
+      "createdAt": "2026-06-02T14:43:33Z",
+      "updatedAt": "2026-06-03T03:59:56Z",
+      "baseRepository": "billwuqin/ICON-problem-statement",
+      "baseRefName": "main",
+      "baseRefOid": "f96deebfcb1667f9c5965bb0c8a9a133a24da698",
+      "headRepository": "billwuqin/ICON-problem-statement",
+      "headRefName": "bclaise-editorial-1",
+      "headRefOid": "d6f2d3635fff290f588ba553cf04dad96040e72d",
+      "closedAt": "2026-06-03T03:59:55Z",
+      "mergedAt": "2026-06-03T03:59:55Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "b5ad405cdc3e7f57c40d2e75d6903f3b72d3920d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOSm5Pfs8AAAABByyfXA",
+          "commit": {
+            "abbreviatedOid": "d6f2d36"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Good Editorial changes, thanks Benoit.",
+          "createdAt": "2026-06-03T03:59:04Z",
+          "updatedAt": "2026-06-03T03:59:04Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
