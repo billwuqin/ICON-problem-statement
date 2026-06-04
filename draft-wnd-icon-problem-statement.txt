@@ -4,13 +4,11 @@
 
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
-Intended status: Informational                                   M. Nair
-Expires: 5 December 2026                                      NetCracker
-                                                           D. Ceccarelli
-                                                                   Cisco
+Intended status: Informational                             D. Ceccarelli
+Expires: 6 December 2026                                           Cisco
                                                                    Z. Li
                                                                     CMCC
-                                                             3 June 2026
+                                                             4 June 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -67,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 December 2026.
+   This Internet-Draft will expire on 6 December 2026.
 
 Copyright Notice
 
@@ -1019,11 +1017,6 @@ Authors' Addresses
    Qin Wu
    Huawei
    Email: bill.wu@huawei.com
-
-
-   Manoj Nair
-   NetCracker
-   Email: manoj.k.nair@netcracker.com
 
 
    Daniele Ceccarelli
