@@ -113,7 +113,7 @@ Table of Contents
      5.2.  Limitations of Agent Drift Analysis
      5.3.  Limitations of Quality gates
      5.4.  Limitations of Intervention Approaches
-     5.5.  Limitations of Security I&C
+     5.5.  Limitations of Security Control Approaches
      5.6.  Limitations of Trust I&C
    6.  Standardization Area
    7.  Security Considerations
@@ -585,8 +585,8 @@ Table of Contents
    Trust I&C approaches extend beyond static identity and permission
    models to incorporate context-awareness, temporal constraints, and
    behavior-driven trust evaluation.  Since this is a cross cutting
-   concen with Security, it requires broader discussion on whether Trust
-   governance and control should be driven by an Agent Governance
+   concern with Security, it requires broader discussion on whether
+   Trust governance and control should be driven by an Agent Governance
    Control Plane or a separate Security governance plane.
 
    Some of the approaches followed for controlling the agent trust are
@@ -821,7 +821,7 @@ Table of Contents
       and automatically triggers a proportionate intervention response
       when a deviation is detected
 
-5.5.  Limitations of Security I&C
+5.5.  Limitations of Security Control Approaches
 
    From the I&C perspective following are some of the key limitations in
    incorporating Security controls in agent.
