@@ -1198,7 +1198,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                     <p id="section-toc.1-1.3.2.1.2.2.1"><a href="#section-3.1.2" class="auto internal xref">3.1.2</a>.  <a href="#name-high-velocity-data-ingestio" class="internal xref">High-Velocity Data Ingestion</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1.2.3">
-                    <p id="section-toc.1-1.3.2.1.2.3.1"><a href="#section-3.1.3" class="auto internal xref">3.1.3</a>.  <a href="#name-ambiguity-of-lineage-and-ac" class="internal xref">Ambiguity of Lineage and Accountability Attribution</a></p>
+                    <p id="section-toc.1-1.3.2.1.2.3.1"><a href="#section-3.1.3" class="auto internal xref">3.1.3</a>.  <a href="#name-ambiguity-of-traceability-o" class="internal xref">Ambiguity of Traceability or Accountability Attribution</a></p>
 </li>
                 </ul>
 </li>
@@ -1435,14 +1435,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-problem-space">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-problem-space" class="section-name selfRef">Problem Space</a>
       </h2>
-<p id="section-3-1">The deployment of autonomous agentic systems within Communications
-Service Provider (CSP) networks introduces fundamental operational,
-architectural, and governance challenges. Current network management
-paradigms are built on deterministic models that assume predictable,
-rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-native
-architectures creates a structural mismatch between machine-speed
-execution and human-speed oversight. This gap manifests in several
-distinct problem areas:<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">The deployment of autonomous agentic systems within operators' networks introduces fundamental operational,
+architectural challenges. Current network management paradigms are built on deterministic models that assume
+predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-driven network
+operation architectures creates a structural mismatch between machine-speed execution and human-speed oversight.
+This gap manifests in several distinct problem areas:<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="the-observability-aspect">
 <section id="section-3.1">
         <h3 id="name-the-observability-aspect">
@@ -1461,7 +1458,7 @@ transparency into how specific decisions are reached or how complex
 action sequences are generated.<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <p id="section-3.1.1-2">Without an out-of-band mechanism to inspect this reasoning layer, operators
 cannot validate the safety or intent of an agent's planned mutations before
-they hit the infrastructure.<a href="#section-3.1.1-2" class="pilcrow">¶</a></p>
+they introduce unexpected consenquence on the infrastructure.<a href="#section-3.1.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="high-velocity-data-ingestion">
@@ -1469,26 +1466,26 @@ they hit the infrastructure.<a href="#section-3.1.1-2" class="pilcrow">¶</a></p
           <h4 id="name-high-velocity-data-ingestio">
 <a href="#section-3.1.2" class="section-number selfRef">3.1.2. </a><a href="#name-high-velocity-data-ingestio" class="section-name selfRef">High-Velocity Data Ingestion</a>
           </h4>
-<p id="section-3.1.2-1">Agents are explicitly designed to operate with high degrees of autonomy,
-speed, and scale. However, CSPs currently lack the corresponding telemetry
-and control infrastructure required to observe, evaluate, and intercept
+<p id="section-3.1.2-1">Agents are explicitly designed to operate with high degrees of autonomy, speed, and
+scale. However, network operators currently lack the corresponding telemetry
+mechanism and control infrastructure required to observe, evaluate, and intercept
 these systems at the same machine-speed pace. Consequently, effective
 real-time oversight becomes functionally impossible. Always relying on human
 escalation paradigms is usually impractical due to the sheer volume and velocity
 of the data points involved in active agent pipelines.<a href="#section-3.1.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="ambiguity-of-lineage-and-accountability-attribution">
+<div id="ambiguity-of-traceability-or-accountability-attribution">
 <section id="section-3.1.3">
-          <h4 id="name-ambiguity-of-lineage-and-ac">
-<a href="#section-3.1.3" class="section-number selfRef">3.1.3. </a><a href="#name-ambiguity-of-lineage-and-ac" class="section-name selfRef">Ambiguity of Lineage and Accountability Attribution</a>
+          <h4 id="name-ambiguity-of-traceability-o">
+<a href="#section-3.1.3" class="section-number selfRef">3.1.3. </a><a href="#name-ambiguity-of-traceability-o" class="section-name selfRef">Ambiguity of Traceability or Accountability Attribution</a>
           </h4>
 <p id="section-3.1.3-1">In distributed multi-agent topologies, operational responsibility for an ultimate
  network outcome is scattered across an extended chain of coordinating agents,
  foundational models, and abstraction layers. When system failures, performance
  degradations, or unintended consequences occur, attributing accountability to
  a specific agent entity, localized model decision, or human-in-the-loop anchor
- becomes highly ambiguous. This lack of clear lineage creates severe complications
+ becomes highly ambiguous. This lack of clear traceability creates severe complications
  for post-incident root-cause analysis and regulatory compliance reporting.<a href="#section-3.1.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1576,7 +1573,7 @@ for agent to agent, agent to tools communication (e.g., Agent-to-Agent <span>[<a
 and Model Context Protocol <span>[<a href="#MCP" class="cite xref">MCP</a>]</span>), and long-running autonomous actions are
 advancing rapidly.<a href="#section-3.3.2-2" class="pilcrow">¶</a></p>
 <p id="section-3.3.2-3">Conversely, essential governance enablers including runtime intervention
-controls, deterministic transaction rollback, and cross-agent lineage
+controls, deterministic transaction rollback, and cross-agent Collaboration
 traceability, agent behavior traceability remain highly immature and lack
 clear standardisation paths.<a href="#section-3.3.2-3" class="pilcrow">¶</a></p>
 </section>

@@ -89,7 +89,7 @@ Table of Contents
      3.1.  The Observability Aspect
        3.1.1.  Limited Transparency in Planning and Decision-Making
        3.1.2.  High-Velocity Data Ingestion
-       3.1.3.  Ambiguity of Lineage and Accountability Attribution
+       3.1.3.  Ambiguity of Traceability or Accountability Attribution
      3.2.  The Intervention Aspect
        3.2.1.  Static IAM Failures
        3.2.2.  Multi-Vendor Dependency Risks
@@ -248,14 +248,14 @@ Table of Contents
 
 3.  Problem Space
 
-   The deployment of autonomous agentic systems within Communications
-   Service Provider (CSP) networks introduces fundamental operational,
-   architectural, and governance challenges.  Current network management
-   paradigms are built on deterministic models that assume predictable,
-   rule-based behaviors.  The shift toward non-deterministic
-   (probabilistic), AI-native architectures creates a structural
-   mismatch between machine-speed execution and human-speed oversight.
-   This gap manifests in several distinct problem areas:
+   The deployment of autonomous agentic systems within operators'
+   networks introduces fundamental operational, architectural
+   challenges.  Current network management paradigms are built on
+   deterministic models that assume predictable, rule-based behaviors.
+   The shift toward non-deterministic (probabilistic), AI-driven network
+   operation architectures creates a structural mismatch between
+   machine-speed execution and human-speed oversight.  This gap
+   manifests in several distinct problem areas:
 
 3.1.  The Observability Aspect
 
@@ -270,20 +270,21 @@ Table of Contents
 
    Without an out-of-band mechanism to inspect this reasoning layer,
    operators cannot validate the safety or intent of an agent's planned
-   mutations before they hit the infrastructure.
+   mutations before they introduce unexpected consenquence on the
+   infrastructure.
 
 3.1.2.  High-Velocity Data Ingestion
 
    Agents are explicitly designed to operate with high degrees of
-   autonomy, speed, and scale.  However, CSPs currently lack the
-   corresponding telemetry and control infrastructure required to
-   observe, evaluate, and intercept these systems at the same machine-
-   speed pace.  Consequently, effective real-time oversight becomes
-   functionally impossible.  Always relying on human escalation
+   autonomy, speed, and scale.  However, network operators currently
+   lack the corresponding telemetry mechanism and control infrastructure
+   required to observe, evaluate, and intercept these systems at the
+   same machine-speed pace.  Consequently, effective real-time oversight
+   becomes functionally impossible.  Always relying on human escalation
    paradigms is usually impractical due to the sheer volume and velocity
    of the data points involved in active agent pipelines.
 
-3.1.3.  Ambiguity of Lineage and Accountability Attribution
+3.1.3.  Ambiguity of Traceability or Accountability Attribution
 
    In distributed multi-agent topologies, operational responsibility for
    an ultimate network outcome is scattered across an extended chain of
@@ -291,7 +292,7 @@ Table of Contents
    When system failures, performance degradations, or unintended
    consequences occur, attributing accountability to a specific agent
    entity, localized model decision, or human-in-the-loop anchor becomes
-   highly ambiguous.  This lack of clear lineage creates severe
+   highly ambiguous.  This lack of clear traceability creates severe
    complications for post-incident root-cause analysis and regulatory
    compliance reporting.
 
@@ -357,8 +358,8 @@ Table of Contents
 
    Conversely, essential governance enablers including runtime
    intervention controls, deterministic transaction rollback, and cross-
-   agent lineage traceability, agent behavior traceability remain highly
-   immature and lack clear standardisation paths.
+   agent Collaboration traceability, agent behavior traceability remain
+   highly immature and lack clear standardisation paths.
 
 3.3.3.  AI-Native Failure Emergence
 
