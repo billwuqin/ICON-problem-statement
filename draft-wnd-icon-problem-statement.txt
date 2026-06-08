@@ -5,10 +5,10 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 6 December 2026                                           Cisco
+Expires: 10 December 2026                                          Cisco
                                                                    Z. Li
                                                                     CMCC
-                                                             4 June 2026
+                                                             8 June 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 December 2026.
+   This Internet-Draft will expire on 10 December 2026.
 
 Copyright Notice
 
@@ -864,99 +864,24 @@ Table of Contents
 
 6.  Standardization Area
 
-   As highlighted in previous sections, the realization of I&C
-   capabilities needs to move toward a more uniform approach aligned
-   with established governance practices.  The current pattern of
-   implementing these capabilities within individual frameworks results
-   in fragmentation, limiting interoperability and increasing
-   maintenance overhead.  To address this, I&C must be supported through
-   a standardised approach that enables consistent behavior across
-   agents, platforms, and domains.  Such an approach should provide
-   shared interaction models, and standardised interfaces that allow
-   governance policies, control mechanisms, trust delegation and
-   observability constructs to be applied uniformly.
-
    This section outlines key areas where standardization is required to
-   support the design, implementation, and operation of I&C in
-   autonomous networks.  These areas span architectural considerations,
-   interaction models, governance mechanisms, and protocol-level
-   extensions, highlighting the cross-cutting nature of I&C across the
-   system stack.  The intent is to identify foundational areas that
-   require further study and alignment within IETF Autonomous Networks
-   work items and the broader CSP transformation towards AI-native
-   operations.  Note that some of these items can span development
-   across multiple stages - for example Stage 1 - Service Description/
-   Requirements, Stage 2 - Technical Realization, Stage 3 - Protocol
-   Level extensions (e.g. A2A-T)
+   support the design, implementation, and operation of Agent
+   Observability,Intervention and Control in autonomous networks.  The
+   intent is to identify foundational areas that require align with
+   network management technologies developed in IETF OPS Area and drive
+   network automation moving toward AI Driven Network Operation.
 
-   *  Agent Intervention and Control Architecture: Define/Formalize the
-      structural extensions required to the current AN Agent
-      Architecture to support centralized, framework-agnostic
-      governance.
+   *  Agent Observability,Intervention and Control Architecture:
+      Developing or selecting a framework for enforcing boundaries,
+      detecting, evaluating,interrupting, correcting, and recovering
+      from agent behavior within operational and compliance boundaries.
 
-   *  Agent I&C Taxonomy - Failure Modes, Intervention & Control
-      Messages, Observability Constructs: Provides a standardised
-      vocabulary of failure modes, I&C actions, and observability
-      constructs across multi-agent systems.  It establishes a common
-      foundation for consistent monitoring, diagnosis, and intervention.
+   *  Telemetry protocol extension Enabling network behavioral
+      assessment through analysis of observed operational network data
+      (logs, metrics, traces, etc.)
 
-   *  Agent I&C Interface Specification: Specifies the standardised
-      external interface through which the governance plane communicates
-      with agents from the human operators.  Currently, every control
-      and intervention point is only reachable through framework-
-      specific, proprietary mechanisms.  This specification defines a
-      common protocol capabilities that any compliant agent must expose,
-      regardless of its underlying framework.
-
-   *  Agent I&C Contract Specification:Addresses the absence of a
-      standardised governance contract model for expressing the runtime
-      I&C relationship between an agent and its operational environment
-      (or between agents).  Specifies, in a vendor-neutral and
-      framework-agnostic way, the minimum set of I&C capabilities an
-      agent must expose: what obligations it accepts, what authorities
-      the operator holds to control the agent, and how these are
-      communicated and enforced across the agent execution lifecycle.
-
-      -  Optional - Zero-Trust for Agent
-
-      -  Optional - Agent Trust Control and Delegation: Defines how
-         trust is assigned, delegated, and enforced across agents
-
-   *  Guardrail Specification: Focuses on defining the constraints and
-      safeguards that govern agent behavior at runtime.  Guardrails may
-      apply to inputs, outputs, actions, and access to context or data,
-      and are intended to prevent unsafe, non-compliant, or unintended
-      outcomes.  The objective is to provide a structured approach to
-      specifying and enforcing these constraints in a way that is
-      consistent, composable, and aligned with overall governance
-      policies.
-
-   *  Agent Interoperability/Interaction Standards Extension: Focuses on
-      extending existing agent interaction protocols and standards to
-      incorporate governance, trust, and I&C capabilities.  It addresses
-      how agents can interoperate not only at the level of functionality
-      but also with respect to control, policy enforcement, and
-      observability.
-
-      -  Agent Card Extension - Governance Capability Declaration -
-         Extends the Agent Card with a governance manifest block that
-         declares what I&C capabilities an agent supports
-
-      -  Agent Governance Contract Establishment - Negotiation and
-         exchange of governance terms at connection or session
-         initiation
-
-      -  Multi-Agent Task Execution Authority Delegation - Defines a
-         protocol-level mechanism for carrying the authority chain
-         alongside task delegation between agents
-
-      -  Intervention and Control Message Envelope - Structure and
-         semantics of messages used to perform intervention and control
-         actions.
-
-      -  Human Escalation/Intervention Message Envelope - Focuses on
-         enabling human-in-the-loop interactions by standardizing how
-         escalation and intervention requests are communicated.
+   *  Human and Agent Interaction protocol for Human Escalation/
+      Intervention, Agent Intervention and Control
 
 7.  Security Considerations
 
