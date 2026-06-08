@@ -1245,10 +1245,10 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-quality-gates" class="internal xref">Quality Gates</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
-                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-intervention-approaches" class="internal xref">Intervention Approaches</a></p>
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-existing-intervention-appro" class="internal xref">Existing Intervention Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
-                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-security-ic-approaches" class="internal xref">Security I&amp;C Approaches</a></p>
+                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-security-control-approaches" class="internal xref">Security Control Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
                 <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-trust-ic-approaches" class="internal xref">Trust I&amp;C Approaches</a></p>
@@ -1703,10 +1703,10 @@ before or after tool use and implement quality gate logic. So most of the techni
 framework specific.<a href="#section-4.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="intervention-approaches">
+<div id="existing-intervention-approaches">
 <section id="section-4.4">
-        <h3 id="name-intervention-approaches">
-<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-intervention-approaches" class="section-name selfRef">Intervention Approaches</a>
+        <h3 id="name-existing-intervention-appro">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-existing-intervention-appro" class="section-name selfRef">Existing Intervention Approaches</a>
         </h3>
 <p id="section-4.4-1">The intervention mechanisms that exist today in agentic systems are mostly implementation-specific, tied to individual
 frameworks, and not mature enough to form a consistent or deployable operational practice. Currently, the mechanisms
@@ -1714,7 +1714,7 @@ involve the following:<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.4-2.1">
             <p id="section-4.4-2.1.1">Primitive and manually controlled repurposed from the infrastructure: Reuse approaches from the infrastructure
-control such as process termination, API key revocation, service account suspension, and network-level blocking -
+control such as process termination, API key revocation, service account suspension, and network-level blocking
 which are not primarily designed for agentic systems. While they can be effective, operations like terminating an
 agent process preserves no state, enables no graceful recovery, produces no trace, and cannot be applied selectively
 to a specific action class or task scope.<a href="#section-4.4-2.1.1" class="pilcrow">¶</a></p>
@@ -1732,10 +1732,10 @@ Microsoft Agent Governance Toolkit, but its interoperability across different ag
         </ul>
 </section>
 </div>
-<div id="security-ic-approaches">
+<div id="security-control-approaches">
 <section id="section-4.5">
-        <h3 id="name-security-ic-approaches">
-<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-security-ic-approaches" class="section-name selfRef">Security I&amp;C Approaches</a>
+        <h3 id="name-security-control-approaches">
+<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-security-control-approaches" class="section-name selfRef">Security Control Approaches</a>
         </h3>
 <p id="section-4.5-1">Whether security control (specifically control mechanisms, not broader security governance) should fall within the
 scope of I&amp;C (Intervention and Control) requires further discussion.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
@@ -1743,21 +1743,19 @@ scope of I&amp;C (Intervention and Control) requires further discussion.<a href=
 ensure that the inputs it receives and processes are not tampered with and manipulated. I&amp;C is concerned with governing
 what the agent does, i.e. its actions within the operational environment. This includes ensuring that actions remain
 within authorized boundaries, are observable, and can be corrected or reversed when necessary.<a href="#section-4.5-2" class="pilcrow">¶</a></p>
-<p id="section-4.5-3">It is believed that the security and I&amp;C should be treated as distinct disciplines, with separate tooling and
-governance responsibilities, but closely coordinated. Security acts as the first line of defense, preserving the
-integrity of the agent's inputs and reasoning. I&amp;C serves as the operational control layer, governing agent behaviour
-regardless of whether decisions are valid or compromised. Another way to view this is: when an agent's security is
-compromised, it is the responsibility of the security layer to prevent or detect this. However, if the security layer
-is bypassed (when adversarial techniques evolve) and if agent still proceeds to action execution, I&amp;C functions as the
-governance backstop, that intervenes to constrain or correct the agent's actions. I&amp;C ensures that there is a minimum
-level of control is in place to control agent behavior when such security issues emerge and bypassed.<a href="#section-4.5-3" class="pilcrow">¶</a></p>
-<p id="section-4.5-4">From an I&amp;C perspective, a prominent way to manage agent security risk is to sandbox the agent's execution environment.
+<p id="section-4.5-3">It is believed that the security Control should be treated as distinct disciplines, with separate tooling and
+governance responsibilities, but closely coordinated. Security acts as the first line of the defense, preserving the
+integrity of the agent's inputs and reasoning. Security Control serves as the operational control layer, governing agent behaviour
+regardless of whether decisions are valid or compromised.<a href="#section-4.5-3" class="pilcrow">¶</a></p>
+<p id="section-4.5-4">Another way to view this is: when an agent's security is compromised, it is the responsibility of the security layer
+to prevent or detect this. However, if the security layer is bypassed (when adversarial techniques evolve) and if agent
+still proceeds to action execution, security control functions as the governance backstop, that intervenes to constrain
+or correct the agent's actions. Security Control ensures that there is a minimum level of control is in place to control
+agent behavior when such security issues emerge and bypassed.<a href="#section-4.5-4" class="pilcrow">¶</a></p>
+<p id="section-4.5-5">From the I&amp;C perspective, a prominent way to manage agent security risk is to sandbox the agent's execution environment.
 This means running the agent in a restricted environment so it cannot cross trust boundaries, even if it is
 compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime environment,
-permissions, and accessible resources in real time based on task context and trust level. In addition, several
-guardrail-based techniques are applied, such as sanitizing inputs before they enter the agent's context, verifying the
-source of retrieved data, using intent classifiers to detect hidden or malicious instructions in non-instructional
-inputs.<a href="#section-4.5-4" class="pilcrow">¶</a></p>
+permissions, and accessible resources in real time based on task context and trust level.<a href="#section-4.5-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="trust-ic-approaches">
