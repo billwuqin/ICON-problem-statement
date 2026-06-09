@@ -5,10 +5,10 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 10 December 2026                                          Cisco
+Expires: 11 December 2026                                          Cisco
                                                                    Z. Li
                                                                     CMCC
-                                                             8 June 2026
+                                                             9 June 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -65,7 +65,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 December 2026.
+   This Internet-Draft will expire on 11 December 2026.
 
 Copyright Notice
 
@@ -870,7 +870,7 @@ Table of Contents
       detecting, evaluating,interrupting, correcting, and recovering
       from agent behavior within operational and compliance boundaries.
 
-   *  Telemetry protocol extension Enabling network behavioral
+   *  OpenTelemetry protocol extension Enabling network behavioral
       assessment through analysis of observed operational network data
       (logs, metrics, traces, etc.)
 
