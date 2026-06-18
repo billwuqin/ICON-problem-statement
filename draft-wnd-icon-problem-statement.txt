@@ -103,9 +103,9 @@ Table of Contents
      4.1.  AI Guardrails
      4.2.  Agent Drift Detection
      4.3.  Quality Gates
-       4.3.1.  Opentelemtery for Agent Observability
-     4.4.  Existing Intervention Approaches
-     4.5.  Trust & Security Control Approaches
+     4.4.  Opentelemtery for Agent Observability
+     4.5.  Existing Intervention Approaches
+     4.6.  Trust & Security Control Approaches
    5.  Gaps in the Current Approaches
      5.1.  Limitations of AI Guardrails
      5.2.  Limitations of Agent Drift Analysis
@@ -474,7 +474,7 @@ Table of Contents
    logic.  So most of the techniques that exist today are agent
    framework specific.
 
-4.3.1.  Opentelemtery for Agent Observability
+4.4.  Opentelemtery for Agent Observability
 
    Modern agents orchestrate complex workflows: reasoning chains, tool
    execution, knowledge retrieval, multi-agent collaboration.  When
@@ -508,7 +508,7 @@ Table of Contents
       caused an agent to exhibit non-deterministic behavior or get stuck
       in an infinite loop.
 
-4.4.  Existing Intervention Approaches
+4.5.  Existing Intervention Approaches
 
    The intervention mechanisms that exist today in agentic systems are
    mostly implementation-specific, tied to individual frameworks, and
@@ -540,7 +540,7 @@ Table of Contents
       Governance Toolkit, but its interoperability across different
       agent frameworks is not proven.
 
-4.5.  Trust & Security Control Approaches
+4.6.  Trust & Security Control Approaches
 
    Trust & Security in autonomous agents spans across multiple
    dimensions, including identity (who the agent is), authorization
