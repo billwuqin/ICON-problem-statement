@@ -110,8 +110,9 @@ Table of Contents
      5.1.  Limitations of AI Guardrails
      5.2.  Limitations of Agent Drift Analysis
      5.3.  Limitations of Quality gates
-     5.4.  Limitations of Intervention Approaches
-     5.5.  Limitations of Trust & Security Control Approaches
+     5.4.  Limitation of OpenTelemetry for Agent Observability
+     5.5.  Limitations of Intervention Approaches
+     5.6.  Limitations of Trust & Security Control Approaches
    6.  Standardization Area
    7.  Security Considerations
    8.  IANA Considerations
@@ -700,7 +701,17 @@ Table of Contents
       monitor, escalate, or resolve.  The gate operates in isolation
       from the broader governance stack.
 
-5.4.  Limitations of Intervention Approaches
+5.4.  Limitation of OpenTelemetry for Agent Observability
+
+   While OpenTelemetry (OTel) is the industry standard for collecting
+   traces, metrics, and logs, it has critical limitations when applied
+   to AI agent observability.The fundamental limitation is that
+   OpenTelemetry functions as a passive data plane for system
+   performance, not an evaluation or guardrail engine for AI behavior.
+   It can track how an application runs, but it struggles to evaluate
+   what an agent decides.
+
+5.5.  Limitations of Intervention Approaches
 
    As highlighted above intervention mechanisms exist in primitive and
    framework-specific forms.  They have the following limitations.
@@ -727,7 +738,7 @@ Table of Contents
       and automatically triggers a proportionate intervention response
       when a deviation is detected
 
-5.5.  Limitations of Trust & Security Control Approaches
+5.6.  Limitations of Trust & Security Control Approaches
 
    From the I&C perspective following are some of the key limitations in
    incorporating Security controls in agent.
