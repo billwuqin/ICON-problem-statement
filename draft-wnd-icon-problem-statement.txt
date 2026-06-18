@@ -103,6 +103,7 @@ Table of Contents
      4.1.  AI Guardrails
      4.2.  Agent Drift Detection
      4.3.  Quality Gates
+       4.3.1.  Opentelemtery for Agent Observability
      4.4.  Existing Intervention Approaches
      4.5.  Trust & Security Control Approaches
    5.  Gaps in the Current Approaches
@@ -471,6 +472,40 @@ Table of Contents
    can be invoked before or after tool use and implement quality gate
    logic.  So most of the techniques that exist today are agent
    framework specific.
+
+4.3.1.  Opentelemtery for Agent Observability
+
+   Modern agents orchestrate complex workflows: reasoning chains, tool
+   execution, knowledge retrieval, multi-agent collaboration.  When
+   things go wrong, or right, you need to understand exactly what
+   happened.  Traditional network monitoring such as gRPC, SNMP, YANG
+   Push can't capture reasoning processes or decision context.
+   Opentelemetry addresses this by utilizing unified GenAI and Agent
+   Semantic Conventions to standardise how metrics, logs, and
+   distributed traces are captured across multi-agent system.
+
+   Implementing OpenTelemetry for AI agents focuses heavily on
+   distributed tracing to how an agent processes information, arrives at
+   decisions, and executes tasks as follows:
+
+   *  Distributed Tracing (Spans): The entire agent run acts as the root
+      span.  Every individual reasoning loop, sub-agent delegation, LLM
+      invocation, and tool/API execution is mapped as a child span.
+      This layout instantly reveals where latencies, bottlenecks, or
+      errors occur.
+
+   *  GenAI Semantic Conventions: Standardised metadata tags provide
+      explicit context.  Spans automatically record critical variables
+      across four critical domains: System Context, Token Economics,
+      Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
+      gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
+
+   *  Protcol,Decision and System Events: When opted-in, Opentelemetry
+      logs every agent actions,every decision, every protocol
+      communication between agents or between agent and tools.  This
+      visibility allows engineers to review the exact context that
+      caused an agent to exhibit non-deterministic behavior or get stuck
+      in an infinite loop.
 
 4.4.  Existing Intervention Approaches
 
