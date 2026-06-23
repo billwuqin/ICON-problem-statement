@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-04T02:51:23.906095+00:00",
+  "timestamp": "2026-06-23T02:30:14.597865+00:00",
   "repo": "billwuqin/ICON-problem-statement",
   "labels": [
     {
@@ -109,6 +109,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOSm5Pfs7pF8xt",
+      "title": "add more limitation about OTel",
+      "url": "https://github.com/billwuqin/ICON-problem-statement/pull/3",
+      "state": "OPEN",
+      "author": "QiufangMa",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-06-22T09:18:56Z",
+      "updatedAt": "2026-06-22T09:18:56Z",
+      "baseRepository": "billwuqin/ICON-problem-statement",
+      "baseRefName": "main",
+      "baseRefOid": "5bf93aeb5293d5a4f390043652f5c52241c55851",
+      "headRepository": "QiufangMa/ICON-problem-statement",
+      "headRefName": "main",
+      "headRefOid": "1aa143a1408183a4ac0da8c7a0bd98b139ec29c3",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
