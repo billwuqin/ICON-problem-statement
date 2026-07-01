@@ -354,7 +354,7 @@ function or if-else statements. Similarly, Google ADK (Agent Development Kit) pr
 before or after tool use and implement quality gate logic. So most of the techniques that exist today are agent
 framework specific.
 
-## Opentelemtery for Agent Observability
+## Opentelemetry for Agent Observability
 
 Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge retrieval, multi-agent collaboration. When
 things go wrong, or right, you need to understand exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
@@ -372,7 +372,7 @@ decisions, and executes tasks as follows:
   four critical domains: System Context, Token Economics, Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
   gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
 
-- Protcol,Decision and System Events: When opted-in, Opentelemetry logs every agent actions,every decision, every protocol
+- Protcol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions,every decision, every protocol
   communication between agents or between agent and tools. This visibility allows engineers to review the exact context that caused an
   agent to exhibit non-deterministic behavior or get stuck in an infinite loop.
 
@@ -475,9 +475,12 @@ Three limitations characterize current implementation of quality gate.
 ## Limitation of OpenTelemetry for Agent Observability
 
 While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
-applied to AI agent observability.The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
+applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
 performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
 evaluate what an agent decides.
+
+Furthermore, OpenTelemetry only captures the execution process, not the operational motivation. It lacks native support for observing metrics such as an agent's reasoning logic and internal confidence levels. OpenTelemetry originated in cloud-native microservice architectures, its tracing lifecycle cannot represent asynchronous Human-in-the-Loop (HITL) workflows. Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action, has been suspended, and is currently awaiting human approval.
+
 
 ## Limitations of Intervention Approaches
 
@@ -547,4 +550,3 @@ This document has no IANA actions.
 {:numbered="false"}
 
 TODO acknowledge.
-
