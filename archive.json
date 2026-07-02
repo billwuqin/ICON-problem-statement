@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-23T02:30:14.597865+00:00",
+  "timestamp": "2026-07-02T02:31:25.127032+00:00",
   "repo": "billwuqin/ICON-problem-statement",
   "labels": [
     {
@@ -80,7 +80,7 @@
       "labels": [],
       "body": "Corrected grammar, punctuation, and formatting issues throughout the document for clarity and consistency.",
       "createdAt": "2026-06-02T14:43:33Z",
-      "updatedAt": "2026-06-03T03:59:56Z",
+      "updatedAt": "2026-06-30T12:52:13Z",
       "baseRepository": "billwuqin/ICON-problem-statement",
       "baseRefName": "main",
       "baseRefOid": "f96deebfcb1667f9c5965bb0c8a9a133a24da698",
@@ -115,26 +115,42 @@
       "id": "PR_kwDOSm5Pfs7pF8xt",
       "title": "add more limitation about OTel",
       "url": "https://github.com/billwuqin/ICON-problem-statement/pull/3",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "QiufangMa",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-06-22T09:18:56Z",
-      "updatedAt": "2026-06-22T09:18:56Z",
+      "updatedAt": "2026-07-01T09:04:22Z",
       "baseRepository": "billwuqin/ICON-problem-statement",
       "baseRefName": "main",
       "baseRefOid": "5bf93aeb5293d5a4f390043652f5c52241c55851",
       "headRepository": "QiufangMa/ICON-problem-statement",
       "headRefName": "main",
       "headRefOid": "1aa143a1408183a4ac0da8c7a0bd98b139ec29c3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-07-01T09:04:22Z",
+      "mergedAt": "2026-07-01T09:04:22Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "afb39833eb61cc6c0b13e2351505d61cd6aefe17"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOSm5Pfs8AAAABEp8lUg",
+          "commit": {
+            "abbreviatedOid": "1aa143a"
+          },
+          "author": "billwuqin",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-07-01T09:04:13Z",
+          "updatedAt": "2026-07-01T09:04:13Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
