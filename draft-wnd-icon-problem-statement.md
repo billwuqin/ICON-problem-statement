@@ -55,7 +55,7 @@ informative:
     target: https://google-a2a.github.io/A2A/#/documentation?id=agent2agent-protocol-a2a
     date: April 2025
 
-  IG1548:
+  IG1507:
     title: IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT
     target: https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744
     date: May 2026
@@ -194,7 +194,7 @@ action sequences are generated.
 
 Without an out-of-band mechanism to inspect this reasoning layer, operators
 cannot validate the safety or intent of an agent's planned mutations before
-they introduce unexpected consenquence on the infrastructure.
+they introduce unexpected consequence on the infrastructure.
 
 ### Ambiguity of Accountability Attribution
 
@@ -235,7 +235,7 @@ Existing trust and authorization models have failed to evolve in step with
 dynamic agentic AI architectures. Traditional Identity and Access Management
 (IAM) frameworks were designed exclusively for human operators or static,
 deterministic software processes. These frameworks cannot securely tackle
-emerging dynamic agent atrributes such as autonomous entity identities and behavioral
+emerging dynamic agent atributes such as autonomous entity identities and behavioral
 profiles which are frequently created and modified at runtime rather than being
 pre-provisioned with metadata information to describe functional capabilities, nor can
 they safely manage downstream sub-agent permission delegation or context-dependent
@@ -263,7 +263,7 @@ agent frameworks, tool/API repositories, and interconnection fabrics.
 
 ## The Intervention Aspect
 
-### Lack Human Oversight
+### Lack of Human Oversight
 
 Core features such as multi-agent execution, advanced interoperability frameworks
 for agent to agent, agent to tools communication (e.g., Agent-to-Agent {{A2A}}
@@ -376,7 +376,7 @@ decisions, and executes tasks as follows:
   four critical domains: System Context, Token Economics, Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
   gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
 
-- Protcol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions,every decision, every protocol
+- Protocol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions, every decision, every protocol
   communication between agents or between agent and tools. This visibility allows engineers to review the exact context that caused an
   agent to exhibit non-deterministic behavior or get stuck in an infinite loop.
 
@@ -403,11 +403,11 @@ involve the following:
 
 ## Trust & Security Control Approaches
 
-Trust & Security in autonomous agents spans across multiple dimensions, including identity (who the agent is), authorization (what it is allowed to do), control (how its actions are performed during execution), behavior (whether it acts in alignment with expected goals and produces correct outcomes), and context (under what conditions it operates). Current industry approaches to agent Trust&security primarily focus on protecting the agent from malicious interference to ensure that the inputs it receives and processes are not tampered with and manipulated. Intervention and Control is concerned with ensuring that actions remain within authorized boundaries, are observable, and can be corrected or reversed when necessary.
+Trust & Security in autonomous agents spans across multiple dimensions, including identity (who the agent is), authorization (what it is allowed to do), control (how its actions are performed during execution), behavior (whether it acts in alignment with expected goals and produces correct outcomes), and context (under what conditions it operates). Current industry approaches to agent Trust & Security primarily focus on protecting the agent from malicious interference to ensure that the inputs it receives and processes are not tampered with and manipulated. Intervention and Control is concerned with ensuring that actions remain within authorized boundaries, are observable, and can be corrected or reversed when necessary.
 
-Traditional IAM frameworks, designed for human users and deterministic software processes, are insufficient to tackle the dynamic trust&Security aspects of autonomous agents. The emerging Trust&Security Control approaches extend beyond static identity and permission models to incorporate context-awareness, temporal constraints, and behavior-driven trust evaluation.
+Traditional IAM frameworks, designed for human users and deterministic software processes, are insufficient to tackle the dynamic Trust & Security aspects of autonomous agents. The emerging Trust & Security Control approaches extend beyond static identity and permission models to incorporate context-awareness, temporal constraints, and behavior-driven trust evaluation.
 
-From the I&C perspective, a prominent way to manage agent security&Trust risk is to sandbox the agent's execution environment. This means running the agent in a restricted environment so it cannot cross trust boundaries, even if it is compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime environment, permissions, and accessible resources in real time based on task context and trust level.
+From the I&C perspective, a prominent way to manage agent Trust & Security risk is to sandbox the agent's execution environment. This means running the agent in a restricted environment so it cannot cross trust boundaries, even if it is compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime environment, permissions, and accessible resources in real time based on task context and trust level.
 
 Some of the approaches followed for controlling the agent trust are given below:
 
@@ -427,7 +427,7 @@ The first two approaches rely on a well-defined agent identity to assign and enf
 
 There are many areas where guardrails cannot provide adequate control based on the current capabilities.
 
-- Action focus: The Majority of the guardrails focus on the text boundary whereas in agentic system the critical
+- Action focus: The majority of the guardrails focus on the text boundary whereas in agentic system the critical
   boundary is the action execution, i.e. the point where a tool call, API invocation, or database write reaches a
   live system.
 
@@ -527,11 +527,11 @@ From the I&C perspective following are some of the key limitations in incorporat
 # Standardization Area
 
 This section outlines key areas where standardization is required to support the design, implementation, and operation of Agent
-Observability,Intervention and Control in autonomous networks. The intent is to identify foundational areas that require align with
+Observability, Intervention and Control in autonomous networks. The intent is to identify foundational areas that require align with
 network management technologies developed in IETF OPS Area and drive network automation moving toward AI Driven Network Operation.
 
-- Agent Observability,Intervention and Control Architecture: Developing or selecting a framework for enforcing boundaries,
-  detecting, evaluating,interrupting, correcting, and recovering from agent behavior within operational and compliance boundaries.
+- Agent Observability, Intervention and Control Architecture: Developing or selecting a framework for enforcing boundaries,
+  detecting, evaluating, interrupting, correcting, and recovering from agent behavior within operational and compliance boundaries.
 
 - OpenTelemetry protocol extension Enabling network behavioral assessment through analysis of observed operational network data
   (logs, metrics, traces, etc.)
