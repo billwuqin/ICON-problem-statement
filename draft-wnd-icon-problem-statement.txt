@@ -10,6 +10,8 @@ Expires: 4 January 2027                                            Cisco
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
+                                                                   Q. Ma
+                                                                  Huawei
                                                              3 July 2026
 
 
@@ -878,3 +880,8 @@ Authors' Addresses
    Luis. M. Contreras
    Telefonica
    Email: luismiguel.contrerasmurillo@telefonica.com
+
+
+   Qiufang Ma
+   Huawei
+   Email: maqiufang1@huawei.com
