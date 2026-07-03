@@ -553,4 +553,4 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+The authors of this document would also like to thank Benoit Claise for review and comments.
