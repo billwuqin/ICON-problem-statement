@@ -101,8 +101,9 @@ technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
-e.g., prompt injection. These guardrails typically operate at the input/output/pre-action
-filter level or through static boundary alignment.
+e.g., prompt injection. These guardrails typically run along with your agents to
+catch bad input or bad output,operate at the input/output/pre-action/post-action
+filter level or align with the static boundaries or measures.
 
 However, as AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
@@ -299,15 +300,23 @@ These include:
 These are most mature, and most operationally familiar AI control mechanism in production today. AI Guardrail
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
-restrictions on tool invocation. Currently, Guardrails are realized through 4 different mechanisms.
+restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
+bad input or bad output — without necessarily involving your selected large language model(expensive or cheap). The typical example is that
+you have a smart, costly model answering customer support questions. If You don't want people abusing it to do their math homework.
+you can attach a cheap/fast guardrail check to keep track of the agent behavior and stops the expensive agent from wasting tokens on it.
 
-- Rule based filters: apply pattern matching, keyword blocking, regular expressions, and deterministic logic to
+AI Guardrail are realized through 4 different mechanisms:
+
+- Rule based filters: Apply pattern matching, keyword blocking, regular expressions, and deterministic logic to
   prompts, context retrieval and completions.
-- LLM based safety classifiers: use a secondary language model to evaluate the primary model's output for safety
+
+- LLM based safety classifiers: Use a secondary language model to evaluate the primary model's output for safety
   policy compliance before it is returned.
-- Agent framework based guardrail libraries: provide structured policy specification languages (e.g. NeMo Guardrails)
+
+- Agent framework based guardrail libraries: Provide structured policy specification languages (e.g. NeMo Guardrails)
   that allow developers to express policy rules in a higher-level format, with the framework handling enforcement
   logic.
+
 - Prompt engineering constraints: shape model behaviour by instruction rather than by interception.
 
 ## Agent Drift Detection
