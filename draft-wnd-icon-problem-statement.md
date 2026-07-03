@@ -116,14 +116,14 @@ full operational lifecycle, e.g.,
   execution paths that match the speed and scale of the network management Agent applications,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
-- When a violation is suspected, there are currently no standardized protocols for intervention
+- When a violation is suspected, there are currently no standardized protocols for runtime intervention
   (e.g., immediate task suspension) and recovery (e.g., reverting to a last known safe state or
    undoing a series of autonomous actions that introduce substantial operational risk) mechanisms.
 
 - In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange
   hinder timely risk mitigation and state recovery during boundary violations by agents.
 
-This document provides a problem statement for protocol on agent observability, intervention and control.
+This document provides a problem statement for protocol on continuous agent observability, intervention and control.
 We list the properties the protocol should have, then explain why those properties are necessary. We describe why a
 new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
 related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
