@@ -168,7 +168,7 @@ identify gaps that need to be filled.
     reasoning patterns over time in a production environment.
 
 -  Cascading Failure: A scenario where a failure in one downstream
-    sub-agent propagates across multi-agent boundaries.
+    agent propagates across multi-agent boundaries.
 
 - Human to Agent Communication: The interaction between human users and network management Agent designed to perform tasks, solve
     problems, or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
