@@ -1349,55 +1349,57 @@ management comprise the following phases:<a href="#section-1-1" class="pilcrow">
       </ul>
 <p id="section-1-3">To help network operators manage AI agents with more consistency, visibility and control,
 the observability phase, intervention and control phase need to work
-in a collaborate manner and are critical for the Agent lifecycle management.Since
-AI native operations may be non-deterministic, when network management agents
-misbehave or deviate from what Agents are expected to do, current AI safety
+in a collaborate manner and are critical for the Agent lifecycle management.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Since AI native operations may be non-deterministic, when network management agents
+misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
-e.g., prompt injection. These guardrails typically operate at the input/output/pre-action
-filter level or through static boundary alignment. For example, imagine you have an agent
+e.g., prompt injection. These guardrails enable you to do checks and validations of user
+input and agent output and typically break down into input input guardrail, action guardrail,
+output guardrail and operate at the input/output/pre-action
+filter level with static boundary parameters. For example, imagine you have an agent
 that uses a very smart (and hence slow/expensive) model to help with customer requests.
 You wouldn't want malicious users to ask the model to help them with their math homework.
-So, you can run a guardrail with a fast/cheap model. If the guardrail detects malicious
-usage, it can immediately raise an error and prevent the expensive model from running,
-saving you time and money.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">However, as Agentic AI systems are increasingly integrated into autonomous workflows and
+So, you can run a guardrail with a fast/cheap model and block agents for specific usages.
+If the guardrail detects malicious usage, it can immediately raise an error and prevent
+the expensive model from running, saving you time and money.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-5">However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
-full operational lifecycle, e.g.,<a href="#section-1-4" class="pilcrow">¶</a></p>
+full operational lifecycle, e.g.,<a href="#section-1-5" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1-5.1">
-          <p id="section-1-5.1.1">Unable to detect, interrupt, and rollover from unanticipated behaviors;<a href="#section-1-5.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-1-6.1">
+          <p id="section-1-6.1.1">Unable to detect, interrupt, and rollover from unanticipated behaviors;<a href="#section-1-6.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-5.2">
-          <p id="section-1-5.2.1">Network operators usually lack an equivalent infrastructure for human oversight;<a href="#section-1-5.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-1-6.2">
+          <p id="section-1-6.2.1">Network operators usually lack an equivalent infrastructure or platform for human oversight;<a href="#section-1-6.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-5.3">
-          <p id="section-1-5.3.1">Provide continuous, monitoring of an AI system's internal logic or its long-running
+        <li class="normal" id="section-1-6.3">
+          <p id="section-1-6.3.1">Provide continuous monitoring of an AI system's internal logic or its long-running
 execution paths that match the speed and scale of the network management Agent applications,
-e.g., network failure or security risk is hard to detect and control, occurring at machine speed.<a href="#section-1-5.3.1" class="pilcrow">¶</a></p>
+e.g., network failure or security risk is hard to detect and control, occurring at machine speed.<a href="#section-1-6.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-5.4">
-          <p id="section-1-5.4.1">When a violation related to input/output filter is suspected, there are currently no standardized
+        <li class="normal" id="section-1-6.4">
+          <p id="section-1-6.4.1">When a violation related to input/output filter is suspected, there are currently no standardized
 protocols for intervention (e.g., immediate task suspension) and recovery (e.g., reverting to a
 last known safe state or undoing a series of autonomous actions that introduce substantial
-operational risk) mechanisms.<a href="#section-1-5.4.1" class="pilcrow">¶</a></p>
+operational risk) mechanisms.<a href="#section-1-6.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-1-5.5">
-          <p id="section-1-5.5.1">In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange
-hinder timely risk mitigation and state recovery during boundary violations by agents.<a href="#section-1-5.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="section-1-6.5">
+          <p id="section-1-6.5.1">In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange
+hinder timely risk mitigation and state recovery during boundary violations by agents.<a href="#section-1-6.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-1-6">This document provides a problem statement for protocol on continuous agent observability, intervention and control.
+<p id="section-1-7">This document provides a problem statement for protocol on continuous agent observability, intervention and control.
 We list the properties the protocol should have, then explain why those properties are necessary. We describe why a
 new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
 related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
-human and agent interaction for agent intervention and control at the service level and network level.<a href="#section-1-6" class="pilcrow">¶</a></p>
-<p id="section-1-7">Where possible, any solutions work will be built in a modular way using existing IETF protocols.
+human and agent interaction for agent intervention and control at the service level and network level.<a href="#section-1-7" class="pilcrow">¶</a></p>
+<p id="section-1-8">Where possible, any solutions work will be built in a modular way using existing IETF protocols.
 However, no protocol solution choices will be made until the functional requirements have been
 agreed, and then this will require an analysis of the capabilities of existing protocols and
-identify gaps that need to be filled.<a href="#section-1-7" class="pilcrow">¶</a></p>
+identify gaps that need to be filled.<a href="#section-1-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
