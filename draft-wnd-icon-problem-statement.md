@@ -544,11 +544,17 @@ From the I&C perspective following are some of the key limitations in incorporat
 
 # Standardization Area
 
-This section outlines key areas where standardization is required to support the design, implementation, and operation of Agent
-Observability, Intervention and Control in autonomous networks. The intent is to identify foundational areas that require align with
-network management technologies developed in IETF OPS Area and drive network automation moving toward AI Driven Network Operation.
+This section outlines key areas where standardization is required to support the design, implementation, and operation of Network
+Management Agent Observability, Intervention and Control in Agent Fabric networks. In the Agent Fabric Network,
+- Two or multiple scenario specifc network management agents can work together to support multi-scenario autonomy or close loop management.
+- Two or muitiple scenario specific network management agents can work together to support cross domain collaboration.
+- Two or mutiple sceanrio specific network management agents can work together to support collaboration between service layer and network layer.
+the agent gateway can be used to collect metric, log, audit information from each network management agents.
 
-- Agent Observability, Intervention and Control Architecture: Developing or selecting a framework for enforcing boundaries,
+The intent is to identify foundational areas that require align with network management technologies developed in IETF OPS Area and drive network
+automation moving toward AI Driven Network Operation.
+
+- Agent Observability, Intervention and Control Network Management Architecture: Developing or selecting a framework for enforcing boundaries,
   detecting, evaluating, interrupting, correcting, and recovering from agent behavior within operational and compliance boundaries.
 
 - OpenTelemetry protocol extension Enabling network behavioral assessment through analysis of observed operational network data
