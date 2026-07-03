@@ -94,7 +94,18 @@ architectural and protocol work and associated documents.
 # Introduction
 
 Network operations are increasingly autonomous with the growth of network
-management Agent applications at the network level and service level. Since
+management Agent applications at the network level and service level. The Agent lifecycle
+management comprise the following phases:
+- Agent Discovery: Discover capabilities and skills and onboard agent
+- Agent Benchmarking: Test behavior before deployment
+- Agent Deployment: move agent from pilot project to production environments
+- Agent Observability: continuous monitor and evaluate performance and behavior deviation in production
+- Agent Intervention and Control: Constrain Agent behavior within operational boundary
+- Agent Upgrade: Large language model, tools, prompts, memory related software update
+
+To help network operators manage AI agents with more consistency, visibility and control,
+the observability phase, intervention and control phase need to work
+in a collaborate manner and are critical for the Agent lifecycle management.Since
 AI native operations may be non-deterministic, when network management agents
 misbehave or deviate from what Agents are expected to do, current AI safety
 technologies (often referred to as "AI guardrails") are introduced to constrain
