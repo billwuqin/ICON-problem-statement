@@ -428,8 +428,8 @@ Table of Contents
    distributed tracing to how an agent processes information, arrives at
    decisions, and executes tasks as follows:
 
-   *  Distributed Tracing (Spans): The entire agent run acts as the root
-      span.  Every individual reasoning loop, sub-agent delegation, LLM
+   *  Distributed Tracing (Spans): The agent as a whole run acts as the
+      root span.  Every individual reasoning loop, agent delegation, LLM
       invocation, and tool/API execution is mapped as a child span.
       This layout instantly reveals where latencies, bottlenecks, or
       errors occur.
