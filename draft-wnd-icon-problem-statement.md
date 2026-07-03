@@ -301,7 +301,7 @@ These are most mature, and most operationally familiar AI control mechanism in p
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
-bad input or bad output — without necessarily involving your selected large language model(expensive or cheap). 
+bad input or bad output — without necessarily involving your selected large language model(expensive or cheap).
 For example, imagine you have an agent that uses a very smart (and hence slow/expensive) model to help with customer
 requests. You wouldn't want malicious users to ask the model to help them with their math homework. So, you can run a
 guardrail with a fast/cheap model. If the guardrail detects malicious usage, it can immediately raise an error and
