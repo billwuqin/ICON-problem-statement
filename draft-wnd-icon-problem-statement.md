@@ -157,7 +157,7 @@ identify gaps that need to be filled.
    the agent is doing and why it behaves in a specific manner.
 
 - Intervention: A reactive, emergency action to intervene or take control of an agent with boundary violations, anomalies, failures,
-                or risks, so as to block harmful decisions, disrupt hazards, and promptly mitigate losses.
+                or risks, so as to block harmful decisions, disrupt hazards, malicious abuse, and promptly mitigate losses.
 
 - Control: Establish a deterministic operational boundary for the agent before execution. By pre-defining the agent's behavior scopes,
            operational constraints, and security baselines, it fundamentally mitigates abnormal behaviors from agents.
