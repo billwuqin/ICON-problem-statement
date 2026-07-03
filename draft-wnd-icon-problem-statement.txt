@@ -5,10 +5,12 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 2 January 2027                                            Cisco
+Expires: 4 January 2027                                            Cisco
                                                                    Z. Li
                                                                     CMCC
-                                                             1 July 2026
+                                                         L. M. Contreras
+                                                              Telefonica
+                                                             3 July 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -65,7 +67,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 January 2027.
+   This Internet-Draft will expire on 4 January 2027.
 
 Copyright Notice
 
@@ -870,3 +872,8 @@ Authors' Addresses
    Zhenqiang Li
    CMCC
    Email: li_zhenqiang@hotmail.com
+
+
+   Luis. M. Contreras
+   Telefonica
+   Email: luismiguel.contrerasmurillo@telefonica.com
