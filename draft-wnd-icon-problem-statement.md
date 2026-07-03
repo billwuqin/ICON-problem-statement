@@ -296,7 +296,7 @@ These include:
 
 ## AI Guardrails
 
-These are most mature, and most operationally familiar AI governance mechanism in production today. AI Guardrail
+These are most mature, and most operationally familiar AI control mechanism in production today. AI Guardrail
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation. Currently, Guardrails are realized through 4 different mechanisms.
@@ -306,7 +306,7 @@ restrictions on tool invocation. Currently, Guardrails are realized through 4 di
 - LLM based safety classifiers: use a secondary language model to evaluate the primary model's output for safety
   policy compliance before it is returned.
 - Agent framework based guardrail libraries: provide structured policy specification languages (e.g. NeMo Guardrails)
-  that allow developers to express governance rules in a higher-level format, with the framework handling enforcement
+  that allow developers to express policy rules in a higher-level format, with the framework handling enforcement
   logic.
 - Prompt engineering constraints: shape model behaviour by instruction rather than by interception.
 
@@ -403,7 +403,7 @@ involve the following:
   the agent framework. Crew AI framework provides mechanism to conditionally execute task or allows defining maximum
   iterations for task execution which prevents from getting into infinite loops. The kill-switch functionality (halt or
   restrict an agent's execution when predefined risk, policy, or trust conditions are violated) is supported in the
-  Microsoft Agent Governance Toolkit, but its interoperability across different agent frameworks is not proven.
+  Microsoft Agent Control Toolkit, but its interoperability across different agent frameworks is not proven.
 
 ## Trust & Security Control Approaches
 
@@ -415,13 +415,13 @@ From the I&C perspective, a prominent way to manage agent Trust & Security risk 
 
 Some of the approaches followed for controlling the agent trust are given below:
 
-Agent privilege control: The most widely deployed current approach to agent trust governance is the application of static least-privilege principles, granting agents the minimum tool access, API permissions, and system scope required for their designated tasks, expressed through standard IAM constructs (service accounts, API keys, OAuth scopes). Its limitation in agent-based systems is that tasks are dynamic. Permissions set for a typical task may be too limited for edge cases, pushing systems to grant broader access than necessary. On the other hand, permissions designed for complex tasks may be too broad for simpler ones. Also, static permissions cannot adapt to changing task needs.
+Agent privilege control: The most widely deployed current approach to agent trust control is the application of static least-privilege principles, granting agents the minimum tool access, API permissions, and system scope required for their designated tasks, expressed through standard IAM constructs (service accounts, API keys, OAuth scopes). Its limitation in agent-based systems is that tasks are dynamic. Permissions set for a typical task may be too limited for edge cases, pushing systems to grant broader access than necessary. On the other hand, permissions designed for complex tasks may be too broad for simpler ones. Also, static permissions cannot adapt to changing task needs.
 
 Scoped and time-limited credentials: Agents often use API keys or service accounts with broad, long-lasting permissions (for tool calls, RAG or model access), which can create trust & security risks. Current best practices is to use short-lived, limited-access credentials, such as OAuth tokens with narrow scopes or JWTs with short expiry so that agents only have the minimum access needed for a specific task and only for a limited time.
 
 Context aware trust assignment: Instead of static roles or scopes, access decisions are made dynamically using attributes and runtime context such as task type, data sensitivity, user intent, environment state, or risk level, e.g., agent is allowed to access certain tools/data only within/belonging to a compliant geography, where it is legally allowed to access such data.
 
-Dynamic trust level assignment: This is one of the advanced and emerging mechanism (e.g. Microsoft Agent Governance Toolkit) where instead of labelling agents as just trusted or untrusted, this model gives each agent a trust score that changes over time. The score increases when the agent follows policies and drops quickly when it violates them. This score then decides what level of access the agent gets, adjusting its permissions based on how trustworthy it is at that moment.
+Dynamic trust level assignment: This is one of the advanced and emerging mechanism (e.g. Microsoft Agent Control Toolkit) where instead of labelling agents as just trusted or untrusted, this model gives each agent a trust score that changes over time. The score increases when the agent follows policies and drops quickly when it violates them. This score then decides what level of access the agent gets, adjusting its permissions based on how trustworthy it is at that moment.
 
 The first two approaches rely on a well-defined agent identity to assign and enforce permissions. The fourth approach focus more on the behavior of agent, i.e., it requires not just identity, but also continuous behavior-based evaluation, where access is determined by how the agent performs over time,i.e, based on trust score, agent is mapped to a trust zone or trust level that determines the authority and access assigned to agent. The definition and management of agent identity are beyond the scope of this document.
 
@@ -436,7 +436,7 @@ There are many areas where guardrails cannot provide adequate control based on t
   live system.
 
 - Multistep execution: Guardrails are typically applied at single-turn boundaries, i.e. they evaluate one input
-  or one output at a time. Currently, there is no well-defined mechanism for evaluating the governance implications
+  or one output at a time. Currently, there is no well-defined mechanism for evaluating the control implications
   of action sequences, or how a series of individually valid steps may collectively lead to unintended or non-compliant
   outcomes. This gap highlights the need for sequence-aware control and intervention mechanisms that can evaluate intent,
   track execution context across steps, and assess cumulative impact.
@@ -471,14 +471,14 @@ Three limitations characterize current implementation of quality gate.
   incompatible with one implemented in CrewAI or AutoGen. They cannot be governed, observed, or audited through common
   infrastructure.
 
-- Absence of external governance observability. Quality gate evaluations are internal to the agent workflow. No current framework
-  provides a standardised mechanism for an external governance authority to observe what quality evaluation was performed, what
+- Absence of external observability. Quality gate evaluations are internal to the agent workflow. No current framework
+  provides a standardised mechanism for an external observability authority to observe what quality evaluation was performed, what
   dimensions were assessed, what score was produced, and why a specific routing decision was made.
 
-- No central governance or intervention and control. Quality gate outcomes particularly human review and/or rejection decisions
-  are not connected to a central governance infrastructure. A gate that routes to human review pauses execution within the agent
-  framework, but that pause is not expressed as a standardised intervention signal that a central governance authority can monitor,
-  escalate, or resolve. The gate operates in isolation from the broader governance stack.
+- No central intervention and control. Quality gate outcomes particularly human review and/or rejection decisions
+  are not connected to a central control infrastructure. A gate that routes to human review pauses execution within the agent
+  framework, but that pause is not expressed as a standardised intervention signal that a central control authority can monitor,
+  escalate, or resolve. The gate operates in isolation from the broader management and control stack.
 
 ## Limitation of OpenTelemetry for Agent Observability
 
@@ -494,7 +494,7 @@ Furthermore, OpenTelemetry only captures the execution process, not the operatio
 
 As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.
 
-- Absence of a standardised external interface that allows an authorized governance authority outside the framework or outside the
+- Absence of a standardised external interface that allows an authorized authority outside the framework or outside the
   agent application to signal intervention and receive a guaranteed response
 
 - Current practice of intervention (leveraging infrastructure level interventions) is largely binary: either the agent runs or it
@@ -505,7 +505,7 @@ As highlighted above intervention mechanisms exist in primitive and framework-sp
   they do not systematically preserve the agent's execution state in a form that enables recovery.
 
 - Current intervention mechanism requires either a human decision or a pre-coded condition to trigger it. There is no mechanism
-  that continuously monitors agent behaviour against governance policies and automatically triggers a proportionate intervention
+  that continuously monitors agent behaviour against control policies and automatically triggers a proportionate intervention
   response when a deviation is detected
 
 ## Limitations of Trust & Security Control Approaches
