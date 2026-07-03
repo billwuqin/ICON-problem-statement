@@ -111,20 +111,23 @@ management comprise the following phases:
 
 To help network operators manage AI agents with more consistency, visibility and control,
 the observability phase, intervention and control phase need to work
-in a collaborate manner and are critical for the Agent lifecycle management.Since
-AI native operations may be non-deterministic, when network management agents
-misbehave or deviate from what Agents are expected to do, current AI safety
+in a collaborate manner and are critical for the Agent lifecycle management.
+
+Since AI native operations may be non-deterministic, when network management agents
+misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
-e.g., prompt injection. These guardrails typically operate at the input/output/pre-action
-filter level or through static boundary alignment. For example, imagine you have an agent
+e.g., prompt injection. These guardrails enable you to do checks and validations of user
+input and agent output and typically break down into input input guardrail, action guardrail,
+output guardrail and operate at the input/output/pre-action
+filter level with static boundary parameters. For example, imagine you have an agent
 that uses a very smart (and hence slow/expensive) model to help with customer requests.
 You wouldn't want malicious users to ask the model to help them with their math homework.
-So, you can run a guardrail with a fast/cheap model. If the guardrail detects malicious
-usage, it can immediately raise an error and prevent the expensive model from running,
-saving you time and money.
+So, you can run a guardrail with a fast/cheap model and block agents for specific usages.
+If the guardrail detects malicious usage, it can immediately raise an error and prevent
+the expensive model from running, saving you time and money.
 
 However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
@@ -132,9 +135,9 @@ full operational lifecycle, e.g.,
 
 - Unable to detect, interrupt, and rollover from unanticipated behaviors;
 
-- Network operators usually lack an equivalent infrastructure for human oversight;
+- Network operators usually lack an equivalent infrastructure or platform for human oversight;
 
-- Provide continuous, monitoring of an AI system's internal logic or its long-running
+- Provide continuous monitoring of an AI system's internal logic or its long-running
   execution paths that match the speed and scale of the network management Agent applications,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
