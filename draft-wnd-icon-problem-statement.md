@@ -102,7 +102,12 @@ the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These guardrails typically operate at the input/output/pre-action
-filter level or through static boundary alignment.
+filter level or through static boundary alignment. For example, imagine you have an agent
+that uses a very smart (and hence slow/expensive) model to help with customer requests.
+You wouldn't want malicious users to ask the model to help them with their math homework.
+So, you can run a guardrail with a fast/cheap model. If the guardrail detects malicious
+usage, it can immediately raise an error and prevent the expensive model from running,
+saving you time and money.
 
 However, as AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
@@ -116,9 +121,10 @@ full operational lifecycle, e.g.,
   execution paths that match the speed and scale of the network management Agent applications,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
-- When a violation is suspected, there are currently no standardized protocols for intervention
-  (e.g., immediate task suspension) and recovery (e.g., reverting to a last known safe state or
-   undoing a series of autonomous actions that introduce substantial operational risk) mechanisms.
+- When a violation related to input/output filter is suspected, there are currently no standardized
+  protocols for intervention (e.g., immediate task suspension) and recovery (e.g., reverting to a
+  last known safe state or undoing a series of autonomous actions that introduce substantial
+  operational risk) mechanisms.
 
 - In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange
   hinder timely risk mitigation and state recovery during boundary violations by agents.
