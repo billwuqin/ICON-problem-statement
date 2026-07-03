@@ -40,6 +40,10 @@ author:
    fullname: Luis. M. Contreras
    organization: Telefonica
    email: luismiguel.contrerasmurillo@telefonica.com
+ -
+    fullname: Qiufang Ma
+    organization: Huawei
+    email: maqiufang1@huawei.com
 
 normative:
 
