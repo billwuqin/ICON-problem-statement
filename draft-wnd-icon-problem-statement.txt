@@ -217,8 +217,8 @@ Table of Contents
 
    *  Intervention: A reactive, emergency action to intervene or take
       control of an agent with boundary violations, anomalies, failures,
-      or risks, so as to block harmful decisions, disrupt hazards, and
-      promptly mitigate losses.
+      or risks, so as to block harmful decisions, disrupt hazards,
+      malicious abuse, and promptly mitigate losses.
 
    *  Control: Establish a deterministic operational boundary for the
       agent before execution.  By pre-defining the agent's behavior
