@@ -101,11 +101,11 @@ technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
-e.g., prompt injection. These guardrails typically run along with your agents to
-catch bad input or bad output,operate at the input/output/pre-action/post-action
+e.g., prompt injection. These guardrails enable you to do checks and validations of
+user input and agent output,operate at the input/output/pre-action/post-action
 filter level or align with the static boundaries or measures.
 
-However, as AI systems are increasingly integrated into autonomous workflows and
+However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
 full operational lifecycle, e.g.,
 
@@ -301,9 +301,11 @@ These are most mature, and most operationally familiar AI control mechanism in p
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
-bad input or bad output — without necessarily involving your selected large language model(expensive or cheap). The typical example is that
-you have a smart, costly model answering customer support questions. If You don't want people abusing it to do their math homework.
-you can attach a cheap/fast guardrail check to keep track of the agent behavior and stops the expensive agent from wasting tokens on it.
+bad input or bad output — without necessarily involving your selected large language model(expensive or cheap). 
+For example, imagine you have an agent that uses a very smart (and hence slow/expensive) model to help with customer
+requests. You wouldn't want malicious users to ask the model to help them with their math homework. So, you can run a
+guardrail with a fast/cheap model. If the guardrail detects malicious usage, it can immediately raise an error and
+prevent the expensive model from running, saving you time and money.
 
 AI Guardrail are realized through 4 different mechanisms:
 
