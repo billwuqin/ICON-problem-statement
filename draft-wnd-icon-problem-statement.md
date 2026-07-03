@@ -330,7 +330,7 @@ Conventions to standardise how metrics, logs, and distributed traces are capture
 Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent processes information, arrives at
 decisions, and executes tasks as follows:
 
-- Distributed Tracing (Spans): The entire agent run acts as the root span. Every individual reasoning loop, sub-agent delegation, LLM
+- Distributed Tracing (Spans): The agent as a whole run acts as the root span. Every individual reasoning loop, agent delegation, LLM
   invocation, and tool/API execution is mapped as a child span. This layout instantly reveals where latencies, bottlenecks, or errors
   occur.
 
