@@ -104,17 +104,17 @@ Table of Contents
        3.3.2.  AI-Native Failure Emergence
    4.  Solution Space for Network Management Agent Observability,
            Intervention and Control
-     4.1.  AI Guardrails
-     4.2.  Agent Drift Detection
-     4.3.  Quality Gates
-     4.4.  Opentelemetry for Agent Observability
+     4.1.  Opentelemetry for Agent Observability
+     4.2.  AI Guardrails
+     4.3.  Agent Drift Detection
+     4.4.  Quality Gates
      4.5.  Existing Intervention Approaches
      4.6.  Trust & Security Control Approaches
    5.  Gaps in the Current Approaches
-     5.1.  Limitations of AI Guardrails
-     5.2.  Limitations of Agent Drift Analysis
-     5.3.  Limitations of Quality gates
-     5.4.  Limitation of OpenTelemetry for Agent Observability
+     5.1.  Limitation of OpenTelemetry for Agent Observability
+     5.2.  Limitations of AI Guardrails
+     5.3.  Limitations of Agent Drift Analysis
+     5.4.  Limitations of Quality gates
      5.5.  Limitations of Intervention Approaches
      5.6.  Limitations of Trust & Security Control Approaches
    6.  Standardization Area
@@ -130,26 +130,41 @@ Table of Contents
 
    Network operations are increasingly autonomous with the growth of
    network management Agent applications at the network level and
-   service level.  Since AI native operations may be non-deterministic,
-   when network management agents misbehave or deviate from what Agents
-   are expected to do, current AI safety technologies (often referred to
-   as "AI guardrails") are introduced to constrain the behavior of AI
-   agents within operational and compliance boundaries, prevent AI from
-   producing harmful results or taking wrong actions, e.g., escalate a
-   decision to a human for a high-risk network operation, defend against
-   malicious attacks, e.g., prompt injection.  These guardrails
-   typically operate at the input/output/pre-action filter level or
-   through static boundary alignment.  For example, imagine you have an
-   agent that uses a very smart (and hence slow/expensive) model to help
-   with customer requests.  You wouldn't want malicious users to ask the
-   model to help them with their math homework.  So, you can run a
-   guardrail with a fast/cheap model.  If the guardrail detects
-   malicious usage, it can immediately raise an error and prevent the
-   expensive model from running, saving you time and money.
+   service level.  The Agent lifecycle management comprise the following
+   phases: - Agent Discovery: Discover capabilities and skills and
+   onboard agent - Agent Benchmarking: Test behavior before deployment -
+   Agent Deployment: move agent from pilot project to production
+   environments - Agent Observability: continuous monitor and evaluate
+   performance and behavior deviation in production - Agent Intervention
+   and Control: Constrain Agent behavior within operational boundary -
+   Agent Upgrade: Large language model, tools, prompts, memory related
+   software update
 
-   However, as AI systems are increasingly integrated into autonomous
-   workflows and critical infrastructure, these static measures are
-   proving insufficient for the full operational lifecycle, e.g.,
+   To help network operators manage AI agents with more consistency,
+   visibility and control, the observability phase, intervention and
+   control phase need to work in a collaborate manner and are critical
+   for the Agent lifecycle management.Since AI native operations may be
+   non-deterministic, when network management agents misbehave or
+   deviate from what Agents are expected to do, current AI safety
+   technologies (often referred to as "AI guardrails") are introduced to
+   constrain the behavior of AI agents within operational and compliance
+   boundaries, prevent AI from producing harmful results or taking wrong
+   actions, e.g., escalate a decision to a human for a high-risk network
+   operation, defend against malicious attacks, e.g., prompt injection.
+   These guardrails typically operate at the input/output/pre-action
+   filter level or through static boundary alignment.  For example,
+   imagine you have an agent that uses a very smart (and hence slow/
+   expensive) model to help with customer requests.  You wouldn't want
+   malicious users to ask the model to help them with their math
+   homework.  So, you can run a guardrail with a fast/cheap model.  If
+   the guardrail detects malicious usage, it can immediately raise an
+   error and prevent the expensive model from running, saving you time
+   and money.
+
+   However, as Agentic AI systems are increasingly integrated into
+   autonomous workflows and critical infrastructure, these static
+   measures are proving insufficient for the full operational lifecycle,
+   e.g.,
 
    *  Unable to detect, interrupt, and rollover from unanticipated
       behaviors;
@@ -173,15 +188,15 @@ Table of Contents
       human-AI semantic intent exchange hinder timely risk mitigation
       and state recovery during boundary violations by agents.
 
-   This document provides a problem statement for protocol on agent
-   observability, intervention and control.  We list the properties the
-   protocol should have, then explain why those properties are
-   necessary.  We describe why a new protocol is the best solution for
-   the more general problem of identifying and characterizing trajectory
-   records related to agent behavior or workflow operation, continuous
-   monitoring and evaluation, enable human oversight, provide human and
-   agent interaction for agent intervention and control at the service
-   level and network level.
+   This document provides a problem statement for protocol on continuous
+   agent observability, intervention and control.  We list the
+   properties the protocol should have, then explain why those
+   properties are necessary.  We describe why a new protocol is the best
+   solution for the more general problem of identifying and
+   characterizing trajectory records related to agent behavior or
+   workflow operation, continuous monitoring and evaluation, enable
+   human oversight, provide human and agent interaction for agent
+   intervention and control at the service level and network level.
 
    Where possible, any solutions work will be built in a modular way
    using existing IETF protocols.  However, no protocol solution choices
@@ -223,8 +238,8 @@ Table of Contents
 
    *  Intervention: A reactive, emergency action to intervene or take
       control of an agent with boundary violations, anomalies, failures,
-      or risks, so as to block harmful decisions, disrupt hazards, and
-      promptly mitigate losses.
+      or risks, so as to block harmful decisions, disrupt hazards,
+      malicious abuse, and promptly mitigate losses.
 
    *  Control: Establish a deterministic operational boundary for the
       agent before execution.  By pre-defining the agent's behavior
@@ -384,25 +399,69 @@ Table of Contents
 4.  Solution Space for Network Management Agent Observability,
     Intervention and Control
 
-4.1.  AI Guardrails
+4.1.  Opentelemetry for Agent Observability
+
+   Modern agents orchestrate complex workflows: reasoning chains, tool
+   execution, knowledge retrieval, multi-agent collaboration.  When
+   things go wrong, or right, you need to understand exactly what
+   happened.  Traditional network monitoring such as gRPC, SNMP, YANG
+   Push can't capture reasoning processes or decision context.
+   Opentelemetry addresses this by utilizing unified GenAI and Agent
+   Semantic Conventions to standardise how metrics, logs, and
+   distributed traces are captured across multi-agent system.
+
+   Implementing OpenTelemetry for AI agents focuses heavily on
+   distributed tracing to how an agent processes information, arrives at
+   decisions, and executes tasks as follows:
+
+   *  Distributed Tracing (Spans): The entire agent run acts as the root
+      span.  Every individual reasoning loop, sub-agent delegation, LLM
+      invocation, and tool/API execution is mapped as a child span.
+      This layout instantly reveals where latencies, bottlenecks, or
+      errors occur.
+
+   *  GenAI Semantic Conventions: Standardised metadata tags provide
+      explicit context.  Spans automatically record critical variables
+      across four critical domains: System Context, Token Economics,
+      Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
+      gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
+
+   *  Protocol, Decision and System Events: When opted-in, Opentelemetry
+      logs every agent actions, every decision, every protocol
+      communication between agents or between agent and tools.  This
+      visibility allows engineers to review the exact context that
+      caused an agent to exhibit non-deterministic behavior or get stuck
+      in an infinite loop.
+
+4.2.  AI Guardrails
 
    These are most mature, and most operationally familiar AI control
    mechanism in production today.  AI Guardrail approaches currently
    realized in the industry operate at defined transition points in the
    agent pipeline, primarily prompt filtering at the LLM input boundary,
    response validation at the LLM output boundary, and access control
-   restrictions on tool invocation.  Currently, Guardrails are realized
-   through 4 different mechanisms.
+   restrictions on tool invocation boundary.  Currently, AI Guardrails
+   are checks that run alongside your agents to catch bad input or bad
+   output — without necessarily involving your selected large language
+   model(expensive or cheap).  For example, imagine you have an agent
+   that uses a very smart (and hence slow/expensive) model to help with
+   customer requests.  You wouldn't want malicious users to ask the
+   model to help them with their math homework.  So, you can run a
+   guardrail with a fast/cheap model.  If the guardrail detects
+   malicious usage, it can immediately raise an error and prevent the
+   expensive model from running, saving you time and money.
 
-   *  Rule based filters: apply pattern matching, keyword blocking,
+   AI Guardrail are realized through 4 different mechanisms:
+
+   *  Rule based filters: Apply pattern matching, keyword blocking,
       regular expressions, and deterministic logic to prompts, context
       retrieval and completions.
 
-   *  LLM based safety classifiers: use a secondary language model to
+   *  LLM based safety classifiers: Use a secondary language model to
       evaluate the primary model's output for safety policy compliance
       before it is returned.
 
-   *  Agent framework based guardrail libraries: provide structured
+   *  Agent framework based guardrail libraries: Provide structured
       policy specification languages (e.g. NeMo Guardrails) that allow
       developers to express policy rules in a higher-level format, with
       the framework handling enforcement logic.
@@ -410,7 +469,7 @@ Table of Contents
    *  Prompt engineering constraints: shape model behaviour by
       instruction rather than by interception.
 
-4.2.  Agent Drift Detection
+4.3.  Agent Drift Detection
 
    Agent drift refers to the gradual degradation in an agent's
    performance and alignment with intended behavior over time in
@@ -451,7 +510,7 @@ Table of Contents
       success rates across agent interactions and mitigated by fixing
       the issues with tool/API/agent interactions.
 
-4.3.  Quality Gates
+4.4.  Quality Gates
 
    Quality gates are checkpoints that evaluate whether an operation
    should proceed or not, or should be conditionally allowed.
@@ -483,40 +542,6 @@ Table of Contents
    can be invoked before or after tool use and implement quality gate
    logic.  So most of the techniques that exist today are agent
    framework specific.
-
-4.4.  Opentelemetry for Agent Observability
-
-   Modern agents orchestrate complex workflows: reasoning chains, tool
-   execution, knowledge retrieval, multi-agent collaboration.  When
-   things go wrong, or right, you need to understand exactly what
-   happened.  Traditional network monitoring such as gRPC, SNMP, YANG
-   Push can't capture reasoning processes or decision context.
-   Opentelemetry addresses this by utilizing unified GenAI and Agent
-   Semantic Conventions to standardise how metrics, logs, and
-   distributed traces are captured across multi-agent system.
-
-   Implementing OpenTelemetry for AI agents focuses heavily on
-   distributed tracing to how an agent processes information, arrives at
-   decisions, and executes tasks as follows:
-
-   *  Distributed Tracing (Spans): The entire agent run acts as the root
-      span.  Every individual reasoning loop, sub-agent delegation, LLM
-      invocation, and tool/API execution is mapped as a child span.
-      This layout instantly reveals where latencies, bottlenecks, or
-      errors occur.
-
-   *  GenAI Semantic Conventions: Standardised metadata tags provide
-      explicit context.  Spans automatically record critical variables
-      across four critical domains: System Context, Token Economics,
-      Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
-      gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
-
-   *  Protocol, Decision and System Events: When opted-in, Opentelemetry
-      logs every agent actions, every decision, every protocol
-      communication between agents or between agent and tools.  This
-      visibility allows engineers to review the exact context that
-      caused an agent to exhibit non-deterministic behavior or get stuck
-      in an infinite loop.
 
 4.5.  Existing Intervention Approaches
 
@@ -630,7 +655,27 @@ Table of Contents
 
 5.  Gaps in the Current Approaches
 
-5.1.  Limitations of AI Guardrails
+5.1.  Limitation of OpenTelemetry for Agent Observability
+
+   While OpenTelemetry (OTel) is the industry standard for collecting
+   traces, metrics, and logs, it has critical limitations when applied
+   to AI agent observability.  The fundamental limitation is that
+   OpenTelemetry functions as a passive data plane for system
+   performance, not an evaluation or guardrail engine for AI behavior.
+   It can track how an application runs, but it struggles to evaluate
+   what an agent decides.
+
+   Furthermore, OpenTelemetry only captures the execution process, not
+   the operational motivation.  It lacks native support for observing
+   metrics such as an agent's reasoning logic and internal confidence
+   levels.  OpenTelemetry originated in cloud-native microservice
+   architectures, its tracing lifecycle cannot represent asynchronous
+   Human-in-the-Loop (HITL) workflows.  Consequently, it provides no
+   mechanism to signal within a trace that a specific step constitutes a
+   high-risk action, has been suspended, and is currently awaiting human
+   approval.
+
+5.2.  Limitations of AI Guardrails
 
    There are many areas where guardrails cannot provide adequate control
    based on the current capabilities.
@@ -669,7 +714,7 @@ Table of Contents
       balance required between flexibility of agent execution and
       reasoning, with the boundary of execution which is subjective.
 
-5.2.  Limitations of Agent Drift Analysis
+5.3.  Limitations of Agent Drift Analysis
 
    Agent drift is hard to detect as it seldom produce a failure event,
    only the effect of the drift can be observed through continuous
@@ -681,7 +726,7 @@ Table of Contents
    Anomaly management.  So a potential direction is to leverage some of
    the techniques used in Anomaly management applied to Agents.
 
-5.3.  Limitations of Quality gates
+5.4.  Limitations of Quality gates
 
    Three limitations characterize current implementation of quality
    gate.
@@ -710,26 +755,6 @@ Table of Contents
       that a central control authority can monitor, escalate, or
       resolve.  The gate operates in isolation from the broader
       management and control stack.
-
-5.4.  Limitation of OpenTelemetry for Agent Observability
-
-   While OpenTelemetry (OTel) is the industry standard for collecting
-   traces, metrics, and logs, it has critical limitations when applied
-   to AI agent observability.  The fundamental limitation is that
-   OpenTelemetry functions as a passive data plane for system
-   performance, not an evaluation or guardrail engine for AI behavior.
-   It can track how an application runs, but it struggles to evaluate
-   what an agent decides.
-
-   Furthermore, OpenTelemetry only captures the execution process, not
-   the operational motivation.  It lacks native support for observing
-   metrics such as an agent's reasoning logic and internal confidence
-   levels.  OpenTelemetry originated in cloud-native microservice
-   architectures, its tracing lifecycle cannot represent asynchronous
-   Human-in-the-Loop (HITL) workflows.  Consequently, it provides no
-   mechanism to signal within a trace that a specific step constitutes a
-   high-risk action, has been suspended, and is currently awaiting human
-   approval.
 
 5.5.  Limitations of Intervention Approaches
 
@@ -793,16 +818,27 @@ Table of Contents
 6.  Standardization Area
 
    This section outlines key areas where standardization is required to
-   support the design, implementation, and operation of Agent
-   Observability, Intervention and Control in autonomous networks.  The
-   intent is to identify foundational areas that require align with
+   support the design, implementation, and operation of Network
+   Management Agent Observability, Intervention and Control in Agent
+   Fabric networks.  In the Agent Fabric Network, - Two or multiple
+   scenario specifc network management agents can work together to
+   support multi-scenario autonomy or close loop management. - Two or
+   muitiple scenario specific network management agents can work
+   together to support cross domain collaboration. - Two or mutiple
+   sceanrio specific network management agents can work together to
+   support collaboration between service layer and network layer. the
+   agent gateway can be used to collect metric, log, audit information
+   from each network management agents.
+
+   The intent is to identify foundational areas that require align with
    network management technologies developed in IETF OPS Area and drive
    network automation moving toward AI Driven Network Operation.
 
-   *  Agent Observability, Intervention and Control Architecture:
-      Developing or selecting a framework for enforcing boundaries,
-      detecting, evaluating, interrupting, correcting, and recovering
-      from agent behavior within operational and compliance boundaries.
+   *  Agent Observability, Intervention and Control Network Management
+      Architecture: Developing or selecting a framework for enforcing
+      boundaries, detecting, evaluating, interrupting, correcting, and
+      recovering from agent behavior within operational and compliance
+      boundaries.
 
    *  OpenTelemetry protocol extension Enabling network behavioral
       assessment through analysis of observed operational network data
