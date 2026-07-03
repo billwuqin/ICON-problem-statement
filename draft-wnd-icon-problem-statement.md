@@ -294,6 +294,28 @@ These include:
 
 # Solution Space for Network Management Agent Observability, Intervention and Control
 
+## Opentelemetry for Agent Observability
+
+Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge retrieval, multi-agent collaboration. When
+things go wrong, or right, you need to understand exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
+can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing unified GenAI and Agent Semantic
+Conventions to standardise how metrics, logs, and distributed traces are captured across multi-agent system.
+
+Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent processes information, arrives at
+decisions, and executes tasks as follows:
+
+- Distributed Tracing (Spans): The entire agent run acts as the root span. Every individual reasoning loop, sub-agent delegation, LLM
+  invocation, and tool/API execution is mapped as a child span. This layout instantly reveals where latencies, bottlenecks, or errors
+  occur.
+
+- GenAI Semantic Conventions: Standardised metadata tags provide explicit context. Spans automatically record critical variables across
+  four critical domains: System Context, Token Economics, Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
+  gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
+
+- Protocol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions, every decision, every protocol
+  communication between agents or between agent and tools. This visibility allows engineers to review the exact context that caused an
+  agent to exhibit non-deterministic behavior or get stuck in an infinite loop.
+
 ## AI Guardrails
 
 These are most mature, and most operationally familiar AI control mechanism in production today. AI Guardrail
@@ -362,28 +384,6 @@ function or if-else statements. Similarly, Google ADK (Agent Development Kit) pr
 before or after tool use and implement quality gate logic. So most of the techniques that exist today are agent
 framework specific.
 
-## Opentelemetry for Agent Observability
-
-Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge retrieval, multi-agent collaboration. When
-things go wrong, or right, you need to understand exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
-can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing unified GenAI and Agent Semantic
-Conventions to standardise how metrics, logs, and distributed traces are captured across multi-agent system.
-
-Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent processes information, arrives at
-decisions, and executes tasks as follows:
-
-- Distributed Tracing (Spans): The entire agent run acts as the root span. Every individual reasoning loop, sub-agent delegation, LLM
-  invocation, and tool/API execution is mapped as a child span. This layout instantly reveals where latencies, bottlenecks, or errors
-  occur.
-
-- GenAI Semantic Conventions: Standardised metadata tags provide explicit context. Spans automatically record critical variables across
-  four critical domains: System Context, Token Economics, Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
-  gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
-
-- Protocol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions, every decision, every protocol
-  communication between agents or between agent and tools. This visibility allows engineers to review the exact context that caused an
-  agent to exhibit non-deterministic behavior or get stuck in an infinite loop.
-
 ## Existing Intervention Approaches
 
 The intervention mechanisms that exist today in agentic systems are mostly implementation-specific, tied to individual
@@ -426,6 +426,19 @@ Dynamic trust level assignment: This is one of the advanced and emerging mechani
 The first two approaches rely on a well-defined agent identity to assign and enforce permissions. The fourth approach focus more on the behavior of agent, i.e., it requires not just identity, but also continuous behavior-based evaluation, where access is determined by how the agent performs over time,i.e, based on trust score, agent is mapped to a trust zone or trust level that determines the authority and access assigned to agent. The definition and management of agent identity are beyond the scope of this document.
 
 # Gaps in the Current Approaches
+
+## Limitation of OpenTelemetry for Agent Observability
+
+While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
+applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
+performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
+evaluate what an agent decides.
+
+Furthermore, OpenTelemetry only captures the execution process, not the operational motivation. It lacks native support for
+observing metrics such as an agent's reasoning logic and internal confidence levels. OpenTelemetry originated in cloud-native
+microservice architectures, its tracing lifecycle cannot represent asynchronous Human-in-the-Loop (HITL) workflows.
+Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action,
+has been suspended, and is currently awaiting human approval.
 
 ## Limitations of AI Guardrails
 
@@ -479,16 +492,6 @@ Three limitations characterize current implementation of quality gate.
   are not connected to a central control infrastructure. A gate that routes to human review pauses execution within the agent
   framework, but that pause is not expressed as a standardised intervention signal that a central control authority can monitor,
   escalate, or resolve. The gate operates in isolation from the broader management and control stack.
-
-## Limitation of OpenTelemetry for Agent Observability
-
-While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
-applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
-performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
-evaluate what an agent decides.
-
-Furthermore, OpenTelemetry only captures the execution process, not the operational motivation. It lacks native support for observing metrics such as an agent's reasoning logic and internal confidence levels. OpenTelemetry originated in cloud-native microservice architectures, its tracing lifecycle cannot represent asynchronous Human-in-the-Loop (HITL) workflows. Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action, has been suspended, and is currently awaiting human approval.
-
 
 ## Limitations of Intervention Approaches
 
