@@ -380,7 +380,7 @@ Table of Contents
 
 4.1.  AI Guardrails
 
-   These are most mature, and most operationally familiar AI governance
+   These are most mature, and most operationally familiar AI control
    mechanism in production today.  AI Guardrail approaches currently
    realized in the industry operate at defined transition points in the
    agent pipeline, primarily prompt filtering at the LLM input boundary,
@@ -398,8 +398,8 @@ Table of Contents
 
    *  Agent framework based guardrail libraries: provide structured
       policy specification languages (e.g. NeMo Guardrails) that allow
-      developers to express governance rules in a higher-level format,
-      with the framework handling enforcement logic.
+      developers to express policy rules in a higher-level format, with
+      the framework handling enforcement logic.
 
    *  Prompt engineering constraints: shape model behaviour by
       instruction rather than by interception.
@@ -541,8 +541,8 @@ Table of Contents
       getting into infinite loops.  The kill-switch functionality (halt
       or restrict an agent's execution when predefined risk, policy, or
       trust conditions are violated) is supported in the Microsoft Agent
-      Governance Toolkit, but its interoperability across different
-      agent frameworks is not proven.
+      Control Toolkit, but its interoperability across different agent
+      frameworks is not proven.
 
 4.6.  Trust & Security Control Approaches
 
@@ -578,7 +578,7 @@ Table of Contents
    given below:
 
    Agent privilege control: The most widely deployed current approach to
-   agent trust governance is the application of static least-privilege
+   agent trust control is the application of static least-privilege
    principles, granting agents the minimum tool access, API permissions,
    and system scope required for their designated tasks, expressed
    through standard IAM constructs (service accounts, API keys, OAuth
@@ -605,7 +605,7 @@ Table of Contents
    legally allowed to access such data.
 
    Dynamic trust level assignment: This is one of the advanced and
-   emerging mechanism (e.g. Microsoft Agent Governance Toolkit) where
+   emerging mechanism (e.g. Microsoft Agent Control Toolkit) where
    instead of labelling agents as just trusted or untrusted, this model
    gives each agent a trust score that changes over time.  The score
    increases when the agent follows policies and drops quickly when it
@@ -637,8 +637,8 @@ Table of Contents
    *  Multistep execution: Guardrails are typically applied at single-
       turn boundaries, i.e. they evaluate one input or one output at a
       time.  Currently, there is no well-defined mechanism for
-      evaluating the governance implications of action sequences, or how
-      a series of individually valid steps may collectively lead to
+      evaluating the control implications of action sequences, or how a
+      series of individually valid steps may collectively lead to
       unintended or non-compliant outcomes.  This gap highlights the
       need for sequence-aware control and intervention mechanisms that
       can evaluate intent, track execution context across steps, and
@@ -689,21 +689,21 @@ Table of Contents
       implemented in CrewAI or AutoGen.  They cannot be governed,
       observed, or audited through common infrastructure.
 
-   *  Absence of external governance observability.  Quality gate
-      evaluations are internal to the agent workflow.  No current
-      framework provides a standardised mechanism for an external
-      governance authority to observe what quality evaluation was
-      performed, what dimensions were assessed, what score was produced,
-      and why a specific routing decision was made.
+   *  Absence of external observability.  Quality gate evaluations are
+      internal to the agent workflow.  No current framework provides a
+      standardised mechanism for an external observability authority to
+      observe what quality evaluation was performed, what dimensions
+      were assessed, what score was produced, and why a specific routing
+      decision was made.
 
-   *  No central governance or intervention and control.  Quality gate
-      outcomes particularly human review and/or rejection decisions are
-      not connected to a central governance infrastructure.  A gate that
-      routes to human review pauses execution within the agent
-      framework, but that pause is not expressed as a standardised
-      intervention signal that a central governance authority can
-      monitor, escalate, or resolve.  The gate operates in isolation
-      from the broader governance stack.
+   *  No central intervention and control.  Quality gate outcomes
+      particularly human review and/or rejection decisions are not
+      connected to a central control infrastructure.  A gate that routes
+      to human review pauses execution within the agent framework, but
+      that pause is not expressed as a standardised intervention signal
+      that a central control authority can monitor, escalate, or
+      resolve.  The gate operates in isolation from the broader
+      management and control stack.
 
 5.4.  Limitation of OpenTelemetry for Agent Observability
 
@@ -731,9 +731,9 @@ Table of Contents
    framework-specific forms.  They have the following limitations.
 
    *  Absence of a standardised external interface that allows an
-      authorized governance authority outside the framework or outside
-      the agent application to signal intervention and receive a
-      guaranteed response
+      authorized authority outside the framework or outside the agent
+      application to signal intervention and receive a guaranteed
+      response
 
    *  Current practice of intervention (leveraging infrastructure level
       interventions) is largely binary: either the agent runs or it does
@@ -748,9 +748,9 @@ Table of Contents
 
    *  Current intervention mechanism requires either a human decision or
       a pre-coded condition to trigger it.  There is no mechanism that
-      continuously monitors agent behaviour against governance policies
-      and automatically triggers a proportionate intervention response
-      when a deviation is detected
+      continuously monitors agent behaviour against control policies and
+      automatically triggers a proportionate intervention response when
+      a deviation is detected
 
 5.6.  Limitations of Trust & Security Control Approaches
 
