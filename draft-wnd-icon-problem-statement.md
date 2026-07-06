@@ -76,7 +76,7 @@ deployment of the observability, intervention, and control of autonomous
 agent pipelines in large-scale heterogeneous network environments. The
 term "Intervention and Control" is used to describe a set of automated and
 human-initiated mechanisms that guarantee the capability to observe, constrain,
-correct, and terminate AI agents at any point, for any reason, irrespective of
+correct, and terminate Autonomous agents at any point, for any reason, irrespective of
 their level of autonomy under which it operates, to ensure resilience, recovery,
 and operational continuity.
 
@@ -119,7 +119,7 @@ technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
-e.g., prompt injection. These guardrails enable you to do checks and validations of user
+e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action
 filter level with static boundary parameters. For example, imagine you have an agent
@@ -192,11 +192,11 @@ identify gaps that need to be filled.
           agent took the shortest sequence of actions or wasted resources on redundant tools or analyzing specific segments of the
           trajectory to see if the agent excels at information retrieval but struggles with mathematical synthesis.
 
-- Human Oversight: The practice of keeping humans actively involved in continuously monitoring of AI agents. In agent trajectory
+- Human Oversight: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents. In agent trajectory
                    management, it ensures that network management agents do not go off the rails, violate safety protocols, or waste
                    resources. It transforms a fully autonomous "black box" into a controllable and collaborative system.
 
-- Behavior: pattern of reasoning, decisions, and actions an AI agent takes to achieve a specific goal such as reasoning sequence,
+- Behavior: pattern of reasoning, decisions, and actions an Autonomous agent takes to achieve a specific goal such as reasoning sequence,
             the sequence and logic of execution paths.
 
 - Trajectory Record: Keep track of Agent behaviour and produce audit log or trace information to Capture the entire "flight path"
