@@ -3,7 +3,7 @@ title: "Problem Statement for Observability, Intervention and Control (I&C) in M
 abbrev: "Observability and I&C"
 category: info
 
-docname: draft-wnd-icon-problem-statement-latest
+docname: draft-wnd-opsawg-icon-ps-latest
 submissiontype: IETF
 number:
 date:
@@ -21,7 +21,7 @@ venue:
 #  mail: WG@example.com
 #  arch: https://example.com/WG
   github: "billwuqin/ICON-problem-statement"
-  latest: "https://billwuqin.github.io/ICON-problem-statement/draft-wnd-icon-problem-statement.html"
+  latest: "https://billwuqin.github.io/ICON-problem-statement/draft-wnd-opsawg-icon-ps.html"
 
 author:
  -
