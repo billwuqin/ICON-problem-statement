@@ -4,10 +4,10 @@
 
 This is the working area for the individual Internet-Draft, "Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks".
 
-* [Editor's Copy](https://billwuqin.github.io/ICON-problem-statement/#go.draft-wnd-icon-problem-statement.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-wnd-icon-problem-statement)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-wnd-icon-problem-statement)
-* [Compare Editor's Copy to Individual Draft](https://billwuqin.github.io/ICON-problem-statement/#go.draft-wnd-icon-problem-statement.diff)
+* [Editor's Copy](https://billwuqin.github.io/ICON-problem-statement/#go.draft-wnd-opsawg-icon-ps.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-wnd-opsawg-icon-ps)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-wnd-opsawg-icon-ps)
+* [Compare Editor's Copy to Individual Draft](https://billwuqin.github.io/ICON-problem-statement/#go.draft-wnd-opsawg--icon-ps.diff)
 
 
 ## Contributing
