@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 4 January 2027                                            Cisco
+Expires: 7 January 2027                                            Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                             3 July 2026
+                                                             6 July 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -27,9 +27,9 @@ Abstract
    environments.  The term "Intervention and Control" is used to
    describe a set of automated and human-initiated mechanisms that
    guarantee the capability to observe, constrain, correct, and
-   terminate AI agents at any point, for any reason, irrespective of
-   their level of autonomy under which it operates, to ensure
-   resilience, recovery, and operational continuity.
+   terminate Autonomous agents at any point, for any reason,
+   irrespective of their level of autonomy under which it operates, to
+   ensure resilience, recovery, and operational continuity.
 
    The set of enabled observability, intervention and control reflects
    operator service offerings to ensure that autonomous operations can
@@ -69,7 +69,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 January 2027.
+   This Internet-Draft will expire on 7 January 2027.
 
 Copyright Notice
 
@@ -162,18 +162,18 @@ Table of Contents
    within operational and compliance boundaries, prevent AI from
    producing harmful results or taking wrong actions, e.g., escalate a
    decision to a human for a high-risk network operation, defend against
-   malicious attacks, e.g., prompt injection.  These guardrails enable
-   you to do checks and validations of user input and agent output and
-   typically break down into input input guardrail, action guardrail,
-   output guardrail and operate at the input/output/pre-action filter
-   level with static boundary parameters.  For example, imagine you have
-   an agent that uses a very smart (and hence slow/expensive) model to
-   help with customer requests.  You wouldn't want malicious users to
-   ask the model to help them with their math homework.  So, you can run
-   a guardrail with a fast/cheap model and block agents for specific
-   usages.  If the guardrail detects malicious usage, it can immediately
-   raise an error and prevent the expensive model from running, saving
-   you time and money.
+   malicious attacks, e.g., prompt injection.  These AI guardrails
+   enable you to do checks and validations of user input and agent
+   output and typically break down into input input guardrail, action
+   guardrail, output guardrail and operate at the input/output/pre-
+   action filter level with static boundary parameters.  For example,
+   imagine you have an agent that uses a very smart (and hence slow/
+   expensive) model to help with customer requests.  You wouldn't want
+   malicious users to ask the model to help them with their math
+   homework.  So, you can run a guardrail with a fast/cheap model and
+   block agents for specific usages.  If the guardrail detects malicious
+   usage, it can immediately raise an error and prevent the expensive
+   model from running, saving you time and money.
 
    However, as Agentic AI systems are increasingly integrated into
    autonomous workflows and critical infrastructure, these static
@@ -268,15 +268,15 @@ Table of Contents
       with mathematical synthesis.
 
    *  Human Oversight: The practice of keeping humans actively involved
-      in continuously monitoring of AI agents.  In agent trajectory
-      management, it ensures that network management agents do not go
-      off the rails, violate safety protocols, or waste resources.  It
-      transforms a fully autonomous "black box" into a controllable and
-      collaborative system.
+      in continuously monitoring of Autonomous agents.  In agent
+      trajectory management, it ensures that network management agents
+      do not go off the rails, violate safety protocols, or waste
+      resources.  It transforms a fully autonomous "black box" into a
+      controllable and collaborative system.
 
-   *  Behavior: pattern of reasoning, decisions, and actions an AI agent
-      takes to achieve a specific goal such as reasoning sequence, the
-      sequence and logic of execution paths.
+   *  Behavior: pattern of reasoning, decisions, and actions an
+      Autonomous agent takes to achieve a specific goal such as
+      reasoning sequence, the sequence and logic of execution paths.
 
    *  Trajectory Record: Keep track of Agent behaviour and produce audit
       log or trace information to Capture the entire "flight path" or
