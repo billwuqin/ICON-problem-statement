@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-05T02:13:05.266575+00:00",
+  "timestamp": "2026-07-07T02:13:17.773945+00:00",
   "repo": "billwuqin/ICON-problem-statement",
   "labels": [
     {
@@ -582,6 +582,34 @@
       "mergedBy": "billwuqin",
       "mergeCommit": {
         "oid": "730657eb60243e2c6ad5030288356c470bf38adf"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 21,
+      "id": "PR_kwDOSm5Pfs7uKgET",
+      "title": "Replace AI Agent with Autonomous Agent",
+      "url": "https://github.com/billwuqin/ICON-problem-statement/pull/21",
+      "state": "MERGED",
+      "author": "billwuqin",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-07-06T02:59:33Z",
+      "updatedAt": "2026-07-06T03:08:34Z",
+      "baseRepository": "billwuqin/ICON-problem-statement",
+      "baseRefName": "main",
+      "baseRefOid": "730657eb60243e2c6ad5030288356c470bf38adf",
+      "headRepository": "billwuqin/ICON-problem-statement",
+      "headRefName": "billwuqin-patch-10",
+      "headRefOid": "08db6baa98acc0125bb35beaa710fd425321649b",
+      "closedAt": "2026-07-06T03:08:29Z",
+      "mergedAt": "2026-07-06T03:08:29Z",
+      "mergedBy": "billwuqin",
+      "mergeCommit": {
+        "oid": "dbe2bb8ff3408b078228df6bcbeaffa067e777ce"
       },
       "comments": [],
       "reviews": []
