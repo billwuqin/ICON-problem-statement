@@ -117,8 +117,13 @@ AI from producing harmful results or taking wrong actions, e.g., escalate a deci
 to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input input guardrail, action guardrail,
-output guardrail and operate at the input/output/pre-action
-filter level with static boundary parameters.
+output guardrail and operate at the input/output/pre-action filter level with static boundary
+parameters. For example, image you have a network management agent that uses network active
+and reactive assurance component to identify and resolve network issues, ensuring that any
+disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
+or performannce drifts produce harmful results, leading to high risk network operation failure.
+if the guardrail detects such operational anomalies, it can immediately raise an error and
+prevent harmful results of high risk network operators.
 
 However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
@@ -340,10 +345,12 @@ approaches currently realized in the industry operate at defined transition poin
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
 bad input or bad output — without necessarily involving your selected large language model(expensive or cheap).
-For example, imagine you have an agent that uses a very smart (and hence slow/expensive) model to help with customer
-requests. You wouldn't want malicious users to ask the model to help them with their math homework. So, you can run a
-guardrail with a fast/cheap model. If the guardrail detects malicious usage, it can immediately raise an error and
-prevent the expensive model from running, saving you time and money.
+For example, image you have a network management agent that uses network active
+and reactive assurance component to identify and resolve network issues, ensuring that any
+disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
+or performannce drifts produce harmful results, leading to high risk network operation failure.
+if the guardrail detects such operational anomalies, it can immediately raise an error and
+prevent harmful results of high risk network operators.
 
 AI Guardrail are realized through 4 different mechanisms:
 
