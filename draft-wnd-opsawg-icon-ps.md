@@ -293,7 +293,7 @@ agent frameworks, tool/API repositories, and interconnection fabrics.
 ### Lack of Human Oversight
 
 Core features such as multi-agent execution, advanced interoperability frameworks
-for agent to agent (e.g., Agent-to-Agent {{A2A}}), agent to tools communication 
+for agent to agent (e.g., Agent-to-Agent {{A2A}}), agent to tools communication
 (e.g.,Model Context Protocol {{MCP}}), Agent to Human interaction, and long-running
 autonomous actions are advancing rapidly.
 
