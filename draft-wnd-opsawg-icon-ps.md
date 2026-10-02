@@ -99,8 +99,6 @@ management comprise the following phases:
 
 - Agent Discovery: Discover capabilities and skills and onboard agent
 
-- Agent Benchmarking: Test behavior before deployment
-
 - Agent Deployment: move agent from pilot project to production environments
 
 - Agent Upgrade: Large language model, tools, prompts, memory related software update
