@@ -105,9 +105,9 @@ management comprise the following phases:
 
 - Agent Upgrade: Large language model, tools, prompts, memory related software update
 
-To help network operators manage AI agents with more consistency, visibility and control,
-the observability component, intervention and control components need to work
-in a collaborate manner and are critical for the Agent lifecycle management.
+To help network operators manage Network management AI agents with more consistency,
+visibility and control, the observability component, intervention and control components
+need to work in a collaborate manner and are critical for the Agent lifecycle management.
 
 Since AI native operations may be non-deterministic, when network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
@@ -138,14 +138,14 @@ full operational lifecycle, e.g.,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
 - When a violation related to input/output filter is suspected, there are currently no standardized
-  protocols for intervention (e.g., immediate task suspension) and recovery (e.g., reverting to a
-  last known safe state or undoing a series of autonomous actions that introduce substantial
-  operational risk) mechanisms.
+  interoperable protocols for network operation and task intervention (e.g., immediate task suspension)
+  and recovery (e.g., reverting to a last known safe state or undoing a series of autonomous actions
+  that introduce substantial operational risk) mechanisms.
 
 - In non-deterministic environments, the lack of human oversight and human-AI semantic intent exchange
   hinder timely risk mitigation and state recovery during boundary violations by agents.
 
-This document provides a problem statement for protocol on continuous agent observability, intervention and control.
+This document provides a problem statement for protocol on continuous agent behavior observability, intervention and control.
 We list the properties the protocol should have, then explain why those properties are necessary. We describe why a
 new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
 related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
@@ -202,10 +202,10 @@ identify gaps that need to be filled.
 # Problem Space
 
 The deployment of autonomous agentic systems within operators' networks introduces fundamental operational,
-architectural challenges. Current network management paradigms are built on deterministic models that assume
-predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-driven network
+architectural challenges. Current network management paradigms are static rule driven and therefore are built on
+deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-driven network
 operation architectures creates a structural mismatch between machine-speed execution and human-speed oversight.
-This gap manifests in several distinct problem areas:
+This gap manifests in the following three distinct aspects:
 
 ## The Observability Aspect
 
@@ -218,22 +218,23 @@ delegation creates an optimization barrier, offering limited
 transparency into how specific decisions are reached or how complex
 action sequences are generated.
 
-Without an out-of-band mechanism to inspect this reasoning layer, operators
-cannot validate the safety or intent of an agent's planned mutations before
+Without an out-of-band mechanism to inspect intent input layer, this
+reasoning layer and tools invocation layer, networkoperators cannot
+validate the safety or intent of an agent's planned mutations before
 they introduce unexpected consequence on the infrastructure.
 
-### Ambiguity of Accountability Attribution
+### Ambiguity of Accountability Attribution or Responsbility Determination
 
 In distributed multi-agent topologies, operational responsibility for an ultimate
 network outcome is scattered across an extended chain of coordinating agents,
 foundational models, and abstraction layers. When system failures, performance
 degradations, or unintended consequences occur, attributing accountability to
 a specific agent entity, localized model decision, or human-in-the-loop anchor
-becomes highly ambiguous. This lack of clear traceability or metrics characterizing
+becomes highly ambiguous. This lack of clear log, trace and performance metrics characterizing
 agent operational health such as action execution latency, error rates, creates severe
 complications for post-incident root-cause analysis and regulatory compliance reporting.
 
-### High-Velocity Data Ingestion
+### High-Velocity Data Ingestion for Evaluation and Intervening
 
 Agents are explicitly designed to operate with high degrees of autonomy, speed, and
 scale. However, network operators currently lack the corresponding telemetry
@@ -261,19 +262,19 @@ Existing trust and authorization models have failed to evolve in step with
 dynamic agentic AI architectures. Traditional Identity and Access Management
 (IAM) frameworks were designed exclusively for human operators or static,
 deterministic software processes. These frameworks cannot securely tackle
-emerging dynamic agent atributes such as autonomous entity identities and behavioral
+emerging dynamic agent attributes such as autonomous entity identities and behavioral
 profiles which are frequently created and modified at runtime rather than being
-pre-provisioned with metadata information to describe functional capabilities, nor can
-they safely manage downstream sub-agent permission delegation or context-dependent
-privilege escalation.
+pre-provisioned with metadata information to describe functional capabilities,
+nor can they safely manage downstream sub-agent permission delegation or
+context-dependent privilege escalation.
 
 ### Fragmentation Across Heterogeneous Integration Layers
 
 Agentic systems operating across mixed Operational Support Systems (OSS)
-and Network Management domains must interact with a highly
-heterogeneous mix of legacy systems, modern APIs, and third-party
-platforms. Establishing consistent, operational and compliance boundaries across these
-disparate integration layers is exceptionally complex as agents may routinely validate intent,
+and Network Management domains must interact with a highly heterogeneous
+mix of legacy systems, modern APIs, and third-party platforms. Establishing
+consistent, operational and compliance boundaries across these disparate
+integration layers is exceptionally complex as agents may routinely validate intent,
 invoke actions or retrieve data through pathways (e.g. MCP/A2A etc.) that were never
 designed with network management automation we used today.
 
@@ -292,9 +293,9 @@ agent frameworks, tool/API repositories, and interconnection fabrics.
 ### Lack of Human Oversight
 
 Core features such as multi-agent execution, advanced interoperability frameworks
-for agent to agent, agent to tools communication (e.g., Agent-to-Agent {{A2A}}
-and Model Context Protocol {{MCP}}), and long-running autonomous actions are
-advancing rapidly.
+for agent to agent (e.g., Agent-to-Agent {{A2A}}), agent to tools communication
+(e.g.,Model Context Protocol {{MCP}}), Agent to Human interaction, and long-running
+autonomous actions are advancing rapidly.
 
 However, essential human oversight capabilities including runtime intervention for execution
 interruption, deterministic transaction rollback and Recovery, and human escalation remain highly
@@ -318,25 +319,28 @@ These include:
 
 ## Opentelemetry for Agent Observability
 
-Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge retrieval, multi-agent collaboration. When
-things go wrong, or right, you need to understand exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
-can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing unified GenAI and Agent Semantic
-Conventions to standardise how metrics, logs, and distributed traces are captured across multi-agent system.
+Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge
+retrieval, multi-agent collaboration. When things go wrong, or right, you need to understand
+exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
+can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing
+unified GenAI and Agent Semantic Conventions to standardise how metrics, logs, and distributed
+traces are captured across multi-agent system.
 
-Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent processes information, arrives at
-decisions, and executes tasks as follows:
+Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent
+processes information, arrives at decisions, and executes tasks as follows:
 
-- Distributed Tracing (Spans): The agent as a whole run acts as the root span. Every individual reasoning loop, agent delegation, LLM
-  invocation, and tool/API execution is mapped as a child span. This layout instantly reveals where latencies, bottlenecks, or errors
-  occur.
+- Distributed Tracing (Spans): The agent as a whole run acts as the root span. Every individual
+  reasoning loop, agent delegation, LLM invocation, and tool/API execution is mapped as a child span.
+  This layout instantly reveals where latencies, bottlenecks, or errors occur.
 
-- GenAI Semantic Conventions: Standardised metadata tags provide explicit context. Spans automatically record critical variables across
-  four critical domains: System Context, Token Economics, Vector Retrieval, and Agent Reasoning,like gen_ai.request.model,
-  gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
+- GenAI Semantic Conventions: Standardised metadata tags provide explicit context. Spans automatically
+  record critical variables across four critical domains: System Context, Token Economics, Vector Retrieval,
+  and Agent Reasoning,like gen_ai.request.model, gen_ai.usage.input_tokens, and gen_ai.usage.output_tokens.
 
-- Protocol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions, every decision, every protocol
-  communication between agents or between agent and tools. This visibility allows engineers to review the exact context that caused an
-  agent to exhibit non-deterministic behavior or get stuck in an infinite loop.
+- Protocol, Decision and System Events: When opted-in, Opentelemetry logs every agent actions, every decision,
+  every protocol communication between agents or between agent and tools. This visibility allows engineers to
+  review the exact context that caused an agent to exhibit non-deterministic behavior or get stuck in an infinite
+  loop.
 
 ## AI Guardrails
 
@@ -441,23 +445,53 @@ involve the following:
 
 ## Trust & Security Control Approaches
 
-Trust & Security in autonomous agents spans across multiple dimensions, including identity (who the agent is), authorization (what it is allowed to do), control (how its actions are performed during execution), behavior (whether it acts in alignment with expected goals and produces correct outcomes), and context (under what conditions it operates). Current industry approaches to agent Trust & Security primarily focus on protecting the agent from malicious interference to ensure that the inputs it receives and processes are not tampered with and manipulated. Intervention and Control is concerned with ensuring that actions remain within authorized boundaries, are observable, and can be corrected or reversed when necessary.
+Trust & Security in autonomous agents spans across multiple dimensions, including identity (who the agent is),
+authorization (what it is allowed to do), control (how its actions are performed during execution), behavior
+(whether it acts in alignment with expected goals and produces correct outcomes), and context (under what
+conditions it operates). Current industry approaches to agent Trust & Security primarily focus on protecting
+the agent from malicious interference to ensure that the inputs it receives and processes are not tampered
+with and manipulated. Intervention and Control is concerned with ensuring that actions remain within authorized
+boundaries, are observable, and can be corrected or reversed when necessary.
 
-Traditional IAM frameworks, designed for human users and deterministic software processes, are insufficient to tackle the dynamic Trust & Security aspects of autonomous agents. The emerging Trust & Security Control approaches extend beyond static identity and permission models to incorporate context-awareness, temporal constraints, and behavior-driven trust evaluation.
+Traditional IAM frameworks, designed for human users and deterministic software processes, are insufficient to
+tackle the dynamic Trust & Security aspects of autonomous agents. The emerging Trust & Security Control approaches
+extend beyond static identity and permission models to incorporate context-awareness, temporal constraints, and
+behavior-driven trust evaluation.
 
-From the I&C perspective, a prominent way to manage agent Trust & Security risk is to sandbox the agent's execution environment. This means running the agent in a restricted environment so it cannot cross trust boundaries, even if it is compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime environment, permissions, and accessible resources in real time based on task context and trust level.
+From the I&C perspective, a prominent way to manage agent Trust & Security risk is to sandbox the agent's execution
+environment. This means running the agent in a restricted environment so it cannot cross trust boundaries, even if
+it is compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime
+environment, permissions, and accessible resources in real time based on task context and trust level.
 
 Some of the approaches followed for controlling the agent trust are given below:
 
-Agent privilege control: The most widely deployed current approach to agent trust control is the application of static least-privilege principles, granting agents the minimum tool access, API permissions, and system scope required for their designated tasks, expressed through standard IAM constructs (service accounts, API keys, OAuth scopes). Its limitation in agent-based systems is that tasks are dynamic. Permissions set for a typical task may be too limited for edge cases, pushing systems to grant broader access than necessary. On the other hand, permissions designed for complex tasks may be too broad for simpler ones. Also, static permissions cannot adapt to changing task needs.
+Agent privilege control: The most widely deployed current approach to agent trust control is the application of
+static least-privilege principles, granting agents the minimum tool access, API permissions, and system scope
+required for their designated tasks, expressed through standard IAM constructs (service accounts, API keys, OAuth scopes).
+Its limitation in agent-based systems is that tasks are dynamic. Permissions set for a typical task may be too limited
+for edge cases, pushing systems to grant broader access than necessary. On the other hand, permissions designed for
+complex tasks may be too broad for simpler ones. Also, static permissions cannot adapt to changing task needs.
 
-Scoped and time-limited credentials: Agents often use API keys or service accounts with broad, long-lasting permissions (for tool calls, RAG or model access), which can create trust & security risks. Current best practices is to use short-lived, limited-access credentials, such as OAuth tokens with narrow scopes or JWTs with short expiry so that agents only have the minimum access needed for a specific task and only for a limited time.
+Scoped and time-limited credentials: Agents often use API keys or service accounts with broad, long-lasting permissions
+(for tool calls, RAG or model access), which can create trust & security risks. Current best practices is to use short-lived,
+limited-access credentials, such as OAuth tokens with narrow scopes or JWTs with short expiry so that agents only have
+the minimum access needed for a specific task and only for a limited time.
 
-Context aware trust assignment: Instead of static roles or scopes, access decisions are made dynamically using attributes and runtime context such as task type, data sensitivity, user intent, environment state, or risk level, e.g., agent is allowed to access certain tools/data only within/belonging to a compliant geography, where it is legally allowed to access such data.
+Context aware trust assignment: Instead of static roles or scopes, access decisions are made dynamically using attributes
+and runtime context such as task type, data sensitivity, user intent, environment state, or risk level, e.g., agent is
+allowed to access certain tools/data only within/belonging to a compliant geography, where it is legally allowed to
+access such data.
 
-Dynamic trust level assignment: This is one of the advanced and emerging mechanism (e.g. Microsoft Agent Control Toolkit) where instead of labelling agents as just trusted or untrusted, this model gives each agent a trust score that changes over time. The score increases when the agent follows policies and drops quickly when it violates them. This score then decides what level of access the agent gets, adjusting its permissions based on how trustworthy it is at that moment.
+Dynamic trust level assignment: This is one of the advanced and emerging mechanism (e.g. Microsoft Agent Control Toolkit)
+where instead of labelling agents as just trusted or untrusted, this model gives each agent a trust score that changes
+over time. The score increases when the agent follows policies and drops quickly when it violates them. This score then
+decides what level of access the agent gets, adjusting its permissions based on how trustworthy it is at that moment.
 
-The first two approaches rely on a well-defined agent identity to assign and enforce permissions. The fourth approach focus more on the behavior of agent, i.e., it requires not just identity, but also continuous behavior-based evaluation, where access is determined by how the agent performs over time,i.e, based on trust score, agent is mapped to a trust zone or trust level that determines the authority and access assigned to agent. The definition and management of agent identity are beyond the scope of this document.
+The first two approaches rely on a well-defined agent identity to assign and enforce permissions. The fourth approach
+focus more on the behavior of agent, i.e., it requires not just identity, but also continuous behavior-based evaluation,
+where access is determined by how the agent performs over time,i.e, based on trust score, agent is mapped to a trust zone
+or trust level that determines the authority and access assigned to agent. The definition and management of agent identity
+are beyond the scope of this document.
 
 # Gaps in the Current Approaches
 
