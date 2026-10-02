@@ -288,7 +288,7 @@ agent frameworks, tool/API repositories, and interconnection fabrics.
 
 ## The Intervention Aspect
 
-### Lack of Human Oversight
+### Lack of Human Oversight Capabilities such as Rollback and Recover
 
 Core features such as multi-agent execution, advanced interoperability frameworks
 for agent to agent (e.g., Agent-to-Agent {{A2A}}), agent to tools communication
@@ -298,6 +298,10 @@ autonomous actions are advancing rapidly.
 However, essential human oversight capabilities including runtime intervention for execution
 interruption, deterministic transaction rollback and Recovery, and human escalation remain highly
 immature and lack clear standardisation paths.
+
+Without human oversigh capabilities, the existing network operation can not ensure any disruptions
+or degradations are promptly addressed which lead to harmful outcome for hish risk network configuration
+changes.
 
 ### AI-Native Failure Emergence
 
