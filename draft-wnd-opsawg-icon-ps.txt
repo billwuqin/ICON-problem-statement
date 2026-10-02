@@ -101,7 +101,8 @@ Table of Contents
        3.2.3.  Fragmentation Across Heterogeneous Integration Layers
        3.2.4.  Multi-Vendor Dependency Risks
      3.3.  The Intervention Aspect
-       3.3.1.  Lack of Human Oversight
+       3.3.1.  Lack of Human Oversight Capabilities such as Rollback
+               and Recover
        3.3.2.  AI-Native Failure Emergence
    4.  Solution Space for Network Management Agent Observability,
            Intervention and Control
@@ -382,7 +383,8 @@ Table of Contents
 
 3.3.  The Intervention Aspect
 
-3.3.1.  Lack of Human Oversight
+3.3.1.  Lack of Human Oversight Capabilities such as Rollback and
+        Recover
 
    Core features such as multi-agent execution, advanced
    interoperability frameworks for agent to agent (e.g., Agent-to-Agent
@@ -394,6 +396,11 @@ Table of Contents
    intervention for execution interruption, deterministic transaction
    rollback and Recovery, and human escalation remain highly immature
    and lack clear standardisation paths.
+
+   Without human oversigh capabilities, the existing network operation
+   can not ensure any disruptions or degradations are promptly addressed
+   which lead to harmful outcome for hish risk network configuration
+   changes.
 
 3.3.2.  AI-Native Failure Emergence
 
