@@ -103,14 +103,10 @@ management comprise the following phases:
 
 - Agent Deployment: move agent from pilot project to production environments
 
-- Agent Observability: continuous monitor and evaluate performance and behavior deviation in production
-
-- Agent Intervention and Control: Constrain Agent behavior within operational boundary
-
 - Agent Upgrade: Large language model, tools, prompts, memory related software update
 
 To help network operators manage AI agents with more consistency, visibility and control,
-the observability phase, intervention and control phase need to work
+the observability component, intervention and control components need to work
 in a collaborate manner and are critical for the Agent lifecycle management.
 
 Since AI native operations may be non-deterministic, when network management agents
@@ -122,12 +118,7 @@ to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action
-filter level with static boundary parameters. For example, imagine you have an agent
-that uses a very smart (and hence slow/expensive) model to help with customer requests.
-You wouldn't want malicious users to ask the model to help them with their math homework.
-So, you can run a guardrail with a fast/cheap model and block agents for specific usages.
-If the guardrail detects malicious usage, it can immediately raise an error and prevent
-the expensive model from running, saving you time and money.
+filter level with static boundary parameters.
 
 However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
