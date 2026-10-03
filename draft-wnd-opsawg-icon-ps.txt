@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 5 April 2027                                              Cisco
+Expires: 6 April 2027                                              Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          2 October 2026
+                                                          3 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 April 2027.
+   This Internet-Draft will expire on 6 April 2027.
 
 Copyright Notice
 
@@ -110,8 +110,9 @@ Table of Contents
      4.2.  AI Guardrails
      4.3.  Agent Drift Detection
      4.4.  Quality Gates
-     4.5.  Existing Intervention Approaches
-     4.6.  Trust & Security Control Approaches
+     4.5.  Existing Intervention Approaches for Human and Agent
+           Interaction
+     4.6.  Identity & Access Management Approaches
    5.  Gaps in the Current Approaches
      5.1.  Limitation of OpenTelemetry for Agent Observability
      5.2.  Limitations of AI Guardrails
@@ -566,12 +567,16 @@ Table of Contents
    logic.  So most of the techniques that exist today are agent
    framework specific.
 
-4.5.  Existing Intervention Approaches
+4.5.  Existing Intervention Approaches for Human and Agent Interaction
 
-   The intervention mechanisms that exist today in agentic systems are
-   mostly implementation-specific, tied to individual frameworks, and
-   not mature enough to form a consistent or deployable operational
-   practice.  Currently, the mechanisms involve the following:
+   The intervention mechanisms that exist today in agentic systems
+   define how humans and AI agents communicate for a set of instructions
+   and commands while guardrails act as the boundary enforcement that
+   ensures those interactions remain safe, structured.  These existing
+   intervention mechanisms are mostly implementation-specific, tied to
+   individual frameworks, and not mature enough to form a consistent or
+   deployable operational practice.  Currently, the mechanisms involve
+   the following:
 
    *  Primitive and manually controlled repurposed from the
       infrastructure: Reuse approaches from the infrastructure control
@@ -598,35 +603,37 @@ Table of Contents
       Control Toolkit, but its interoperability across different agent
       frameworks is not proven.
 
-4.6.  Trust & Security Control Approaches
+4.6.  Identity & Access Management Approaches
 
-   Trust & Security in autonomous agents spans across multiple
-   dimensions, including identity (who the agent is), authorization
-   (what it is allowed to do), control (how its actions are performed
-   during execution), behavior (whether it acts in alignment with
-   expected goals and produces correct outcomes), and context (under
-   what conditions it operates).  Current industry approaches to agent
-   Trust & Security primarily focus on protecting the agent from
-   malicious interference to ensure that the inputs it receives and
-   processes are not tampered with and manipulated.  Intervention and
-   Control is concerned with ensuring that actions remain within
-   authorized boundaries, are observable, and can be corrected or
-   reversed when necessary.
+   The identity and Access Management in autonomous agents spans across
+   multiple dimensions, including identity (who the agent is),
+   authorization (what it is allowed to do), control (how its actions
+   are performed during execution), behavior (whether it acts in
+   alignment with expected goals and produces correct outcomes), and
+   context (under what conditions it operates).  Current industry
+   approaches to agent identity and access Management primarily focus on
+   protecting the agent from malicious interference to ensure that the
+   inputs it receives and processes are not tampered with and
+   manipulated.  Intervention and Control is concerned with ensuring
+   that actions remain within authorized boundaries, are observable, and
+   can be corrected or reversed when necessary.
 
    Traditional IAM frameworks, designed for human users and
    deterministic software processes, are insufficient to tackle the
-   dynamic Trust & Security aspects of autonomous agents.  The emerging
-   Trust & Security Control approaches extend beyond static identity and
-   permission models to incorporate context-awareness, temporal
-   constraints, and behavior-driven trust evaluation.
+   dynamic identity and access aspects of autonomous agents.  The
+   emerging identity and access management approaches extend beyond
+   static identity and permission models to incorporate context-
+   awareness, temporal constraints, and behavior-driven trust
+   evaluation.
 
-   From the I&C perspective, a prominent way to manage agent Trust &
-   Security risk is to sandbox the agent's execution environment.  This
-   means running the agent in a restricted environment so it cannot
-   cross trust boundaries, even if it is compromised.  Dynamically
-   limiting the execution boundary can be achieved by adjusting the
-   agent's runtime environment, permissions, and accessible resources in
-   real time based on task context and trust level.
+   From the I&C perspective, a prominent way to manage agent identity
+   and access management risk is to sandbox the agent's execution
+   environment.  This means running the agent in a restricted
+   environment so it cannot cross trust boundaries, even if it is
+   compromised.  Dynamically limiting the execution boundary can be
+   achieved by adjusting the agent's runtime environment, permissions,
+   and accessible resources in real time based on task context and trust
+   level.
 
    Some of the approaches followed for controlling the agent trust are
    given below:
