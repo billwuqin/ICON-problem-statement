@@ -237,7 +237,7 @@ complications for post-incident root-cause analysis and regulatory compliance re
 
 Agents are explicitly designed to operate with high degrees of autonomy, speed, and
 scale. However, network operators currently lack the corresponding telemetry
-mechanism and control infrastructure required to observe, evaluate, and intercept
+mechanism and human-on-the-loop infrastructure required to observe, evaluate, and intercept
 these systems at the same machine-speed pace. Consequently, effective
 real-time oversight becomes functionally impossible. Always relying on human
 escalation paradigms is usually impractical due to the sheer volume and velocity
