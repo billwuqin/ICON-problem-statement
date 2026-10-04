@@ -447,25 +447,27 @@ involve the following:
   restrict an agent's execution when predefined risk, policy, or trust conditions are violated) is supported in the
   Microsoft Agent Control Toolkit, but its interoperability across different agent frameworks is not proven.
 
-## Identity & Access Management Approaches
+## Existing Identity & Access Management Approaches
 
-The identity and Access Management in autonomous agents spans across multiple dimensions, including identity (who the agent is),
-authorization (what it is allowed to do), control (how its actions are performed during execution), behavior
-(whether it acts in alignment with expected goals and produces correct outcomes), and context (under what
-conditions it operates). Current industry approaches to agent identity and access Management primarily focus on protecting
-the agent from malicious interference to ensure that the inputs it receives and processes are not tampered
-with and manipulated. Intervention and Control is concerned with ensuring that actions remain within authorized
-boundaries, are observable, and can be corrected or reversed when necessary.
+The existing identity and Access Management in autonomous agents spans across multiple dimensions, including
+identity (who the agent is), authorization (what it is allowed to do), control (how its actions are performed
+during execution), behavior (whether it acts in alignment with expected goals and produces correct outcomes),
+and context (under what conditions it operates). Current industry approaches to agent identity and access
+Management primarily focus on protecting the agent from malicious interference to ensure that the inputs it
+receives and processes are not tampered with and manipulated. Intervention and Control is concerned with
+ensuring that actions remain within authorized boundaries, are observable, and can be corrected or reversed
+when necessary.
 
 Traditional IAM frameworks, designed for human users and deterministic software processes, are insufficient to
-tackle the dynamic identity and access aspects of autonomous agents. The emerging identity and access management approaches
-extend beyond static identity and permission models to incorporate context-awareness, temporal constraints, and
-behavior-driven trust evaluation.
+tackle the dynamic identity and access aspects of autonomous agents. The emerging identity and access management
+approaches extend beyond static identity and permission models to incorporate context-awareness, temporal constraints,
+and behavior-driven trust evaluation.
 
-From the I&C perspective, a prominent way to manage agent identity and access management risk is to sandbox the agent's execution
-environment. This means running the agent in a restricted environment so it cannot cross trust boundaries, even if
-it is compromised. Dynamically limiting the execution boundary can be achieved by adjusting the agent's runtime
-environment, permissions, and accessible resources in real time based on task context and trust level.
+From the I&C perspective, a prominent way to manage agent identity and access management risk is to sandbox
+the agent's execution environment. This means running the agent in a restricted environment so it cannot cross
+trust boundaries, even if it is compromised. Dynamically limiting the execution boundary can be achieved by
+adjusting the agent's runtime environment, permissions, and accessible resources in real time based on task
+context and trust level.
 
 Some of the approaches followed for controlling the agent trust are given below:
 
