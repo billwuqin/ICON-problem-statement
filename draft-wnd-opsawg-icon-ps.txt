@@ -92,7 +92,7 @@ Table of Contents
      3.1.  The Observability Aspect
        3.1.1.  Limited Transparency in Planning and Decision-Making
        3.1.2.  Ambiguity of Accountability Attribution or
-               Responsbility Determination
+               Responsibility Determination
        3.1.3.  High-Velocity Data Ingestion for Evaluation and
                Intervening
      3.2.  The Control Aspect
@@ -309,7 +309,7 @@ Table of Contents
    validate the safety or intent of an agent's planned mutations before
    they introduce unexpected consequence on the infrastructure.
 
-3.1.2.  Ambiguity of Accountability Attribution or Responsbility
+3.1.2.  Ambiguity of Accountability Attribution or Responsibility
         Determination
 
    In distributed multi-agent topologies, operational responsibility for
