@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 6 April 2027                                              Cisco
+Expires: 7 April 2027                                              Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          3 October 2026
+                                                          4 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -26,16 +26,16 @@ Abstract
    autonomous agent pipelines in large-scale heterogeneous network
    environments.  The term "Intervention and Control" is used to
    describe a set of automated and human-initiated mechanisms that
-   guarantee the capability to observe, constrain, correct, and
-   terminate Autonomous agents at any point, for any reason,
+   guarantee the capability to observe, evaluate, constrain, correct,
+   and terminate Autonomous agents at any point, for any reason,
    irrespective of their level of autonomy under which it operates, to
    ensure resilience, recovery, and operational continuity.
 
    The set of enabled observability, intervention and control reflects
-   operator service offerings to ensure that autonomous operations can
-   be stopped, or safely redirected when required and is designed in
-   conjunction with agent to agent, agent to tools, agent to human
-   interaction and service and network policy.
+   operator service offerings to ensure that autonomous network
+   operations can be stopped, or safely redirected when required and is
+   designed in conjunction with agent to agent, agent to tools, agent to
+   human interaction and service and network policy.
 
    This document also identifies several key areas that the Agent
    Observability, Intervention and Control group will investigate to
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 April 2027.
+   This Internet-Draft will expire on 7 April 2027.
 
 Copyright Notice
 
