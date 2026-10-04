@@ -221,7 +221,7 @@ reasoning layer and tools invocation layer, networkoperators cannot
 validate the safety or intent of an agent's planned mutations before
 they introduce unexpected consequence on the infrastructure.
 
-### Ambiguity of Accountability Attribution or Responsbility Determination
+### Ambiguity of Accountability Attribution or Responsibility Determination
 
 In distributed multi-agent topologies, operational responsibility for an ultimate
 network outcome is scattered across an extended chain of coordinating agents,
