@@ -223,8 +223,9 @@ they introduce unexpected consequence on the infrastructure.
 
 ### Ambiguity of Accountability Attribution or Responsibility Determination
 
-In distributed multi-agent topologies, operational responsibility for an ultimate
-network outcome is scattered across an extended chain of coordinating agents,
+In distributed agent interaction (e.g., agent to tools, human to agent, agent
+to agent) topologies, operational responsibility for an ultimate network
+outcome is scattered across an extended chain of coordinating agents,
 foundational models, and abstraction layers. When system failures, performance
 degradations, or unintended consequences occur, attributing accountability to
 a specific agent entity, localized model decision, or human-in-the-loop anchor
