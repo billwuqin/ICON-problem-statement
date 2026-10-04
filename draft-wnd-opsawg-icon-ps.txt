@@ -112,7 +112,7 @@ Table of Contents
      4.4.  Quality Gates
      4.5.  Existing Intervention Approaches for Human and Agent
            Interaction
-     4.6.  Identity & Access Management Approaches
+     4.6.  Existing Identity & Access Management Approaches
    5.  Gaps in the Current Approaches
      5.1.  Limitation of OpenTelemetry for Agent Observability
      5.2.  Limitations of AI Guardrails
@@ -603,12 +603,12 @@ Table of Contents
       Control Toolkit, but its interoperability across different agent
       frameworks is not proven.
 
-4.6.  Identity & Access Management Approaches
+4.6.  Existing Identity & Access Management Approaches
 
-   The identity and Access Management in autonomous agents spans across
-   multiple dimensions, including identity (who the agent is),
-   authorization (what it is allowed to do), control (how its actions
-   are performed during execution), behavior (whether it acts in
+   The existing identity and Access Management in autonomous agents
+   spans across multiple dimensions, including identity (who the agent
+   is), authorization (what it is allowed to do), control (how its
+   actions are performed during execution), behavior (whether it acts in
    alignment with expected goals and produces correct outcomes), and
    context (under what conditions it operates).  Current industry
    approaches to agent identity and access Management primarily focus on
