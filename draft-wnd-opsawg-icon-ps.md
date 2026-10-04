@@ -75,13 +75,13 @@ This document provides an overview of the issues associated with the
 deployment of the observability, intervention, and control of autonomous
 agent pipelines in large-scale heterogeneous network environments. The
 term "Intervention and Control" is used to describe a set of automated and
-human-initiated mechanisms that guarantee the capability to observe, constrain,
+human-initiated mechanisms that guarantee the capability to observe, evaluate, constrain,
 correct, and terminate Autonomous agents at any point, for any reason, irrespective of
 their level of autonomy under which it operates, to ensure resilience, recovery,
 and operational continuity.
 
 The set of enabled observability, intervention and control reflects operator
-service offerings to ensure that autonomous operations can be stopped, or safely
+service offerings to ensure that autonomous network operations can be stopped, or safely
 redirected when required and is designed in conjunction with agent to agent, agent
 to tools, agent to human interaction and service and network policy.
 
