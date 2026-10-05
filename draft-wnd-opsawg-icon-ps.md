@@ -291,17 +291,39 @@ agent frameworks, tool/API repositories, and interconnection fabrics.
 
 ### Lack of Human Oversight Capabilities such as Rollback and Recover
 
-Core features such as multi-agent execution, advanced interoperability frameworks
-for agent to agent (e.g., Agent-to-Agent {{A2A}}), agent to tools communication
-(e.g.,Model Context Protocol {{MCP}}), Agent to Human interaction, and long-running
-autonomous actions are advancing rapidly.
+When an autonomous agent deviates from expected boundaries (e.g., entering
+infinite reasoning loops, suffering from reasoning drift, or getting stuck
+in deadlocks), the current human oversight capabilities including runtime
+intervention for execution interruption, deterministic transaction rollback
+and Recovery, and human escalation remain highly immature and lack
+interoperability:
 
-However, essential human oversight capabilities including runtime intervention for execution
-interruption, deterministic transaction rollback and Recovery, and human escalation remain highly
-immature and lack clear standardisation paths.
+* **Lack of Out-of-Band Kill Switches:** The legacy Frameworks lack an
+   asynchronous, out-of-band communication interface that can force an
+   uncooperative or frozen agent execution loop to immediately pause or
+   stop, completely independent of its internal LLM responsiveness.
 
-Without human oversigh capabilities, the existing network operation can not ensure any disruptions
-or degradations are promptly addressed which lead to harmful outcome for hish risk network configuration
+* **Information Loss During Escalation:** When an agent encounters an
+   ambiguous state and needs to escalate a problem to a higher human
+   authority, it lacks an interoperable protocol to encapsulate and
+   pass its full reasoning provenance and context trail seamlessly.
+
+* **Granularity Fractures in Recovery:** Operators lack standard
+   mechanisms to trigger targeted rollbacks. They cannot choose
+   whether to revert a single execution step (Workflow level),
+   a distinct operation (Task level), or an entire multi-step
+   execution (Context level).
+
+* **Destructive Infrastructure Overrides:** Operators must rely on
+   primitive infrastructure-level actions (e.g., killing a process,
+   revoking an API key, or suspending a service account). These
+   actions wipe out the runtime memory, provide no out-of-band
+   state preservation, and allow no selective pausing or soft
+   redirection.
+
+Without human oversight capabilities, the existing network operation
+can not ensure any disruptions or degradations are promptly addressed
+which lead to harmful outcome for high risk network configuration
 changes.
 
 ### AI-Native Failure Emergence
