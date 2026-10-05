@@ -207,19 +207,28 @@ This gap manifests in the following three distinct aspects:
 
 ## The Observability Aspect
 
-### Limited Transparency in Planning and Decision-Making
+### Limited Transparency in Planning, Reasoning, and Tools Execution
 
-As agents increasingly execute complex operational tasks, they
-frequently delegate critical planning paths and execution decisions to
-Large Language Models (LLMs) or specialized downstream AI models. This
-delegation creates an optimization barrier, offering limited
-transparency into how specific decisions are reached or how complex
-action sequences are generated.
+As agents increasingly execute complex operational tasks ((e.g., service
+provisioning, fault diagnosis)), they frequently delegate critical planning
+paths and execution decisions to the underlying Large Language Models (LLMs).
+This delegation creates an optimization barrier:
 
-Without an out-of-band mechanism to inspect intent input layer, this
-reasoning layer and tools invocation layer, networkoperators cannot
-validate the safety or intent of an agent's planned mutations before
-they introduce unexpected consequence on the infrastructure.
+* **Lack of Trajectory Transparency:** Network operators cannot cannot
+ validate the safety or intent of an agent's planned mutations and trace how
+ an agent’s internal Chain-of-Thought (CoT) reasoning maps directly to mutating
+ network configuration diffs (e.g., CLI changes or NETCONF configuration changes)
+ before or after execution. This may lead to unexpected consequence on the
+ infrastructure.
+
+* **Ambiguity of Data Attribution:** There is no standard mechanism to observe
+   context or knowledge come from. Operators cannot verify which external
+   knowledge base, version, or retrieval weight led an agent to make a
+   high-risk operational decision.
+
+* **Invisible Tool Parameter Bindings:** Input and output states of invoked tools,
+   scripts, and APIs are encapsulated within proprietary agent execution loops,
+   preventing real-time validation of parameter bindings.
 
 ### Ambiguity of Accountability Attribution or Responsibility Determination
 
@@ -233,15 +242,26 @@ becomes highly ambiguous. This lack of clear log, trace and performance metrics 
 agent operational health such as action execution latency, error rates, creates severe
 complications for post-incident root-cause analysis and regulatory compliance reporting.
 
-### High-Velocity Data Ingestion for Evaluation and Intervening
+### High-Velocity Telemetry Data Ingestion inefficiency for Evaluation and Intervening
 
 Agents are explicitly designed to operate with high degrees of autonomy, speed, and
 scale. However, network operators currently lack the corresponding telemetry
 mechanism and human-on-the-loop infrastructure required to observe, evaluate, and intercept
-these systems at the same machine-speed pace. Consequently, effective
+these systems at the same machine-speed pace.  Consequently, effective
 real-time oversight becomes functionally impossible. Always relying on human
 escalation paradigms is usually impractical due to the sheer volume and velocity
-of the data points involved in active agent pipelines.
+of the data points involved in active agent pipelines:
+
+* **Asynchronous Tracking and Clock Drift:** Distributed environments lack an authoritative
+ causal event-ordering model. This prevents operators from cleanly aligning internal agent
+ reasoning loops chronologically with external network state telemetry changes.
+* **Telemetry Storms:** Intensive CoT reasoning logs and high-frequency tool invocation
+ traces can lead to telemetry storms that overwhelm network collectors, yet legacy pipelines
+ lack adaptive backpressure or dynamic sampling mechanisms.
+* **Security vs. Auditing Trade-off:** Standard telemetry logging lacks context-aware, dynamic
+ update. Network Operators are forced to choose between logging complete trajectories (risking
+ the leakage of PII, credentials, or topology details) or omitting data (ruining post-incident
+ accountability and cryptographic audit trails).
 
 ## The Control Aspect
 
