@@ -256,7 +256,7 @@ of the data points involved in active agent pipelines:
  causal event-ordering model. This prevents operators from cleanly aligning internal agent
  reasoning loops chronologically with external network state telemetry changes.
 * **Telemetry Storms:** Intensive CoT reasoning logs and high-frequency tool invocation
- traces can lead to telemetry storms that overwhelm network collectors, yet legacy pipelines
+ traces can lead to telemetry storms that overwhelm Agent Observability Data collectors, yet legacy pipelines
  lack adaptive backpressure or dynamic sampling mechanisms.
 * **Security vs. Auditing Trade-off:** Standard telemetry logging lacks context-aware, dynamic
  update. Network Operators are forced to choose between logging complete trajectories (risking
