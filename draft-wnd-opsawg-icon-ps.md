@@ -245,27 +245,55 @@ of the data points involved in active agent pipelines.
 
 ## The Control Aspect
 
-### Inadequacy of Deterministic Constraints
+### Inadequacy of Boundary Constraints and Risk Evaluation
+Agent behavior cannot be reliably constrained using predefined, deterministic
+rules or traditional static guardrails. Because agents rely on dynamic reasoning
+patterns to achieve declarative goals, their exact execution trajectories remain
+non-deterministic. This intrinsic variability bypasses legacy input/output filters
+that fail to account for real-time contextual adaptation and makes operational
+outcomes significantly less predictable during runtime execution, leading to
+multi-step execution risks:
 
-Agent behavior cannot be reliably constrained using predefined,
-deterministic rules or traditional static guardrails. Because agents
-rely on dynamic reasoning patterns to achieve declarative goals, their
-exact execution trajectories remain non-deterministic. This intrinsic
-variability makes operational outcomes significantly less predictable
-during runtime execution, bypassing legacy input/output filters that
-fail to account for real-time contextual adaptation.
+* **Implicit Impact Evaluation:** Network management agents lack a standardized
+   protocol to evaluate and classify the risk tier (e.g., Low, Medium, High, Critical)
+   or estimate the potential blast radius (affected devices, link traffic, customer
+   scope) of an action sequence before deploying in production network.
+* **Automation Storms:** Autonomous reasoning can lead to high-velocity loops.
+    Without standardized access control per-device, per-operator, or global
+   concurrency controls and rate limits, agents run the risk of lose control
+   on the network elements.
+* **Undefined Action Cancellation Semantics:** Existing control frameworks do not
+     natively support state-aware cancellation transitions,leading to partial,
+     configurations or applied configuration without monitoring.
 
-### Static IAM Limitation
+#### Static IAM Limitation
 
-Existing trust and authorization models have failed to evolve in step with
-dynamic agentic AI architectures. Traditional Identity and Access Management
-(IAM) frameworks were designed exclusively for human operators or static,
-deterministic software processes. These frameworks cannot securely tackle
-emerging dynamic agent attributes such as autonomous entity identities and behavioral
-profiles which are frequently created and modified at runtime rather than being
-pre-provisioned with metadata information to describe functional capabilities,
-nor can they safely manage downstream sub-agent permission delegation or
-context-dependent privilege escalation.
+Traditional Identity and Access Management (IAM) frameworks were designed exclusively
+for human operators or static, deterministic software processes. These frameworks cannot
+securely tackle emerging dynamic agent attributes such as autonomous entity identities
+and behavioral profiles which are frequently created and modified at runtime rather than
+being pre-provisioned with metadata information to describe functional capabilities.
+
+* **Absence of Role Separation:** Existing agent frameworks lack the mechanisms to enforce
+   strict, credential Separation of Duties across distinct operational roles (Read-Only,
+   Propose, Validate, Approve, Execute). This frequently allows a single agent to plan,
+   approve, and execute a network configuration changes end-to-end without supervisory
+   intervention.
+
+* **Concurrency and Policy Conflicts:** In federated multi-vendor topologies, multi-agent
+    operations lack distributed resource locking. When an action spans multiple network
+   domains (e.g., routing vs. security), there is no deterministic framework to resolve
+   cross-domain policy conflicts or enforce authority precedence (e.g., ensuring a Human
+   Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).
+
+* **Control Unreachability Vulnerability:** There is no standardized "fail-safe" or
+    "fail-hold" expectation when an agent loses connectivity to its management plane,
+    meaning a disconnected agent may continue altering network state entirely unconstrained.
+
+* **Coarse Permission Demarcation:** Security policies cannot dynamically bind/constrain
+    an agent's permissions to a specific agent in the network domain based on task context,
+    nor can they safely manage downstream sub-agent permission delegation or context-dependent
+    privilege escalation.
 
 ### Fragmentation Across Heterogeneous Integration Layers
 
