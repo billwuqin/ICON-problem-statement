@@ -97,10 +97,9 @@ Table of Contents
        3.1.3.  High-Velocity Telemetry Data Ingestion inefficiency for
                Evaluation and Intervening
      3.2.  The Control Aspect
-       3.2.1.  Inadequacy of Deterministic Constraints
-       3.2.2.  Static IAM Limitation
-       3.2.3.  Fragmentation Across Heterogeneous Integration Layers
-       3.2.4.  Multi-Vendor Dependency Risks
+       3.2.1.  Inadequacy of Boundary Constraints and Risk Evaluation
+       3.2.2.  Fragmentation Across Heterogeneous Integration Layers
+       3.2.3.  Multi-Vendor Dependency Risks
      3.3.  The Intervention Aspect
        3.3.1.  Lack of Human Oversight Capabilities such as Rollback
                and Recover
@@ -371,30 +370,71 @@ Table of Contents
 
 3.2.  The Control Aspect
 
-3.2.1.  Inadequacy of Deterministic Constraints
+3.2.1.  Inadequacy of Boundary Constraints and Risk Evaluation
 
    Agent behavior cannot be reliably constrained using predefined,
    deterministic rules or traditional static guardrails.  Because agents
    rely on dynamic reasoning patterns to achieve declarative goals,
    their exact execution trajectories remain non-deterministic.  This
-   intrinsic variability makes operational outcomes significantly less
-   predictable during runtime execution, bypassing legacy input/output
-   filters that fail to account for real-time contextual adaptation.
+   intrinsic variability bypasses legacy input/output filters that fail
+   to account for real-time contextual adaptation and makes operational
+   outcomes significantly less predictable during runtime execution,
+   leading to multi-step execution risks:
 
-3.2.2.  Static IAM Limitation
+   *  *Implicit Impact Evaluation:* Network management agents lack a
+      standardized protocol to evaluate and classify the risk tier
+      (e.g., Low, Medium, High, Critical) or estimate the potential
+      blast radius (affected devices, link traffic, customer scope) of
+      an action sequence before deploying in production network.
 
-   Existing trust and authorization models have failed to evolve in step
-   with dynamic agentic AI architectures.  Traditional Identity and
-   Access Management (IAM) frameworks were designed exclusively for
-   human operators or static, deterministic software processes.  These
-   frameworks cannot securely tackle emerging dynamic agent attributes
-   such as autonomous entity identities and behavioral profiles which
-   are frequently created and modified at runtime rather than being pre-
-   provisioned with metadata information to describe functional
-   capabilities, nor can they safely manage downstream sub-agent
-   permission delegation or context-dependent privilege escalation.
+   *  *Automation Storms:* Autonomous reasoning can lead to high-
+      velocity loops.  Without standardized per-device, per-operator
+      access control, or global concurrency access controls and rate
+      limits, agents run the risk of losing control on the network
+      elements.
 
-3.2.3.  Fragmentation Across Heterogeneous Integration Layers
+   *  *Undefined Action Cancellation Semantics:* Existing control
+      frameworks do not natively support state-aware cancellation
+      transitions,leading to partial, configurations or applied
+      configuration without monitoring.
+
+3.2.1.1.  Static IAM Limitation
+
+   Traditional Identity and Access Management (IAM) frameworks were
+   designed exclusively for human operators or static, deterministic
+   software processes.  These frameworks cannot securely tackle emerging
+   dynamic agent attributes such as autonomous entity identities and
+   behavioral profiles which are frequently created and modified at
+   runtime rather than being pre-provisioned with metadata information
+   to describe functional capabilities.
+
+   *  *Absence of Role Separation:* Existing agent frameworks lack the
+      mechanisms to enforce strict, credential Separation of Duties
+      across distinct operational roles (Read-Only, Propose, Validate,
+      Approve, Execute).  This frequently allows a single agent to plan,
+      approve, and execute a network configuration changes end-to-end
+      without supervisory intervention.
+
+   *  *Concurrency and Policy Conflicts:* In federated multi-vendor
+      topologies, multi-agent operations lack distributed resource
+      locking.  When an action spans multiple network domains (e.g.,
+      routing vs. security), there is no deterministic framework to
+      resolve cross-domain policy conflicts or enforce authority
+      precedence (e.g., ensuring a Human Operator or Supervisor Agent
+      explicitly preempts a lower-level autonomous agent).
+
+   *  *Control Unreachability Vulnerability:* There is no standardized
+      "fail-safe" or "fail-hold" expectation when an agent loses
+      connectivity to its management plane, meaning a disconnected agent
+      may continue altering network state entirely unconstrained.
+
+   *  *Coarse Permission Demarcation:* Security policies cannot
+      dynamically bind/constrain an agent's permissions to a specific
+      agent in the network domain based on task context, nor can they
+      safely manage downstream sub-agent permission delegation or
+      context-dependent privilege escalation.
+
+3.2.2.  Fragmentation Across Heterogeneous Integration Layers
 
    Agentic systems operating across mixed Operational Support Systems
    (OSS) and Network Management domains must interact with a highly
@@ -405,7 +445,7 @@ Table of Contents
    retrieve data through pathways (e.g. MCP/A2A etc.) that were never
    designed with network management automation we used today.
 
-3.2.4.  Multi-Vendor Dependency Risks
+3.2.3.  Multi-Vendor Dependency Risks
 
    As network operators begin sourcing agentic control capabilities from
    diverse third-party vendors, independent software providers, and
