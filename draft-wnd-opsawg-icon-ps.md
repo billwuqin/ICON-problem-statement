@@ -662,7 +662,7 @@ Three limitations characterize current implementation of quality gate.
   framework, but that pause is not expressed as a standardised intervention signal that a central control authority can monitor,
   escalate, or resolve. The gate operates in isolation from the broader management and control stack.
 
-## Limitations of Intervention Approaches
+## Limitations of the existing Intervention Approaches
 
 As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.
 
@@ -680,9 +680,9 @@ As highlighted above intervention mechanisms exist in primitive and framework-sp
   that continuously monitors agent behaviour against control policies and automatically triggers a proportionate intervention
   response when a deviation is detected
 
-## Limitations of Trust & Security Control Approaches
+## Limitations of the existing Identity and Access Management Approaches
 
-From the I&C perspective following are some of the key limitations in incorporating Security controls in agent.
+From the I&C perspective following are some of the key limitations in incorporating identity and access management in the agents.
 
 - Security control mechanisms primarily govern inputs and outputs, but have limited ability to fully interpret or validate the
   internal reasoning process of the agent. As a result, reasoning errors or misalignment may go undetected until they take effect
