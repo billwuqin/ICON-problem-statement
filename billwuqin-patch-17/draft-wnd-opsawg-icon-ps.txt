@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 8 April 2027                                              Cisco
+Expires: 9 April 2027                                              Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          5 October 2026
+                                                          6 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 April 2027.
+   This Internet-Draft will expire on 9 April 2027.
 
 Copyright Notice
 
@@ -356,9 +356,10 @@ Table of Contents
       an action sequence before deploying in production network.
 
    *  *Automation Storms:* Autonomous reasoning can lead to high-
-      velocity loops.  Without standardized access control per-device,
-      per-operator, or global concurrency controls and rate limits,
-      agents run the risk of lose control on the network elements.
+      velocity loops.  Without standardized per-device, per-operator
+      access control, or global concurrency access controls and rate
+      limits, agents run the risk of losing control on the network
+      elements.
 
    *  *Undefined Action Cancellation Semantics:* Existing control
       frameworks do not natively support state-aware cancellation
