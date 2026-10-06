@@ -390,7 +390,7 @@ These include:
 
 # Solution Space for Network Management Agent Observability, Intervention and Control
 
-## Opentelemetry for Agent Observability
+## Opentelemetry for Agent Observability and Drift Tracking
 
 Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge
 retrieval, multi-agent collaboration. When things go wrong, or right, you need to understand
@@ -399,8 +399,9 @@ can't capture reasoning processes or decision context. Opentelemetry addresses t
 unified GenAI and Agent Semantic Conventions to standardise how metrics, logs, and distributed
 traces are captured across multi-agent system.
 
-Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing to how an agent
-processes information, arrives at decisions, and executes tasks as follows:
+Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing and Context
+Monitoring to how an agent processes information, arrives at decisions, and executes tasks
+to establish baselines and identify drift early as follows:
 
 - Distributed Tracing (Spans): The agent as a whole run acts as the root span. Every individual
   reasoning loop, agent delegation, LLM invocation, and tool/API execution is mapped as a child span.
