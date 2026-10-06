@@ -222,7 +222,7 @@ This delegation creates an optimization barrier:
  infrastructure.
 
 * **Ambiguity of Data Attribution:** There is no standard mechanism to observe
-   context or knowledge come from. Operators cannot verify which external
+   where context or knowledge come from. Operators cannot verify which external
    knowledge base, version, or retrieval weight led an agent to make a
    high-risk operational decision.
 
