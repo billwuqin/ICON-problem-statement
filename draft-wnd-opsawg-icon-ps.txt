@@ -109,7 +109,7 @@ Table of Contents
      4.1.  Opentelemetry for Agent Observability and Drift Tracking
      4.2.  Context-Aware AI Guardrails and Validation
      4.3.  Agent Drift Detection
-     4.4.  Quality Gates
+     4.4.  Quality Gates for Human Oversight & Stage Transitions
      4.5.  Existing Intervention Approaches for Human and Agent
            Interaction
      4.6.  Existing Identity & Access Management Approaches
@@ -634,13 +634,13 @@ Table of Contents
       success rates across agent interactions and mitigated by fixing
       the issues with tool/API/agent interactions.
 
-4.4.  Quality Gates
+4.4.  Quality Gates for Human Oversight & Stage Transitions
 
    Quality gates are checkpoints that evaluate whether an operation
    should proceed or not, or should be conditionally allowed.
 
-   Unlike guardrails which enforce policy constraints at defined
-   boundaries of Agent implementation, quality gates assess whether the
+   Unlike Guardrails which enforce policy constraints at defined
+   boundaries of Agent implementation, Quality Gates assess whether the
    work product of one stage meets a defined quality standard before
    permitting progression to the next.  The concept is borrowed from
    DevOps practice i.e. quality gates in CI/CD pipelines that prevent
@@ -651,10 +651,10 @@ Table of Contents
    quality advances to the next stage.
 
    Quality gates are the ideal mechanism to involve humans for agent
-   tasks execution quality and escalations, i.e., at stage transitions
-   where the accumulated work product of a whole reasoning stage is
-   ready for assessment where the human is presented with a complete
-   plan, a complete risk assessment, and a specific decision to make.
+   tasks execution quality asessment, i.e., at stage transitions where
+   the accumulated work product of a whole reasoning stage is ready for
+   assessment where the human is presented with a complete plan, a
+   complete risk assessment, and a specific decision to make.
 
    Currently none of the available agent frameworks have a named
    capability called quality gate.  However, some of the existing
