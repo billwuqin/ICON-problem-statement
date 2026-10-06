@@ -1260,6 +1260,9 @@ architectural and protocol work and associated documents.<a href="#section-abstr
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-existing-identity-access-ma" class="internal xref">Existing Identity &amp; Access Management Approaches</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
+                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-ietf-audit-for-cross-domain" class="internal xref">IETF AUDIT for Cross-Domain Interaction Traceability and Verification</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
@@ -1940,11 +1943,53 @@ Tokens (JWTs) with narrow scopes and rapid expirations, restricting tool access 
 temporal window.<a href="#section-4.5-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.5-3.3">
-            <p id="section-4.5-3.3.1">Context-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
+            <p id="section-4.5-3.3.1">Cntext-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
 configurations by computing dynamic, behavior-driven trust scores in real time. Instead of labeling an
 agent as permanently trusted, frameworks (such as the Microsoft Agent Control Toolkit) dynamically
 track operational compliance; the score drops instantly upon policy violations, automatically shrinking
 permission profiles or restricting the agent's active trust zone.<a href="#section-4.5-3.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="ietf-audit-for-cross-domain-interaction-traceability-and-verification">
+<section id="section-4.6">
+        <h3 id="name-ietf-audit-for-cross-domain">
+<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-ietf-audit-for-cross-domain" class="section-name selfRef">IETF AUDIT for Cross-Domain Interaction Traceability and Verification</a>
+        </h3>
+<p id="section-4.6-1">Modern agents orchestrate complex, long-running workflows that frequently span multiple administrative
+boundaries and invoke independent subagents or external tools without active human oversight at each step.
+When anomalies or compliance violations occur, local agent logs are insufficient because no single
+administrative party possesses full visibility over a multi-domain interaction chain. Traditional
+auditing and logging techniques lack the cryptographic primitives required to produce verifiable proof
+of execution to external, untrusted entities. The emerging IETF AUDIT approach addresses these limitations
+by introducing standard data models and protocol-layer extensions to securely record, correlate, and
+verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<p id="section-4.6-2">Implementing the IETF AUDIT framework focuses heavily on cross-domain correlation, dynamic authorization
+tracking, and independent audit verifiability to track the entire action chain through the following
+mechanisms:<a href="#section-4.6-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.6-3.1">
+            <p id="section-4.6-3.1.1">Cross-Domain Correlation and Common Identifiers: Rather than relying on isolated execution traces, the
+AUDIT framework adapts protocol-layer extensions (such as HTTP headers or context propagation tokens)
+to inject a common identifier across administrative boundaries. This allows an independent auditor to
+stitch together separate interaction records—spanning user intent, agent-to-agent delegation, and
+downstream tool invocations—into a singular, chronologically ordered action chain.<a href="#section-4.6-3.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.6-3.2">
+            <p id="section-4.6-3.2.1">Time-Evolving Authorization and Identity Attestation: Unlike traditional static software processes,
+an agent's permissions shift non-deterministically based on runtime execution context and delegated
+  trust boundaries. AUDIT leverages standardized data representations to capture authorization transitions
+  as a continuous, time-evolving state, while cleanly differentiating between user, agent instance, and
+  target service identities across the transaction history.<a href="#section-4.6-3.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.6-3.3">
+            <p id="section-4.6-3.3.1">Independent Verifiability and Privacy-Preserving Logging: To transform standard operational telemetry
+ into a tamper-evident audit record, the architecture composes verifiable building blocks like
+ attestation (RATS) and transparency logging (SCITT). Audit records are designed to be fully verifiable
+ by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
+ mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
+ integrity.<a href="#section-4.6-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
