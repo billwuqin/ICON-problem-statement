@@ -500,28 +500,36 @@ function or if-else statements. Similarly, Google ADK (Agent Development Kit) pr
 before or after tool use and implement quality gate logic. So most of the techniques that exist today are agent
 framework specific.
 
-## Existing Intervention Approaches for Human and Agent Interaction
 
-The intervention mechanisms that exist today in agentic systems define how humans and AI agents communicate for
-a set of instructions and commands while guardrails act as the boundary enforcement that ensures those interactions
-remain safe, structured. These existing intervention mechanisms are mostly implementation-specific, tied to individual
-frameworks, and not mature enough to form a consistent or deployable operational practice. Currently, the mechanisms
-involve the following:
+### Existing Intervention Approaches for Human and Agent Interaction
 
-- Primitive and manually controlled repurposed from the infrastructure: Reuse approaches from the infrastructure
-  control such as process termination, API key revocation, service account suspension, and network-level blocking
-  which are not primarily designed for agentic systems. While they can be effective, operations like terminating an
-  agent process preserves no state, enables no graceful recovery, produces no trace, and cannot be applied selectively
-  to a specific action class or task scope.
+Modern network agents orchestrate complex workflows that occasionally run into infinite reasoning loops, reasoning drifts,
+or operational deadlocks. When boundaries are violated or an agent begins to misbehave, operators require a clear mechanism
+to step in and pause, correct, or safely redirect the agent. Traditional infrastructure-level overrides (such as process
+kills or API credential revocations) cannot gracefully manage context state, leaving network configurations partially applied.
+Existing intervention mechanisms address this by establishing structured Human-in-the-Loop (HITL) communication models to
+bridge the gap between autonomous task execution and external human oversight.
 
-- Framework specific intervention mechanisms: These are intervention mechanisms provided by specific agent frameworks.
-  For example LangGraph provides an option to pause and resume the execution (pause , seek guidance from human, get
-  response and then proceed). While this is primarily a Human-in-the-loop mechanism, it can be used as a workaround for
-  interventions. But such mechanisms are implemented in code and not accessible externally through interfaces outside
-  the agent framework. Crew AI framework provides mechanism to conditionally execute task or allows defining maximum
-  iterations for task execution which prevents from getting into infinite loops. The kill-switch functionality (halt or
-  restrict an agent's execution when predefined risk, policy, or trust conditions are violated) is supported in the
-  Microsoft Agent Control Toolkit, but its interoperability across different agent frameworks is not proven.
+Implementing intervention approaches for AI agents focuses heavily on task suspension, state-aware recovery, and runtime
+command injection to intercept failures early through the following mechanisms:
+
+- Infrastructure-Level Controls (Repurposed): The most immediate, though primitive, intervention approach borrows
+  standard IT infrastructure management actions. Operators forcefully apply process termination, API key revocation,
+  or service account suspension to stop an agent. While highly effective at freezing uncooperative pipelines, these
+  brute-force approaches wipe out the agent’s runtime memory and provide no mechanism for graceful recovery or
+  selective sub-task modification.
+
+- Framework-Specific Interaction Primitives: Modern orchestration frameworks provide embedded, code-level capabilities
+  to pause and resume agent execution streams. For example, frameworks like LangGraph utilize native checkpointing states
+  to let an agent pause its reasoning cycle, seek guidance or explicit input from a human, and subsequently proceed based
+  on that human injection. Similarly, tools like CrewAI allow developers to define hard limits on loop iterations to
+  prevent agents from spiraling into resource-wasting loops.
+
+- External Kill-Switch Toolkits: Emerging control architectures, such as the Microsoft Agent Control Toolkit, introduce
+  decoupled frameworks to monitor and forcefully halt an agent's execution externally when explicit trust, risk, or
+  compliance boundaries are broken. However, these toolkit-driven intervention signals remain tightly bound to their
+  native vendor platforms and lack proven interoperability when managing heterogeneous multi-vendor agent topologies
+  across a production network.
 
 ## Existing Identity & Access Management Approaches
 
