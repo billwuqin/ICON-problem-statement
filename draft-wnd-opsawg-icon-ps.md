@@ -259,8 +259,8 @@ multi-step execution risks:
    or estimate the potential blast radius (affected devices, link traffic, customer
    scope) of an action sequence before deploying in production network.
 * **Automation Storms:** Autonomous reasoning can lead to high-velocity loops.
-    Without standardized access control per-device, per-operator, or global
-   concurrency controls and rate limits, agents run the risk of lose control
+    Without standardized per-device, per-operator access control, or global
+   concurrency access controls and rate limits, agents run the risk of losing control
    on the network elements.
 * **Undefined Action Cancellation Semantics:** Existing control frameworks do not
      natively support state-aware cancellation transitions,leading to partial,
@@ -282,9 +282,9 @@ being pre-provisioned with metadata information to describe functional capabilit
 
 * **Concurrency and Policy Conflicts:** In federated multi-vendor topologies, multi-agent
     operations lack distributed resource locking. When an action spans multiple network
-   domains (e.g., routing vs. security), there is no deterministic framework to resolve
-   cross-domain policy conflicts or enforce authority precedence (e.g., ensuring a Human
-   Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).
+    domains (e.g., routing vs. security), there is no deterministic framework to resolve
+    cross-domain policy conflicts or enforce authority precedence (e.g., ensuring a Human
+    Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).
 
 * **Control Unreachability Vulnerability:** There is no standardized "fail-safe" or
     "fail-hold" expectation when an agent loses connectivity to its management plane,
