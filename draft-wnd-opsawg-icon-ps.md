@@ -700,6 +700,31 @@ From the I&C perspective following are some of the key limitations in incorporat
   a sub-agent, it is unclear what level of trust the sub-agent should inherit, or what constraints should govern the delegated
   authority.
 
+##  Limitations of the IETF AUDIT Approach
+There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
+mitigation within autonomous network environments, based on its defined charter and design constraints:
+
+- Exclusion of Internal Logic Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
+  behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs),
+  training sets, or internal inference parameters. Consequently, structural reasoning loops, hallucinations, or internal model
+  drift remain completely invisible within the logged trajectory record.
+
+- Retrospective Rather Than Interceptive Control: The AUDIT framework is fundamentally optimized for cryptographic evidence
+  collection and post-event verification across trust domains. It completely lacks protocol-layer primitives to enforce
+  inline runtime policies or execute real-time task redirection. This means a misbehaving agent generating high-velocity
+  loop mutations cannot be actively intercepted or suspended before the configuration changes damage the network infrastructure.
+
+- Absence of Active State Recovery & Rollback: While AUDIT focuses heavily on recording time-evolving authorization transitions
+  and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no mechanism to
+  checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting a partial
+   network configuration to a last known safe state) when a cross-domain policy violation occurs.
+
+- Heavy Core Primitive Dependencies: The framework does not design or standardize standalone identity, attestation, or tracking
+  primitives. Instead, it depends on the multi-group composition of external protocols (such as WIMSE, RATS, SCITT, and OAuth).
+  This introduces severe deployment and synchronization risks; any fragmentation or architectural mismatch in those baseline
+   blocks directly breaks the integrity of the end-to-end network automation audit trail.
+
+
 # Standardization Area
 
 This section outlines key areas where standardization is required to support the design, implementation, and operation of Network
