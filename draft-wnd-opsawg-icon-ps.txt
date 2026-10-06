@@ -107,7 +107,7 @@ Table of Contents
    4.  Solution Space for Network Management Agent Observability,
            Intervention and Control
      4.1.  Opentelemetry for Agent Observability and Drift Tracking
-     4.2.  AI Guardrails
+     4.2.  Context-Aware AI Guardrails and Validation
      4.3.  Agent Drift Detection
      4.4.  Quality Gates
      4.5.  Existing Intervention Approaches for Human and Agent
@@ -549,7 +549,7 @@ Table of Contents
       caused an agent to exhibit non-deterministic behavior or get stuck
       in an infinite loop.
 
-4.2.  AI Guardrails
+4.2.  Context-Aware AI Guardrails and Validation
 
    These are most mature, and most operationally familiar AI control
    mechanism in production today.  AI Guardrail approaches currently
@@ -586,6 +586,12 @@ Table of Contents
 
    *  Prompt engineering constraints: shape model behaviour by
       instruction rather than by interception.
+
+   AI Guardrails enforce policy constraints at boundaries to prevent
+   non-deterministic or harmful network operations.  Take Multi-Step &
+   Hybrid Defense as an example, AI Guardrail Combines rule-based
+   filters, LLM safety classifiers, and frameworks like NeMo Guardrails
+   to evaluate multi-agent alignment across pipelines.
 
 4.3.  Agent Drift Detection
 
