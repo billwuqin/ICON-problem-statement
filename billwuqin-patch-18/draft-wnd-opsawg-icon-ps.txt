@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 8 April 2027                                              Cisco
+Expires: 9 April 2027                                              Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          5 October 2026
+                                                          6 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 April 2027.
+   This Internet-Draft will expire on 9 April 2027.
 
 Copyright Notice
 
@@ -407,13 +407,13 @@ Table of Contents
       authority, it lacks an interoperable protocol to encapsulate and
       pass its full reasoning provenance and context trail seamlessly.
 
-   *  *Granularity Fractures in Recovery:* Operators lack standard
+   *  *Lack of Granularity Control in Recovery:* Operators lack standard
       mechanisms to trigger targeted rollbacks.  They cannot choose
       whether to revert a single execution step (Workflow level), a
       distinct operation (Task level), or an entire multi-step execution
       (Context level).
 
-   *  *Destructive Infrastructure Overrides:* Operators must rely on
+   *  *Dangerous Infrastructure Overrides:* Operators must rely on
       primitive infrastructure-level actions (e.g., killing a process,
       revoking an API key, or suspending a service account).  These
       actions wipe out the runtime memory, provide no out-of-band state
