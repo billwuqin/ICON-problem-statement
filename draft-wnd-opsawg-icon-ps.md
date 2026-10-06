@@ -471,20 +471,20 @@ as follows
 - Collaboration drift is typically detected through interaction success rates across agent interactions and mitigated
   by fixing the issues with tool/API/agent interactions.
 
-## Quality Gates
+## Quality Gates for Human Oversight & Stage Transitions
 
 Quality gates are checkpoints that evaluate whether an operation should proceed or not, or should be conditionally
 allowed.
 
-Unlike guardrails which enforce policy constraints at defined boundaries of Agent implementation, quality
-gates assess whether the work product of one stage meets a defined quality standard before permitting progression to
+Unlike Guardrails which enforce policy constraints at defined boundaries of Agent implementation, Guality
+Gates assess whether the work product of one stage meets a defined quality standard before permitting progression to
 the next. The concept is borrowed from DevOps practice i.e. quality gates in CI/CD pipelines that prevent code from
 advancing through build, test, and deployment stages unless it meets defined quality criteria. While guardrails determine
 crossing points i.e. what enters and exits defined zones, quality gates determine progression points - whether work of
 sufficient quality advances to the next stage.
 
 Quality gates are the ideal mechanism to involve humans for agent tasks
-execution quality and escalations, i.e., at stage transitions where the accumulated work product of a whole reasoning
+execution quality asessment, i.e., at stage transitions where the accumulated work product of a whole reasoning
 stage is ready for assessment where the human is presented with a complete plan, a complete risk assessment, and a
 specific decision to make.
 
