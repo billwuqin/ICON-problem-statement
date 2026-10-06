@@ -1286,6 +1286,9 @@ architectural and protocol work and associated documents.<a href="#section-abstr
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.6">
                 <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-limitations-of-the-existing-" class="internal xref">Limitations of the existing Identity and Access Management Approaches</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.7">
+                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-limitations-of-the-ietf-aud" class="internal xref">Limitations of the IETF AUDIT Approach</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
@@ -2148,6 +2151,41 @@ non-interoperable approaches.<a href="#section-5.6-2.3.1" class="pilcrow">¶</a>
 when an orchestrating agent delegates authority to a sub-agent. For example, when a highly trusted orchestrator assigns a task to
 a sub-agent, it is unclear what level of trust the sub-agent should inherit, or what constraints should govern the delegated
 authority.<a href="#section-5.6-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="limitations-of-the-ietf-audit-approach">
+<section id="section-5.7">
+        <h3 id="name-limitations-of-the-ietf-aud">
+<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-limitations-of-the-ietf-aud" class="section-name selfRef">Limitations of the IETF AUDIT Approach</a>
+        </h3>
+<p id="section-5.7-1">There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
+mitigation within autonomous network environments, based on its defined charter and design constraints:<a href="#section-5.7-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5.7-2.1">
+            <p id="section-5.7-2.1.1">Exclusion of Internal Logic Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
+behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs),
+training sets, or internal inference parameters. Consequently, structural reasoning loops, hallucinations, or internal model
+drift remain completely invisible within the logged trajectory record.<a href="#section-5.7-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.7-2.2">
+            <p id="section-5.7-2.2.1">Retrospective Rather Than Interceptive Control: The AUDIT framework is fundamentally optimized for cryptographic evidence
+collection and post-event verification across trust domains. It completely lacks protocol-layer primitives to enforce
+inline runtime policies or execute real-time task redirection. This means a misbehaving agent generating high-velocity
+loop mutations cannot be actively intercepted or suspended before the configuration changes damage the network infrastructure.<a href="#section-5.7-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.7-2.3">
+            <p id="section-5.7-2.3.1">Absence of Active State Recovery &amp; Rollback: While AUDIT focuses heavily on recording time-evolving authorization transitions
+and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no mechanism to
+checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting a partial
+ network configuration to a last known safe state) when a cross-domain policy violation occurs.<a href="#section-5.7-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.7-2.4">
+            <p id="section-5.7-2.4.1">Heavy Core Primitive Dependencies: The framework does not design or standardize standalone identity, attestation, or tracking
+primitives. Instead, it depends on the multi-group composition of external protocols (such as WIMSE, RATS, SCITT, and OAuth).
+This introduces severe deployment and synchronization risks; any fragmentation or architectural mismatch in those baseline
+ blocks directly breaks the integrity of the end-to-end network automation audit trail.<a href="#section-5.7-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
