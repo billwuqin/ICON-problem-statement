@@ -416,7 +416,7 @@ to establish baselines and identify drift early as follows:
   review the exact context that caused an agent to exhibit non-deterministic behavior or get stuck in an infinite
   loop.
 
-## AI Guardrails
+## Context-Aware AI Guardrails and Validation
 
 These are most mature, and most operationally familiar AI control mechanism in production today. AI Guardrail
 approaches currently realized in the industry operate at defined transition points in the agent pipeline, primarily
@@ -443,6 +443,10 @@ AI Guardrail are realized through 4 different mechanisms:
   logic.
 
 - Prompt engineering constraints: shape model behaviour by instruction rather than by interception.
+
+AI Guardrails enforce policy constraints at boundaries to prevent non-deterministic or harmful network operations.
+Take Multi-Step & Hybrid Defense as an example, AI Guardrail Combines rule-based filters, LLM safety classifiers,
+and frameworks like NeMo Guardrails to evaluate multi-agent alignment across pipelines.
 
 ## Agent Drift Detection
 
