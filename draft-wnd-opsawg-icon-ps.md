@@ -476,7 +476,7 @@ as follows
 Quality gates are checkpoints that evaluate whether an operation should proceed or not, or should be conditionally
 allowed.
 
-Unlike Guardrails which enforce policy constraints at defined boundaries of Agent implementation, Guality
+Unlike Guardrails which enforce policy constraints at defined boundaries of Agent implementation, Quality
 Gates assess whether the work product of one stage meets a defined quality standard before permitting progression to
 the next. The concept is borrowed from DevOps practice i.e. quality gates in CI/CD pipelines that prevent code from
 advancing through build, test, and deployment stages unless it meets defined quality criteria. While guardrails determine
