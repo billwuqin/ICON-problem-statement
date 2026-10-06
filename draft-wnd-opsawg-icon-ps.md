@@ -308,13 +308,13 @@ interoperability:
    authority, it lacks an interoperable protocol to encapsulate and
    pass its full reasoning provenance and context trail seamlessly.
 
-* **Granularity Fractures in Recovery:** Operators lack standard
+* **Lack of Granularity Control in Recovery:** Operators lack standard
    mechanisms to trigger targeted rollbacks. They cannot choose
    whether to revert a single execution step (Workflow level),
    a distinct operation (Task level), or an entire multi-step
    execution (Context level).
 
-* **Destructive Infrastructure Overrides:** Operators must rely on
+* **Dangerous Infrastructure Overrides:** Operators must rely on
    primitive infrastructure-level actions (e.g., killing a process,
    revoking an API key, or suspending a service account). These
    actions wipe out the runtime memory, provide no out-of-band
