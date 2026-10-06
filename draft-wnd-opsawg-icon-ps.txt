@@ -120,8 +120,9 @@ Table of Contents
      5.2.  Limitations of AI Guardrails
      5.3.  Limitations of Agent Drift Analysis
      5.4.  Limitations of Quality gates
-     5.5.  Limitations of Intervention Approaches
-     5.6.  Limitations of Trust & Security Control Approaches
+     5.5.  Limitations of the existing Intervention Approaches
+     5.6.  Limitations of the existing Identity and Access Management
+           Approaches
    6.  Standardization Area
    7.  Security Considerations
    8.  IANA Considerations
@@ -909,7 +910,7 @@ Table of Contents
       resolve.  The gate operates in isolation from the broader
       management and control stack.
 
-5.5.  Limitations of Intervention Approaches
+5.5.  Limitations of the existing Intervention Approaches
 
    As highlighted above intervention mechanisms exist in primitive and
    framework-specific forms.  They have the following limitations.
@@ -936,10 +937,11 @@ Table of Contents
       automatically triggers a proportionate intervention response when
       a deviation is detected
 
-5.6.  Limitations of Trust & Security Control Approaches
+5.6.  Limitations of the existing Identity and Access Management
+      Approaches
 
    From the I&C perspective following are some of the key limitations in
-   incorporating Security controls in agent.
+   incorporating identity and access management in the agents.
 
    *  Security control mechanisms primarily govern inputs and outputs,
       but have limited ability to fully interpret or validate the
