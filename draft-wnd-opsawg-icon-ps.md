@@ -305,6 +305,11 @@ being pre-provisioned with metadata information to describe functional capabilit
    approve, and execute a network configuration changes end-to-end without supervisory
    intervention.
 
+* **Coarse Permission Demarcation:** Security policies cannot dynamically bind/constrain
+    an agent's permissions to a specific agent in the network domain based on task context,
+    nor can they safely manage downstream sub-agent permission delegation or context-dependent
+    privilege escalation.
+
 * **Concurrency and Policy Conflicts:** In federated multi-vendor topologies, multi-agent
     operations lack distributed resource locking. When an action spans multiple network
     domains (e.g., routing vs. security), there is no deterministic framework to resolve
@@ -314,11 +319,6 @@ being pre-provisioned with metadata information to describe functional capabilit
 * **Control Unreachability Vulnerability:** There is no standardized "fail-safe" or
     "fail-hold" expectation when an agent loses connectivity to its management plane,
     meaning a disconnected agent may continue altering network state entirely unconstrained.
-
-* **Coarse Permission Demarcation:** Security policies cannot dynamically bind/constrain
-    an agent's permissions to a specific agent in the network domain based on task context,
-    nor can they safely manage downstream sub-agent permission delegation or context-dependent
-    privilege escalation.
 
 ### Fragmentation Across Heterogeneous Integration Layers
 
