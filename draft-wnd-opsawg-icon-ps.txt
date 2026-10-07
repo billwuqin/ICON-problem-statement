@@ -116,14 +116,14 @@ Table of Contents
      4.6.  IETF AUDIT for Cross-Domain Interaction Traceability and
            Verification
    5.  Gaps in the Current Approaches
-     5.1.  Limitation of OpenTelemetry for Agent Observability
-     5.2.  Limitations of AI Guardrails
-     5.3.  Limitations of Agent Drift Analysis
-     5.4.  Limitations of Quality gates
-     5.5.  Limitations of the existing Intervention Approaches
-     5.6.  Limitations of the existing Identity and Access Management
+     5.1.  Gap in OpenTelemetry for Agent Observability
+     5.2.  Gap in AI Guardrails
+     5.3.  Gap in Agent Drift Analysis
+     5.4.  Gap in Quality gates
+     5.5.  Gap in the existing Intervention Approaches
+     5.6.  Gap in the existing Identity and Access Management
            Approaches
-     5.7.  Limitations of the IETF AUDIT Approach
+     5.7.  Gap in the IETF AUDIT Approach
    6.  Standardization Area
    7.  Security Considerations
    8.  IANA Considerations
@@ -811,7 +811,7 @@ Table of Contents
 
 5.  Gaps in the Current Approaches
 
-5.1.  Limitation of OpenTelemetry for Agent Observability
+5.1.  Gap in OpenTelemetry for Agent Observability
 
    While OpenTelemetry (OTel) is the industry standard for collecting
    traces, metrics, and logs, it has critical limitations when applied
@@ -831,7 +831,7 @@ Table of Contents
    high-risk action, has been suspended, and is currently awaiting human
    approval.
 
-5.2.  Limitations of AI Guardrails
+5.2.  Gap in AI Guardrails
 
    There are many areas where guardrails cannot provide adequate control
    based on the current capabilities.
@@ -870,7 +870,7 @@ Table of Contents
       balance required between flexibility of agent execution and
       reasoning, with the boundary of execution which is subjective.
 
-5.3.  Limitations of Agent Drift Analysis
+5.3.  Gap in Agent Drift Analysis
 
    Agent drift is hard to detect as it seldom produce a failure event,
    only the effect of the drift can be observed through continuous
@@ -882,7 +882,7 @@ Table of Contents
    Anomaly management.  So a potential direction is to leverage some of
    the techniques used in Anomaly management applied to Agents.
 
-5.4.  Limitations of Quality gates
+5.4.  Gap in Quality gates
 
    Three limitations characterize current implementation of quality
    gate.
@@ -912,7 +912,7 @@ Table of Contents
       resolve.  The gate operates in isolation from the broader
       management and control stack.
 
-5.5.  Limitations of the existing Intervention Approaches
+5.5.  Gap in the existing Intervention Approaches
 
    As highlighted above intervention mechanisms exist in primitive and
    framework-specific forms.  They have the following limitations.
@@ -939,8 +939,7 @@ Table of Contents
       automatically triggers a proportionate intervention response when
       a deviation is detected
 
-5.6.  Limitations of the existing Identity and Access Management
-      Approaches
+5.6.  Gap in the existing Identity and Access Management Approaches
 
    From the I&C perspective following are some of the key limitations in
    incorporating identity and access management in the agents.
@@ -972,7 +971,7 @@ Table of Contents
       should inherit, or what constraints should govern the delegated
       authority.
 
-5.7.  Limitations of the IETF AUDIT Approach
+5.7.  Gap in the IETF AUDIT Approach
 
    There are several areas where the IETF AUDIT framework cannot provide
    comprehensive operational control or real-time risk mitigation within

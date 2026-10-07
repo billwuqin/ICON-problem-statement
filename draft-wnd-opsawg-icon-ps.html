@@ -1269,25 +1269,25 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-gaps-in-the-current-approac" class="internal xref">Gaps in the Current Approaches</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-limitation-of-opentelemetry" class="internal xref">Limitation of OpenTelemetry for Agent Observability</a></p>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-gap-in-opentelemetry-for-ag" class="internal xref">Gap in OpenTelemetry for Agent Observability</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-limitations-of-ai-guardrail" class="internal xref">Limitations of AI Guardrails</a></p>
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-gap-in-ai-guardrails" class="internal xref">Gap in AI Guardrails</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-limitations-of-agent-drift-" class="internal xref">Limitations of Agent Drift Analysis</a></p>
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-gap-in-agent-drift-analysis" class="internal xref">Gap in Agent Drift Analysis</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
-                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-limitations-of-quality-gate" class="internal xref">Limitations of Quality gates</a></p>
+                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-gap-in-quality-gates" class="internal xref">Gap in Quality gates</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5">
-                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-limitations-of-the-existing" class="internal xref">Limitations of the existing Intervention Approaches</a></p>
+                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-gap-in-the-existing-interve" class="internal xref">Gap in the existing Intervention Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.6">
-                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-limitations-of-the-existing-" class="internal xref">Limitations of the existing Identity and Access Management Approaches</a></p>
+                <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-gap-in-the-existing-identit" class="internal xref">Gap in the existing Identity and Access Management Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.7">
-                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-limitations-of-the-ietf-aud" class="internal xref">Limitations of the IETF AUDIT Approach</a></p>
+                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-gap-in-the-ietf-audit-appro" class="internal xref">Gap in the IETF AUDIT Approach</a></p>
 </li>
             </ul>
 </li>
@@ -2004,10 +2004,10 @@ an agent's permissions shift non-deterministically based on runtime execution co
       <h2 id="name-gaps-in-the-current-approac">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-gaps-in-the-current-approac" class="section-name selfRef">Gaps in the Current Approaches</a>
       </h2>
-<div id="limitation-of-opentelemetry-for-agent-observability">
+<div id="gap-in-opentelemetry-for-agent-observability">
 <section id="section-5.1">
-        <h3 id="name-limitation-of-opentelemetry">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-limitation-of-opentelemetry" class="section-name selfRef">Limitation of OpenTelemetry for Agent Observability</a>
+        <h3 id="name-gap-in-opentelemetry-for-ag">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-gap-in-opentelemetry-for-ag" class="section-name selfRef">Gap in OpenTelemetry for Agent Observability</a>
         </h3>
 <p id="section-5.1-1">While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
 applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
@@ -2020,10 +2020,10 @@ Consequently, it provides no mechanism to signal within a trace that a specific 
 has been suspended, and is currently awaiting human approval.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="limitations-of-ai-guardrails">
+<div id="gap-in-ai-guardrails">
 <section id="section-5.2">
-        <h3 id="name-limitations-of-ai-guardrail">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-limitations-of-ai-guardrail" class="section-name selfRef">Limitations of AI Guardrails</a>
+        <h3 id="name-gap-in-ai-guardrails">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-gap-in-ai-guardrails" class="section-name selfRef">Gap in AI Guardrails</a>
         </h3>
 <p id="section-5.2-1">There are many areas where guardrails cannot provide adequate control based on the current capabilities.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2056,10 +2056,10 @@ and reasoning, with the boundary of execution which is subjective.<a href="#sect
         </ul>
 </section>
 </div>
-<div id="limitations-of-agent-drift-analysis">
+<div id="gap-in-agent-drift-analysis">
 <section id="section-5.3">
-        <h3 id="name-limitations-of-agent-drift-">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-limitations-of-agent-drift-" class="section-name selfRef">Limitations of Agent Drift Analysis</a>
+        <h3 id="name-gap-in-agent-drift-analysis">
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-gap-in-agent-drift-analysis" class="section-name selfRef">Gap in Agent Drift Analysis</a>
         </h3>
 <p id="section-5.3-1">Agent drift is hard to detect as it seldom produce a failure event, only the effect of the drift can be observed through
 continuous monitoring. Current drift management techniques are retrospective and does not intercept the degraded agent
@@ -2068,10 +2068,10 @@ drift signals with runtime intervention mechanisms. Agent drift management has s
 potential direction is to leverage some of the techniques used in Anomaly management applied to Agents.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="limitations-of-quality-gates">
+<div id="gap-in-quality-gates">
 <section id="section-5.4">
-        <h3 id="name-limitations-of-quality-gate">
-<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-limitations-of-quality-gate" class="section-name selfRef">Limitations of Quality gates</a>
+        <h3 id="name-gap-in-quality-gates">
+<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-gap-in-quality-gates" class="section-name selfRef">Gap in Quality gates</a>
         </h3>
 <p id="section-5.4-1">Three limitations characterize current implementation of quality gate.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2096,10 +2096,10 @@ escalate, or resolve. The gate operates in isolation from the broader management
         </ul>
 </section>
 </div>
-<div id="limitations-of-the-existing-intervention-approaches">
+<div id="gap-in-the-existing-intervention-approaches">
 <section id="section-5.5">
-        <h3 id="name-limitations-of-the-existing">
-<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-limitations-of-the-existing" class="section-name selfRef">Limitations of the existing Intervention Approaches</a>
+        <h3 id="name-gap-in-the-existing-interve">
+<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-gap-in-the-existing-interve" class="section-name selfRef">Gap in the existing Intervention Approaches</a>
         </h3>
 <p id="section-5.5-1">As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.<a href="#section-5.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2124,10 +2124,10 @@ response when a deviation is detected<a href="#section-5.5-2.4.1" class="pilcrow
         </ul>
 </section>
 </div>
-<div id="limitations-of-the-existing-identity-and-access-management-approaches">
+<div id="gap-in-the-existing-identity-and-access-management-approaches">
 <section id="section-5.6">
-        <h3 id="name-limitations-of-the-existing-">
-<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-limitations-of-the-existing-" class="section-name selfRef">Limitations of the existing Identity and Access Management Approaches</a>
+        <h3 id="name-gap-in-the-existing-identit">
+<a href="#section-5.6" class="section-number selfRef">5.6. </a><a href="#name-gap-in-the-existing-identit" class="section-name selfRef">Gap in the existing Identity and Access Management Approaches</a>
         </h3>
 <p id="section-5.6-1">From the I&amp;C perspective following are some of the key limitations in incorporating identity and access management in the agents.<a href="#section-5.6-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -2155,10 +2155,10 @@ authority.<a href="#section-5.6-2.4.1" class="pilcrow">¶</a></p>
         </ul>
 </section>
 </div>
-<div id="limitations-of-the-ietf-audit-approach">
+<div id="gap-in-the-ietf-audit-approach">
 <section id="section-5.7">
-        <h3 id="name-limitations-of-the-ietf-aud">
-<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-limitations-of-the-ietf-aud" class="section-name selfRef">Limitations of the IETF AUDIT Approach</a>
+        <h3 id="name-gap-in-the-ietf-audit-appro">
+<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-gap-in-the-ietf-audit-appro" class="section-name selfRef">Gap in the IETF AUDIT Approach</a>
         </h3>
 <p id="section-5.7-1">There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
 mitigation within autonomous network environments, based on its defined charter and design constraints:<a href="#section-5.7-1" class="pilcrow">¶</a></p>
