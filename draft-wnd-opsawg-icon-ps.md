@@ -201,23 +201,23 @@ identify gaps that need to be filled.
 
 The deployment of autonomous agentic systems within operators' networks introduces fundamental operational,
 architectural challenges. Current network management paradigms are static rule driven and therefore are built on
-deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-driven network
-operation architectures creates a structural mismatch between machine-speed execution and human-speed oversight.
-This gap manifests in the following three distinct aspects:
+deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic),
+AI-driven network operation architectures creates a structural mismatch between machine-speed execution and human-speed
+oversight. This gap manifests in the following three distinct aspects:
 
 ## The Observability Aspect
 
 ### Limited Transparency in Planning, Reasoning, and Tools Execution
 
-As agents increasingly execute complex operational tasks ((e.g., service
-provisioning, fault diagnosis)), they frequently delegate critical planning
+As agents increasingly execute complex operational tasks (e.g., service
+provisioning, fault diagnosis), they frequently delegate critical planning
 paths and execution decisions to the underlying Large Language Models (LLMs).
 This delegation creates an optimization barrier:
 
 * **Lack of Trajectory Transparency:** Network operators cannot cannot
  validate the safety or intent of an agent's planned mutations and trace how
  an agent’s internal Chain-of-Thought (CoT) reasoning maps directly to mutating
- network configuration diffs (e.g., CLI changes or NETCONF configuration changes)
+ network configuration diffs (e.g., CLI changes or Network configuration changes)
  before or after execution. This may lead to unexpected consequence on the
  infrastructure.
 
@@ -228,7 +228,7 @@ This delegation creates an optimization barrier:
 
 * **Invisible Tool Parameter Bindings:** Input and output states of invoked tools,
    scripts, and APIs are encapsulated within proprietary agent execution loops,
-   preventing real-time validation of parameter bindings.
+   preventing real-time validation of parameter bindings and performance evaluation.
 
 ### Ambiguity of Accountability Attribution or Responsibility Determination
 
@@ -253,11 +253,13 @@ escalation paradigms is usually impractical due to the sheer volume and velocity
 of the data points involved in active agent pipelines:
 
 * **Asynchronous Tracking and Clock Drift:** Distributed environments lack an authoritative
- causal event-ordering model. This prevents operators from cleanly aligning internal agent
+ causal event-ordering model. This prevents network operators from cleanly aligning internal agent
  reasoning loops chronologically with external network state telemetry changes.
+
 * **Telemetry Storms:** Intensive CoT reasoning logs and high-frequency tool invocation
  traces can lead to telemetry storms that overwhelm Agent Observability Data collectors, yet legacy pipelines
  lack adaptive backpressure or dynamic sampling mechanisms.
+
 * **Security vs. Auditing Trade-off:** Standard telemetry logging lacks context-aware, dynamic
  update. Network Operators are forced to choose between logging complete trajectories (risking
  the leakage of PII, credentials, or topology details) or omitting data (ruining post-incident
@@ -266,6 +268,7 @@ of the data points involved in active agent pipelines:
 ## The Control Aspect
 
 ### Inadequacy of Boundary Constraints and Risk Evaluation
+
 Agent behavior cannot be reliably constrained using predefined, deterministic
 rules or traditional static guardrails. Because agents rely on dynamic reasoning
 patterns to achieve declarative goals, their exact execution trajectories remain
@@ -278,10 +281,12 @@ multi-step execution risks:
    protocol to evaluate and classify the risk tier (e.g., Low, Medium, High, Critical)
    or estimate the potential blast radius (affected devices, link traffic, customer
    scope) of an action sequence before deploying in production network.
+
 * **Automation Storms:** Autonomous reasoning can lead to high-velocity loops.
     Without standardized per-device, per-operator access control, or global
    concurrency access controls and rate limits, agents run the risk of losing control
    on the network elements.
+
 * **Undefined Action Cancellation Semantics:** Existing control frameworks do not
      natively support state-aware cancellation transitions,leading to partial,
      configurations or applied configuration without monitoring.
@@ -701,6 +706,7 @@ From the I&C perspective following are some of the key limitations in incorporat
   authority.
 
 ##  Limitations of the IETF AUDIT Approach
+
 There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
 mitigation within autonomous network environments, based on its defined charter and design constraints:
 
