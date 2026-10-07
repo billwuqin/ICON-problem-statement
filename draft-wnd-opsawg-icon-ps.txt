@@ -92,9 +92,9 @@ Table of Contents
      3.1.  The Observability Aspect
        3.1.1.  Limited Transparency in Planning, Reasoning, and Tools
                Execution
-       3.1.2.  Ambiguity of Accountability Attribution or
-               Responsibility Determination
-       3.1.3.  High-Velocity Telemetry Data Ingestion inefficiency for
+       3.1.2.  Ambiguity of Accountability or Responsibility
+               Determination
+       3.1.3.  High-Velocity Telemetry Data Ingestion Inefficiency for
                Evaluation and Intervening
      3.2.  The Control Aspect
        3.2.1.  Inadequacy of Boundary Constraints and Risk Evaluation
@@ -325,8 +325,7 @@ Table of Contents
       proprietary agent execution loops, preventing real-time validation
       of parameter bindings and performance evaluation.
 
-3.1.2.  Ambiguity of Accountability Attribution or Responsibility
-        Determination
+3.1.2.  Ambiguity of Accountability or Responsibility Determination
 
    In distributed agent interaction (e.g., agent to tools, human to
    agent, agent to agent) topologies, operational responsibility for an
@@ -341,7 +340,7 @@ Table of Contents
    post-incident root-cause analysis and regulatory compliance
    reporting.
 
-3.1.3.  High-Velocity Telemetry Data Ingestion inefficiency for
+3.1.3.  High-Velocity Telemetry Data Ingestion Inefficiency for
         Evaluation and Intervening
 
    Agents are explicitly designed to operate with high degrees of
