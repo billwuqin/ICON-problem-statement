@@ -601,7 +601,7 @@ mechanisms:
 
 # Gaps in the Current Approaches
 
-## Limitation of OpenTelemetry for Agent Observability
+## Gap in OpenTelemetry for Agent Observability
 
 While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
 applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
@@ -614,7 +614,7 @@ microservice architectures, its tracing lifecycle cannot represent asynchronous 
 Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action,
 has been suspended, and is currently awaiting human approval.
 
-## Limitations of AI Guardrails
+## Gap in AI Guardrails
 
 There are many areas where guardrails cannot provide adequate control based on the current capabilities.
 
@@ -640,7 +640,7 @@ There are many areas where guardrails cannot provide adequate control based on t
   scale in high-speed or high-volume environments. Also, there is a fine balance required between flexibility of agent execution
   and reasoning, with the boundary of execution which is subjective.
 
-## Limitations of Agent Drift Analysis
+## Gap in Agent Drift Analysis
 
 Agent drift is hard to detect as it seldom produce a failure event, only the effect of the drift can be observed through
 continuous monitoring. Current drift management techniques are retrospective and does not intercept the degraded agent
@@ -648,7 +648,7 @@ behaviour as it occurs or does not automatically adjust agent policy in response
 drift signals with runtime intervention mechanisms. Agent drift management has similarities to Anomaly management. So a
 potential direction is to leverage some of the techniques used in Anomaly management applied to Agents.
 
-## Limitations of Quality gates
+## Gap in Quality gates
 
 Three limitations characterize current implementation of quality gate.
 
@@ -667,7 +667,7 @@ Three limitations characterize current implementation of quality gate.
   framework, but that pause is not expressed as a standardised intervention signal that a central control authority can monitor,
   escalate, or resolve. The gate operates in isolation from the broader management and control stack.
 
-## Limitations of the existing Intervention Approaches
+## Gap in the existing Intervention Approaches
 
 As highlighted above intervention mechanisms exist in primitive and framework-specific forms. They have the following limitations.
 
@@ -685,7 +685,7 @@ As highlighted above intervention mechanisms exist in primitive and framework-sp
   that continuously monitors agent behaviour against control policies and automatically triggers a proportionate intervention
   response when a deviation is detected
 
-## Limitations of the existing Identity and Access Management Approaches
+## Gap in the existing Identity and Access Management Approaches
 
 From the I&C perspective following are some of the key limitations in incorporating identity and access management in the agents.
 
@@ -705,7 +705,7 @@ From the I&C perspective following are some of the key limitations in incorporat
   a sub-agent, it is unclear what level of trust the sub-agent should inherit, or what constraints should govern the delegated
   authority.
 
-##  Limitations of the IETF AUDIT Approach
+##  Gap in the IETF AUDIT Approach
 
 There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
 mitigation within autonomous network environments, based on its defined charter and design constraints:
