@@ -98,8 +98,9 @@ Table of Contents
                Evaluation and Intervening
      3.2.  The Control Aspect
        3.2.1.  Inadequacy of Boundary Constraints and Risk Evaluation
-       3.2.2.  Fragmentation Across Heterogeneous Integration Layers
-       3.2.3.  Multi-Vendor Dependency Risks
+       3.2.2.  Static Identity Management and Access Control
+       3.2.3.  Fragmentation Across Heterogeneous Integration Layers
+       3.2.4.  Multi-Vendor Dependency Risks
      3.3.  The Intervention Aspect
        3.3.1.  Lack of Human Oversight Capabilities such as Rollback
                and Recover
@@ -402,7 +403,7 @@ Table of Contents
       transitions,leading to partial, configurations or applied
       configuration without monitoring.
 
-3.2.1.1.  Static Identity Management and Access Control
+3.2.2.  Static Identity Management and Access Control
 
    Traditional Identity and Access Management (IAM) frameworks were
    designed exclusively for human operators or static, deterministic
@@ -438,7 +439,7 @@ Table of Contents
       safely manage downstream sub-agent permission delegation or
       context-dependent privilege escalation.
 
-3.2.2.  Fragmentation Across Heterogeneous Integration Layers
+3.2.3.  Fragmentation Across Heterogeneous Integration Layers
 
    Agentic systems operating across mixed Operational Support Systems
    (OSS) and Network Management domains must interact with a highly
@@ -449,7 +450,7 @@ Table of Contents
    retrieve data through pathways (e.g. MCP/A2A etc.) that were never
    designed with network management automation we used today.
 
-3.2.3.  Multi-Vendor Dependency Risks
+3.2.4.  Multi-Vendor Dependency Risks
 
    As network operators begin sourcing agentic control capabilities from
    diverse third-party vendors, independent software providers, and

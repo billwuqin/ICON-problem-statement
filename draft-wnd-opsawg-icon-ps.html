@@ -1217,10 +1217,13 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                     <p id="section-toc.1-1.3.2.2.2.1.1"><a href="#section-3.2.1" class="auto internal xref">3.2.1</a>.  <a href="#name-inadequacy-of-boundary-cons" class="internal xref">Inadequacy of Boundary Constraints and Risk Evaluation</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.2">
-                    <p id="section-toc.1-1.3.2.2.2.2.1"><a href="#section-3.2.2" class="auto internal xref">3.2.2</a>.  <a href="#name-fragmentation-across-hetero" class="internal xref">Fragmentation Across Heterogeneous Integration Layers</a></p>
+                    <p id="section-toc.1-1.3.2.2.2.2.1"><a href="#section-3.2.2" class="auto internal xref">3.2.2</a>.  <a href="#name-static-identity-management-" class="internal xref">Static Identity Management and Access Control</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.3">
-                    <p id="section-toc.1-1.3.2.2.2.3.1"><a href="#section-3.2.3" class="auto internal xref">3.2.3</a>.  <a href="#name-multi-vendor-dependency-ris" class="internal xref">Multi-Vendor Dependency Risks</a></p>
+                    <p id="section-toc.1-1.3.2.2.2.3.1"><a href="#section-3.2.3" class="auto internal xref">3.2.3</a>.  <a href="#name-fragmentation-across-hetero" class="internal xref">Fragmentation Across Heterogeneous Integration Layers</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2.2.4">
+                    <p id="section-toc.1-1.3.2.2.2.4.1"><a href="#section-3.2.4" class="auto internal xref">3.2.4</a>.  <a href="#name-multi-vendor-dependency-ris" class="internal xref">Multi-Vendor Dependency Risks</a></p>
 </li>
                 </ul>
 </li>
@@ -1588,73 +1591,73 @@ multi-step execution risks:<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
    configurations or applied configuration without monitoring.<a href="#section-3.2.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
+</section>
+</div>
 <div id="static-identity-management-and-access-control">
-<section id="section-3.2.1.1">
-            <h5 id="name-static-identity-management-">
-<a href="#section-3.2.1.1" class="section-number selfRef">3.2.1.1. </a><a href="#name-static-identity-management-" class="section-name selfRef">Static Identity Management and Access Control</a>
-            </h5>
-<p id="section-3.2.1.1-1">Traditional Identity and Access Management (IAM) frameworks were designed exclusively
+<section id="section-3.2.2">
+          <h4 id="name-static-identity-management-">
+<a href="#section-3.2.2" class="section-number selfRef">3.2.2. </a><a href="#name-static-identity-management-" class="section-name selfRef">Static Identity Management and Access Control</a>
+          </h4>
+<p id="section-3.2.2-1">Traditional Identity and Access Management (IAM) frameworks were designed exclusively
 for human operators or static, deterministic software processes. These frameworks cannot
 securely tackle emerging dynamic agent attributes such as autonomous entity identities
 and behavioral profiles which are frequently created and modified at runtime rather than
-being pre-provisioned with metadata information to describe functional capabilities.<a href="#section-3.2.1.1-1" class="pilcrow">¶</a></p>
+being pre-provisioned with metadata information to describe functional capabilities.<a href="#section-3.2.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.2.1.1-2.1">
-                <p id="section-3.2.1.1-2.1.1"><strong>Absence of Role Separation:</strong> Existing agent frameworks lack the mechanisms to enforce
+<li class="normal" id="section-3.2.2-2.1">
+              <p id="section-3.2.2-2.1.1"><strong>Absence of Role Separation:</strong> Existing agent frameworks lack the mechanisms to enforce
  strict, credential Separation of Duties across distinct operational roles (Read-Only,
  Propose, Validate, Approve, Execute). This frequently allows a single agent to plan,
  approve, and execute a network configuration changes end-to-end without supervisory
- intervention.<a href="#section-3.2.1.1-2.1.1" class="pilcrow">¶</a></p>
+ intervention.<a href="#section-3.2.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.2.1.1-2.2">
-                <p id="section-3.2.1.1-2.2.1"><strong>Concurrency and Policy Conflicts:</strong> In federated multi-vendor topologies, multi-agent
+            <li class="normal" id="section-3.2.2-2.2">
+              <p id="section-3.2.2-2.2.1"><strong>Concurrency and Policy Conflicts:</strong> In federated multi-vendor topologies, multi-agent
   operations lack distributed resource locking. When an action spans multiple network
   domains (e.g., routing vs. security), there is no deterministic framework to resolve
   cross-domain policy conflicts or enforce authority precedence (e.g., ensuring a Human
-  Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).<a href="#section-3.2.1.1-2.2.1" class="pilcrow">¶</a></p>
+  Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).<a href="#section-3.2.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.2.1.1-2.3">
-                <p id="section-3.2.1.1-2.3.1"><strong>Control Unreachability Vulnerability:</strong> There is no standardized "fail-safe" or
+            <li class="normal" id="section-3.2.2-2.3">
+              <p id="section-3.2.2-2.3.1"><strong>Control Unreachability Vulnerability:</strong> There is no standardized "fail-safe" or
   "fail-hold" expectation when an agent loses connectivity to its management plane,
-  meaning a disconnected agent may continue altering network state entirely unconstrained.<a href="#section-3.2.1.1-2.3.1" class="pilcrow">¶</a></p>
+  meaning a disconnected agent may continue altering network state entirely unconstrained.<a href="#section-3.2.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.2.1.1-2.4">
-                <p id="section-3.2.1.1-2.4.1"><strong>Coarse Permission Demarcation:</strong> Security policies cannot dynamically bind/constrain
+            <li class="normal" id="section-3.2.2-2.4">
+              <p id="section-3.2.2-2.4.1"><strong>Coarse Permission Demarcation:</strong> Security policies cannot dynamically bind/constrain
   an agent's permissions to a specific agent in the network domain based on task context,
   nor can they safely manage downstream sub-agent permission delegation or context-dependent
-  privilege escalation.<a href="#section-3.2.1.1-2.4.1" class="pilcrow">¶</a></p>
+  privilege escalation.<a href="#section-3.2.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            </ul>
-</section>
-</div>
+          </ul>
 </section>
 </div>
 <div id="fragmentation-across-heterogeneous-integration-layers">
-<section id="section-3.2.2">
+<section id="section-3.2.3">
           <h4 id="name-fragmentation-across-hetero">
-<a href="#section-3.2.2" class="section-number selfRef">3.2.2. </a><a href="#name-fragmentation-across-hetero" class="section-name selfRef">Fragmentation Across Heterogeneous Integration Layers</a>
+<a href="#section-3.2.3" class="section-number selfRef">3.2.3. </a><a href="#name-fragmentation-across-hetero" class="section-name selfRef">Fragmentation Across Heterogeneous Integration Layers</a>
           </h4>
-<p id="section-3.2.2-1">Agentic systems operating across mixed Operational Support Systems (OSS)
+<p id="section-3.2.3-1">Agentic systems operating across mixed Operational Support Systems (OSS)
 and Network Management domains must interact with a highly heterogeneous
 mix of legacy systems, modern APIs, and third-party platforms. Establishing
 consistent, operational and compliance boundaries across these disparate
 integration layers is exceptionally complex as agents may routinely validate intent,
 invoke actions or retrieve data through pathways (e.g. MCP/A2A etc.) that were never
-designed with network management automation we used today.<a href="#section-3.2.2-1" class="pilcrow">¶</a></p>
+designed with network management automation we used today.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multi-vendor-dependency-risks">
-<section id="section-3.2.3">
+<section id="section-3.2.4">
           <h4 id="name-multi-vendor-dependency-ris">
-<a href="#section-3.2.3" class="section-number selfRef">3.2.3. </a><a href="#name-multi-vendor-dependency-ris" class="section-name selfRef">Multi-Vendor Dependency Risks</a>
+<a href="#section-3.2.4" class="section-number selfRef">3.2.4. </a><a href="#name-multi-vendor-dependency-ris" class="section-name selfRef">Multi-Vendor Dependency Risks</a>
           </h4>
-<p id="section-3.2.3-1">As network operators begin sourcing agentic control capabilities from diverse third-party
+<p id="section-3.2.4-1">As network operators begin sourcing agentic control capabilities from diverse third-party
 vendors, independent software providers, and hyperscalers, operational
 accountability becomes externalized in ways that are difficult to technically
 or contractually enforce. A typical production agent implementation features
 highly fragmented dependency chains spanning completely separate vendor
 ecosystems, including LLM/AI model providers, infrastructure hosts, core
-agent frameworks, tool/API repositories, and interconnection fabrics.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
+agent frameworks, tool/API repositories, and interconnection fabrics.<a href="#section-3.2.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
