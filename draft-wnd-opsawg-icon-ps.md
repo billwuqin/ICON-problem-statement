@@ -379,20 +379,6 @@ can not ensure any disruptions or degradations are promptly addressed
 which lead to harmful outcome for high risk network configuration
 changes.
 
-### AI-Native Failure Emergence
-
-Agentic systems introduce an entirely new class of complex, systemic failure
-modes that legacy operational risk frameworks are blind to detect or contain.
-These include:
-
-- Multi-agent alignment failures, where the isolated actions of
-  individual sub-agents appear structurally correct and compliant with their
-  local plans, yet collectively combine to produce a catastrophic network state.
-
-- Additionally, systems suffer from agent drift, where an agent's reasoning pattern
-  and behavioral outputs shift unpredictably over time as it continuously adapts
-  to an evolving network context.
-
 # Solution Space for Network Management Agent Observability, Intervention and Control
 
 ## Opentelemetry for Agent Observability and Drift Tracking
