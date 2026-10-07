@@ -402,7 +402,7 @@ Table of Contents
       transitions,leading to partial, configurations or applied
       configuration without monitoring.
 
-3.2.1.1.  Static IAM Limitation
+3.2.1.1.  Static Identity Management and Access Control
 
    Traditional Identity and Access Management (IAM) frameworks were
    designed exclusively for human operators or static, deterministic
