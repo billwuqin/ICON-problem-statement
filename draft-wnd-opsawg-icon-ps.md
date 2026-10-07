@@ -230,7 +230,7 @@ This delegation creates an optimization barrier:
    scripts, and APIs are encapsulated within proprietary agent execution loops,
    preventing real-time validation of parameter bindings and performance evaluation.
 
-### Ambiguity of Accountability Attribution or Responsibility Determination
+### Ambiguity of Accountability or Responsibility Determination
 
 In distributed agent interaction (e.g., agent to tools, human to agent, agent
 to agent) topologies, operational responsibility for an ultimate network
@@ -242,7 +242,7 @@ becomes highly ambiguous. This lack of clear log, trace and performance metrics 
 agent operational health such as action execution latency, error rates, creates severe
 complications for post-incident root-cause analysis and regulatory compliance reporting.
 
-### High-Velocity Telemetry Data Ingestion inefficiency for Evaluation and Intervening
+### High-Velocity Telemetry Data Ingestion Inefficiency for Evaluation and Intervening
 
 Agents are explicitly designed to operate with high degrees of autonomy, speed, and
 scale. However, network operators currently lack the corresponding telemetry
