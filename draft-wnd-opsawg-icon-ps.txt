@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 9 April 2027                                              Cisco
+Expires: 10 April 2027                                             Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          6 October 2026
+                                                          7 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 April 2027.
+   This Internet-Draft will expire on 10 April 2027.
 
 Copyright Notice
 
@@ -301,8 +301,8 @@ Table of Contents
 
 3.1.1.  Limited Transparency in Planning, Reasoning, and Tools Execution
 
-   As agents increasingly execute complex operational tasks ((e.g.,
-   service provisioning, fault diagnosis)), they frequently delegate
+   As agents increasingly execute complex operational tasks (e.g.,
+   service provisioning, fault diagnosis), they frequently delegate
    critical planning paths and execution decisions to the underlying
    Large Language Models (LLMs).  This delegation creates an
    optimization barrier:
@@ -311,7 +311,7 @@ Table of Contents
       validate the safety or intent of an agent's planned mutations and
       trace how an agent’s internal Chain-of-Thought (CoT) reasoning
       maps directly to mutating network configuration diffs (e.g., CLI
-      changes or NETCONF configuration changes) before or after
+      changes or Network configuration changes) before or after
       execution.  This may lead to unexpected consequence on the
       infrastructure.
 
@@ -323,7 +323,7 @@ Table of Contents
    *  *Invisible Tool Parameter Bindings:* Input and output states of
       invoked tools, scripts, and APIs are encapsulated within
       proprietary agent execution loops, preventing real-time validation
-      of parameter bindings.
+      of parameter bindings and performance evaluation.
 
 3.1.2.  Ambiguity of Accountability Attribution or Responsibility
         Determination
@@ -356,8 +356,9 @@ Table of Contents
 
    *  *Asynchronous Tracking and Clock Drift:* Distributed environments
       lack an authoritative causal event-ordering model.  This prevents
-      operators from cleanly aligning internal agent reasoning loops
-      chronologically with external network state telemetry changes.
+      network operators from cleanly aligning internal agent reasoning
+      loops chronologically with external network state telemetry
+      changes.
 
    *  *Telemetry Storms:* Intensive CoT reasoning logs and high-
       frequency tool invocation traces can lead to telemetry storms that

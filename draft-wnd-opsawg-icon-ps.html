@@ -1065,7 +1065,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Wu, et al.</td>
-<td class="center">Expires 9 April 2027</td>
+<td class="center">Expires 10 April 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1078,12 +1078,12 @@ svg {
 <dd class="internet-draft">draft-wnd-opsawg-icon-ps-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-06" class="published">6 October 2026</time>
+<time datetime="2026-10-07" class="published">7 October 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-09">9 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-04-10">10 April 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1158,7 +1158,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 9 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 10 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1465,9 +1465,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       </h2>
 <p id="section-3-1">The deployment of autonomous agentic systems within operators' networks introduces fundamental operational,
 architectural challenges. Current network management paradigms are static rule driven and therefore are built on
-deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic), AI-driven network
-operation architectures creates a structural mismatch between machine-speed execution and human-speed oversight.
-This gap manifests in the following three distinct aspects:<a href="#section-3-1" class="pilcrow">¶</a></p>
+deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic),
+AI-driven network operation architectures creates a structural mismatch between machine-speed execution and human-speed
+oversight. This gap manifests in the following three distinct aspects:<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="the-observability-aspect">
 <section id="section-3.1">
         <h3 id="name-the-observability-aspect">
@@ -1478,8 +1478,8 @@ This gap manifests in the following three distinct aspects:<a href="#section-3-1
           <h4 id="name-limited-transparency-in-pla">
 <a href="#section-3.1.1" class="section-number selfRef">3.1.1. </a><a href="#name-limited-transparency-in-pla" class="section-name selfRef">Limited Transparency in Planning, Reasoning, and Tools Execution</a>
           </h4>
-<p id="section-3.1.1-1">As agents increasingly execute complex operational tasks ((e.g., service
-provisioning, fault diagnosis)), they frequently delegate critical planning
+<p id="section-3.1.1-1">As agents increasingly execute complex operational tasks (e.g., service
+provisioning, fault diagnosis), they frequently delegate critical planning
 paths and execution decisions to the underlying Large Language Models (LLMs).
 This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1487,7 +1487,7 @@ This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class
               <p id="section-3.1.1-2.1.1"><strong>Lack of Trajectory Transparency:</strong> Network operators cannot cannot
  validate the safety or intent of an agent's planned mutations and trace how
  an agent’s internal Chain-of-Thought (CoT) reasoning maps directly to mutating
- network configuration diffs (e.g., CLI changes or NETCONF configuration changes)
+ network configuration diffs (e.g., CLI changes or Network configuration changes)
  before or after execution. This may lead to unexpected consequence on the
  infrastructure.<a href="#section-3.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
@@ -1500,7 +1500,7 @@ This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class
             <li class="normal" id="section-3.1.1-2.3">
               <p id="section-3.1.1-2.3.1"><strong>Invisible Tool Parameter Bindings:</strong> Input and output states of invoked tools,
  scripts, and APIs are encapsulated within proprietary agent execution loops,
- preventing real-time validation of parameter bindings.<a href="#section-3.1.1-2.3.1" class="pilcrow">¶</a></p>
+ preventing real-time validation of parameter bindings and performance evaluation.<a href="#section-3.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1536,7 +1536,7 @@ of the data points involved in active agent pipelines:<a href="#section-3.1.3-1"
 <ul class="normal">
 <li class="normal" id="section-3.1.3-2.1">
               <p id="section-3.1.3-2.1.1"><strong>Asynchronous Tracking and Clock Drift:</strong> Distributed environments lack an authoritative
- causal event-ordering model. This prevents operators from cleanly aligning internal agent
+ causal event-ordering model. This prevents network operators from cleanly aligning internal agent
  reasoning loops chronologically with external network state telemetry changes.<a href="#section-3.1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.3-2.2">
