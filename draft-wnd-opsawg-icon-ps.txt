@@ -419,6 +419,12 @@ Table of Contents
       approve, and execute a network configuration changes end-to-end
       without supervisory intervention.
 
+   *  *Coarse Permission Demarcation:* Security policies cannot
+      dynamically bind/constrain an agent's permissions to a specific
+      agent in the network domain based on task context, nor can they
+      safely manage downstream sub-agent permission delegation or
+      context-dependent privilege escalation.
+
    *  *Concurrency and Policy Conflicts:* In federated multi-vendor
       topologies, multi-agent operations lack distributed resource
       locking.  When an action spans multiple network domains (e.g.,
@@ -431,12 +437,6 @@ Table of Contents
       "fail-safe" or "fail-hold" expectation when an agent loses
       connectivity to its management plane, meaning a disconnected agent
       may continue altering network state entirely unconstrained.
-
-   *  *Coarse Permission Demarcation:* Security policies cannot
-      dynamically bind/constrain an agent's permissions to a specific
-      agent in the network domain based on task context, nor can they
-      safely manage downstream sub-agent permission delegation or
-      context-dependent privilege escalation.
 
 3.2.3.  Fragmentation Across Heterogeneous Integration Layers
 

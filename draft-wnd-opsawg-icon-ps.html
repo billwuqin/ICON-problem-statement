@@ -1612,22 +1612,22 @@ being pre-provisioned with metadata information to describe functional capabilit
  intervention.<a href="#section-3.2.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.2.2-2.2">
-              <p id="section-3.2.2-2.2.1"><strong>Concurrency and Policy Conflicts:</strong> In federated multi-vendor topologies, multi-agent
+              <p id="section-3.2.2-2.2.1"><strong>Coarse Permission Demarcation:</strong> Security policies cannot dynamically bind/constrain
+  an agent's permissions to a specific agent in the network domain based on task context,
+  nor can they safely manage downstream sub-agent permission delegation or context-dependent
+  privilege escalation.<a href="#section-3.2.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-3.2.2-2.3">
+              <p id="section-3.2.2-2.3.1"><strong>Concurrency and Policy Conflicts:</strong> In federated multi-vendor topologies, multi-agent
   operations lack distributed resource locking. When an action spans multiple network
   domains (e.g., routing vs. security), there is no deterministic framework to resolve
   cross-domain policy conflicts or enforce authority precedence (e.g., ensuring a Human
-  Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).<a href="#section-3.2.2-2.2.1" class="pilcrow">¶</a></p>
-</li>
-            <li class="normal" id="section-3.2.2-2.3">
-              <p id="section-3.2.2-2.3.1"><strong>Control Unreachability Vulnerability:</strong> There is no standardized "fail-safe" or
-  "fail-hold" expectation when an agent loses connectivity to its management plane,
-  meaning a disconnected agent may continue altering network state entirely unconstrained.<a href="#section-3.2.2-2.3.1" class="pilcrow">¶</a></p>
+  Operator or Supervisor Agent explicitly preempts a lower-level autonomous agent).<a href="#section-3.2.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.2.2-2.4">
-              <p id="section-3.2.2-2.4.1"><strong>Coarse Permission Demarcation:</strong> Security policies cannot dynamically bind/constrain
-  an agent's permissions to a specific agent in the network domain based on task context,
-  nor can they safely manage downstream sub-agent permission delegation or context-dependent
-  privilege escalation.<a href="#section-3.2.2-2.4.1" class="pilcrow">¶</a></p>
+              <p id="section-3.2.2-2.4.1"><strong>Control Unreachability Vulnerability:</strong> There is no standardized "fail-safe" or
+  "fail-hold" expectation when an agent loses connectivity to its management plane,
+  meaning a disconnected agent may continue altering network state entirely unconstrained.<a href="#section-3.2.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
