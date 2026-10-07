@@ -291,7 +291,7 @@ multi-step execution risks:
      natively support state-aware cancellation transitions,leading to partial,
      configurations or applied configuration without monitoring.
 
-#### Static Identity Management and Access Control
+### Static Identity Management and Access Control
 
 Traditional Identity and Access Management (IAM) frameworks were designed exclusively
 for human operators or static, deterministic software processes. These frameworks cannot
