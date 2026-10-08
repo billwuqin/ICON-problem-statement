@@ -565,11 +565,11 @@ boundaries and invoke independent subagents or external tools without active hum
 When anomalies or compliance violations occur, local agent logs are insufficient because no single
 administrative party possesses full visibility over a multi-domain interaction chain. Traditional
 auditing and logging techniques lack the cryptographic primitives required to produce verifiable proof
-of execution to external, untrusted entities. The emerging approach in {{?draft-kuehlewind-audit-architecture}}
+of execution to external, untrusted entities. The emerging approach in {{?I-D.kuehlewind-audit-architecture}}
 addresses these limitations by introducing standard data models and protocol-layer extensions to securely record,
 correlate, and verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.
 
-Implementing {{?draft-kuehlewind-audit-architecture}} focuses heavily on cross-domain correlation, dynamic authorization
+Implementing {{?I-D.kuehlewind-audit-architecture}} focuses heavily on cross-domain correlation, dynamic authorization
 tracking, and independent audit verifiability to track the entire action chain through the following
 mechanisms:
 
@@ -700,7 +700,7 @@ From the I&C perspective following are some of the key limitations in incorporat
 
 ##  Gap in the Audit Architecture Approach
 
-There are several areas where the audit framework, introduced in {{?draft-kuehlewind-audit-architecture}}, cannot provide comprehensive
+There are several areas where the audit framework, introduced in {{?I-D.kuehlewind-audit-architecture}}, cannot provide comprehensive
 operational control or real-time risk mitigation within autonomous network environments, based on its defined charter and design constraints:
 
 - Exclusion of Internal Logic Assessment: The primary limitation of the audit architecture is its strict focus on external, observable
