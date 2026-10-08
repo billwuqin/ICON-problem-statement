@@ -12,9 +12,9 @@ v: 3
 # area: AREA
 # workgroup: WG Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - Observability
+ - Control
+ - Intervention
 venue:
 #  group: WG
 #  type: Working Group
@@ -41,12 +41,6 @@ author:
    organization: Telefonica
    email: luismiguel.contrerasmurillo@telefonica.com
  -
-    fullname: Daniel King
-    organization: Lancaster University
-    email: d.king@lancaster.ac.uk
-
-Contributor:
- -
     fullname: Qiufang Ma
     organization: Huawei
     email: maqiufang1@huawei.com
@@ -66,21 +60,25 @@ informative:
     date: April 2025
 
   IG1507:
-    title: IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT
+    title: TM Forum, IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT
     target: https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744
     date: May 2026
 
   IG1251G:
-    title: IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy
+    title: TM Forum, IG1251G IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy
     target: https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956
     date: May 2026
+
+  OpenTelemetry:
+    title: OpenTelemetry (OTel)
+    target: https://opentelemetry.io/
 
 --- abstract
 
 This document provides an overview of the issues associated with the
 deployment of the observability, intervention, and control of autonomous
 agent pipelines in large-scale heterogeneous network environments. The
-term "Intervention and Control" is used to describe a set of automated and
+term "Observability, Intervention and Control" is used to describe a set of automated and
 human-initiated mechanisms that guarantee the capability to observe, evaluate, constrain,
 correct, and terminate Autonomous agents at any point, for any reason, irrespective of
 their level of autonomy under which it operates, to ensure resilience, recovery,
@@ -100,8 +98,8 @@ architectural and protocol work and associated documents.
 # Introduction
 
 Network operations are increasingly autonomous with the growth of network
-management Agent applications at the network level and service level. The Agent lifecycle
-management comprise the following phases:
+management Agent applications at the network level and service level {{IG1507}}, {{IG1251G}}.
+The Agent lifecycle management comprise the following phases:
 
 - Agent Discovery: Discover capabilities and skills and onboard agent
 
@@ -120,7 +118,7 @@ the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
-input and agent output and typically break down into input input guardrail, action guardrail,
+input and agent output and typically break down into input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action filter level with static boundary
 parameters. For example, image you have a network management agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
@@ -150,8 +148,8 @@ full operational lifecycle, e.g.,
   hinder timely risk mitigation and state recovery during boundary violations by agents.
 
 This document provides a problem statement for protocol on continuous agent behavior observability, intervention and control.
-We list the properties the protocol should have, then explain why those properties are necessary. We describe why a
-new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
+We list the properties the protocol should have, then explain why those properties are necessary. We explain why
+a new protocol can offer the optimal solution for the more general problem of identifying and characterizing trajectory records
 related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
 human and agent interaction for agent intervention and control at the service level and network level.
 
@@ -178,7 +176,7 @@ identify gaps that need to be filled.
     task, human-agent communication involves delegation, where the human provides a goal and the agent autonomously figures out
     how to achieve it.
 
-- Agent Observability: The visibility into an agent's internal state, decision-making logic, and workflow execution from its
+- Observability: The visibility into an agent's internal state, decision-making logic, and workflow execution from its
    external telemetry outputs (e.g., logs, traces, metrics), enabling human   operators or monitoring systems to understand what
    the agent is doing and why it behaves in a specific manner.
 
@@ -203,13 +201,16 @@ identify gaps that need to be filled.
                      or reasoning sequence the agent followed to reach its conclusion using a structured Thought,Action,Observation
                      loop.
 
+- OpenTelemetry: also known as OTel, is a vendor-neutral open source Observability framework for instrumenting, generating, collecting,
+  and exporting telemetry data such as traces, metrics, and logs ({OpenTelemetry}).
+
 # Problem Space
 
 The deployment of autonomous agentic systems within operators' networks introduces fundamental operational,
 architectural challenges. Current network management paradigms are static rule driven and therefore are built on
 deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic),
 AI-driven network operation architectures creates a structural mismatch between machine-speed execution and human-speed
-oversight. This gap manifests in the following three distinct aspects:
+oversight. This gap appears in the following three distinct aspects.
 
 ## The Observability Aspect
 
@@ -333,8 +334,8 @@ and Network Management domains must interact with a highly heterogeneous
 mix of legacy systems, modern APIs, and third-party platforms. Establishing
 consistent, operational and compliance boundaries across these disparate
 integration layers is exceptionally complex as agents may routinely validate intent,
-invoke actions or retrieve data through pathways (e.g. MCP/A2A etc.) that were never
-designed with network management automation we used today.
+invoke actions or retrieve data through pathways, e.g. {{MCP}} and {{A2A}},
+that were never designed with network management automation we used today.
 
 ### Multi-Vendor Dependency Risks
 
@@ -387,14 +388,14 @@ changes.
 
 # Solution Space for Network Management Agent Observability, Intervention and Control
 
-## Opentelemetry for Agent Observability and Drift Tracking
+## OpenTelemetry for Agent Observability and Drift Tracking
 
 Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge
 retrieval, multi-agent collaboration. When things go wrong, or right, you need to understand
-exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
-can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing
-unified GenAI and Agent Semantic Conventions to standardise how metrics, logs, and distributed
-traces are captured across multi-agent system.
+exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push, IPFIX
+can't capture reasoning processes or decision context. OpenTelemetry {OpenTelemetry} addresses
+this by utilizing unified GenAI and Agent Semantic Conventions to standardise how metrics, logs,
+and distributed traces are captured across multi-agent system.
 
 Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing and Context
 Monitoring to how an agent processes information, arrives at decisions, and executes tasks
@@ -551,51 +552,51 @@ and runtime trust metrics to establish security boundaries and mitigate executio
   Tokens (JWTs) with narrow scopes and rapid expirations, restricting tool access to a highly compressed
   temporal window.
 
-- Cntext-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
+- Context-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
   configurations by computing dynamic, behavior-driven trust scores in real time. Instead of labeling an
   agent as permanently trusted, frameworks (such as the Microsoft Agent Control Toolkit) dynamically
   track operational compliance; the score drops instantly upon policy violations, automatically shrinking
   permission profiles or restricting the agent's active trust zone.
 
-## IETF AUDIT for Cross-Domain Interaction Traceability and Verification
+## An Audit Architecture for Cross-Domain Interaction Traceability and Verification
 
 Modern agents orchestrate complex, long-running workflows that frequently span multiple administrative
 boundaries and invoke independent subagents or external tools without active human oversight at each step.
 When anomalies or compliance violations occur, local agent logs are insufficient because no single
 administrative party possesses full visibility over a multi-domain interaction chain. Traditional
 auditing and logging techniques lack the cryptographic primitives required to produce verifiable proof
-of execution to external, untrusted entities. The emerging IETF AUDIT approach addresses these limitations
-by introducing standard data models and protocol-layer extensions to securely record, correlate, and
-verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.
+of execution to external, untrusted entities. The emerging approach in {{?I-D.kuehlewind-audit-architecture}}
+addresses these limitations by introducing standard data models and protocol-layer extensions to securely record,
+correlate, and verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.
 
-Implementing the IETF AUDIT framework focuses heavily on cross-domain correlation, dynamic authorization
+Implementing {{?I-D.kuehlewind-audit-architecture}} focuses heavily on cross-domain correlation, dynamic authorization
 tracking, and independent audit verifiability to track the entire action chain through the following
 mechanisms:
 
 - Cross-Domain Correlation and Common Identifiers: Rather than relying on isolated execution traces, the
-  AUDIT framework adapts protocol-layer extensions (such as HTTP headers or context propagation tokens)
+  audit framework adapts protocol-layer extensions (such as HTTP headers or context propagation tokens)
   to inject a common identifier across administrative boundaries. This allows an independent auditor to
   stitch together separate interaction records—spanning user intent, agent-to-agent delegation, and
   downstream tool invocations—into a singular, chronologically ordered action chain.
 
--  Time-Evolving Authorization and Identity Attestation: Unlike traditional static software processes,
-   an agent's permissions shift non-deterministically based on runtime execution context and delegated
-  trust boundaries. AUDIT leverages standardized data representations to capture authorization transitions
+- Time-Evolving Authorization and Identity Attestation: Unlike traditional static software processes,
+  an agent's permissions shift non-deterministically based on runtime execution context and delegated
+  trust boundaries. The framework leverages standardized data representations to capture authorization transitions
   as a continuous, time-evolving state, while cleanly differentiating between user, agent instance, and
   target service identities across the transaction history.
 
 - Independent Verifiability and Privacy-Preserving Logging: To transform standard operational telemetry
-   into a tamper-evident audit record, the architecture composes verifiable building blocks like
-   attestation (RATS) and transparency logging (SCITT). Audit records are designed to be fully verifiable
-   by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
-   mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
-   integrity.
+  into a tamper-evident audit record, the architecture composes verifiable building blocks like
+  attestation (RATS) and transparency logging (SCITT). Audit records are designed to be fully verifiable
+  by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
+  mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
+  integrity.
 
-# Gaps in the Current Approaches
+# Gap Analysis of the Current Approaches
 
 ## Gap in OpenTelemetry for Agent Observability
 
-While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
+While OTel is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
 applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
 performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
 evaluate what an agent decides.
@@ -697,22 +698,22 @@ From the I&C perspective following are some of the key limitations in incorporat
   a sub-agent, it is unclear what level of trust the sub-agent should inherit, or what constraints should govern the delegated
   authority.
 
-##  Gap in the IETF AUDIT Approach
+##  Gap in the Audit Architecture Approach
 
-There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
-mitigation within autonomous network environments, based on its defined charter and design constraints:
+There are several areas where the audit framework, introduced in {{?I-D.kuehlewind-audit-architecture}}, cannot provide comprehensive
+operational control or real-time risk mitigation within autonomous network environments, based on its defined charter and design constraints:
 
-- Exclusion of Internal Logic Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
+- Exclusion of Internal Logic Assessment: The primary limitation of the audit architecture is its strict focus on external, observable
   behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs),
   training sets, or internal inference parameters. Consequently, structural reasoning loops, hallucinations, or internal model
   drift remain completely invisible within the logged trajectory record.
 
-- Retrospective Rather Than Interceptive Control: The AUDIT framework is fundamentally optimized for cryptographic evidence
+- Retrospective Rather Than Interceptive Control: The audit framework is fundamentally optimized for cryptographic evidence
   collection and post-event verification across trust domains. It completely lacks protocol-layer primitives to enforce
   inline runtime policies or execute real-time task redirection. This means a misbehaving agent generating high-velocity
   loop mutations cannot be actively intercepted or suspended before the configuration changes damage the network infrastructure.
 
-- Absence of Active State Recovery & Rollback: While AUDIT focuses heavily on recording time-evolving authorization transitions
+- Absence of Active State Recovery & Rollback: While audit framework focuses heavily on recording time-evolving authorization transitions
   and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no mechanism to
   checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting a partial
    network configuration to a last known safe state) when a cross-domain policy violation occurs.
