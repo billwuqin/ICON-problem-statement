@@ -41,6 +41,12 @@ author:
    organization: Telefonica
    email: luismiguel.contrerasmurillo@telefonica.com
  -
+    fullname: Daniel King
+    organization: Lancaster University
+    email: d.king@lancaster.ac.uk
+
+Contributor:
+ -
     fullname: Qiufang Ma
     organization: Huawei
     email: maqiufang1@huawei.com
