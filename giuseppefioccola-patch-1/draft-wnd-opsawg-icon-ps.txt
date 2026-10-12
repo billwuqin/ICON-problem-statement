@@ -10,8 +10,8 @@ Expires: 15 April 2027                                             Cisco
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
-                                                                   Q. Ma
-                                                                  Huawei
+                                                                 D. King
+                                                    Lancaster University
                                                          12 October 2026
 
 
@@ -1122,6 +1122,6 @@ Authors' Addresses
    Email: luismiguel.contrerasmurillo@telefonica.com
 
 
-   Qiufang Ma
-   Huawei
-   Email: maqiufang1@huawei.com
+   Daniel King
+   Lancaster University
+   Email: d.king@lancaster.ac.uk
