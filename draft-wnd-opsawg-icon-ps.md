@@ -558,7 +558,7 @@ and runtime trust metrics to establish security boundaries and mitigate executio
   track operational compliance; the score drops instantly upon policy violations, automatically shrinking
   permission profiles or restricting the agent's active trust zone.
 
-## An Audit Architecture for Cross-Domain Interaction Traceability and Verification
+## An AUDIT Architecture for Cross-Domain Interaction Traceability and Verification
 
 Modern agents orchestrate complex, long-running workflows that frequently span multiple administrative
 boundaries and invoke independent subagents or external tools without active human oversight at each step.
@@ -574,7 +574,7 @@ tracking, and independent audit verifiability to track the entire action chain t
 mechanisms:
 
 - Cross-Domain Correlation and Common Identifiers: Rather than relying on isolated execution traces, the
-  audit framework adapts protocol-layer extensions (such as HTTP headers or context propagation tokens)
+  AUDIT framework adapts protocol-layer extensions (such as HTTP headers or context propagation tokens)
   to inject a common identifier across administrative boundaries. This allows an independent auditor to
   stitch together separate interaction records—spanning user intent, agent-to-agent delegation, and
   downstream tool invocations—into a singular, chronologically ordered action chain.
@@ -586,8 +586,8 @@ mechanisms:
   target service identities across the transaction history.
 
 - Independent Verifiability and Privacy-Preserving Logging: To transform standard operational telemetry
-  into a tamper-evident audit record, the architecture composes verifiable building blocks like
-  attestation (RATS) and transparency logging (SCITT). Audit records are designed to be fully verifiable
+  into a tamper-evident AUDIT record, the architecture composes verifiable building blocks like
+  attestation (RATS) and transparency logging (SCITT). AUDIT records are designed to be fully verifiable
   by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
   mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
   integrity.
@@ -647,7 +647,7 @@ Three limitations characterize current implementation of quality gate.
 
 - Implementation dependency on framework primitives. Quality gate behaviour is entirely developer-constructed from
   framework-specific primitives. There is no standard quality gate interface, no standard evaluation schema, no standard
-  routing decision vocabulary, and no standard audit record format. A quality gate implemented in LangGraph is architecturally
+  routing decision vocabulary, and no standard AUDIT record format. A quality gate implemented in LangGraph is architecturally
   incompatible with one implemented in CrewAI or AutoGen. They cannot be governed, observed, or audited through common
   infrastructure.
 
@@ -698,22 +698,22 @@ From the I&C perspective following are some of the key limitations in incorporat
   a sub-agent, it is unclear what level of trust the sub-agent should inherit, or what constraints should govern the delegated
   authority.
 
-##  Gap in the Audit Architecture Approach
+##  Gap in the AUDIT Architecture Approach
 
-There are several areas where the audit framework, introduced in {{?I-D.kuehlewind-audit-architecture}}, cannot provide comprehensive
+There are several areas where the AUDIT framework, introduced in {{?I-D.kuehlewind-audit-architecture}}, cannot provide comprehensive
 operational control or real-time risk mitigation within autonomous network environments, based on its defined charter and design constraints:
 
-- Exclusion of Internal Logic Assessment: The primary limitation of the audit architecture is its strict focus on external, observable
+- Exclusion of Internal Logic Assessment: The primary limitation of the AUDIT architecture is its strict focus on external, observable
   behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs),
   training sets, or internal inference parameters. Consequently, structural reasoning loops, hallucinations, or internal model
   drift remain completely invisible within the logged trajectory record.
 
-- Retrospective Rather Than Interceptive Control: The audit framework is fundamentally optimized for cryptographic evidence
+- Retrospective Rather Than Interceptive Control: The AUDIT framework is fundamentally optimized for cryptographic evidence
   collection and post-event verification across trust domains. It completely lacks protocol-layer primitives to enforce
   inline runtime policies or execute real-time task redirection. This means a misbehaving agent generating high-velocity
   loop mutations cannot be actively intercepted or suspended before the configuration changes damage the network infrastructure.
 
-- Absence of Active State Recovery & Rollback: While audit framework focuses heavily on recording time-evolving authorization transitions
+- Absence of Active State Recovery & Rollback: While AUDIT framework focuses heavily on recording time-evolving authorization transitions
   and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no mechanism to
   checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting a partial
    network configuration to a last known safe state) when a cross-domain policy violation occurs.
