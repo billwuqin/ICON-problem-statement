@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 11 April 2027                                             Cisco
+Expires: 15 April 2027                                             Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                    Q. Ma
                                                                   Huawei
-                                                          8 October 2026
+                                                         12 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 April 2027.
+   This Internet-Draft will expire on 15 April 2027.
 
 Copyright Notice
 
@@ -113,7 +113,7 @@ Table of Contents
        4.4.1.  Existing Intervention Approaches for Human and Agent
                Interaction
      4.5.  Existing Identity & Access Management Approaches
-     4.6.  An Audit Architecture for Cross-Domain Interaction
+     4.6.  An AUDIT Architecture for Cross-Domain Interaction
            Traceability and Verification
    5.  Gap Analysis of the Current Approaches
      5.1.  Gap in OpenTelemetry for Agent Observability
@@ -123,7 +123,7 @@ Table of Contents
      5.5.  Gap in the existing Intervention Approaches
      5.6.  Gap in the existing Identity and Access Management
            Approaches
-     5.7.  Gap in the Audit Architecture Approach
+     5.7.  Gap in the AUDIT Architecture Approach
    6.  Standardization Area
    7.  Security Considerations
    8.  IANA Considerations
@@ -749,7 +749,7 @@ Table of Contents
       automatically shrinking permission profiles or restricting the
       agent's active trust zone.
 
-4.6.  An Audit Architecture for Cross-Domain Interaction Traceability
+4.6.  An AUDIT Architecture for Cross-Domain Interaction Traceability
       and Verification
 
    Modern agents orchestrate complex, long-running workflows that
@@ -772,7 +772,7 @@ Table of Contents
    through the following mechanisms:
 
    *  Cross-Domain Correlation and Common Identifiers: Rather than
-      relying on isolated execution traces, the audit framework adapts
+      relying on isolated execution traces, the AUDIT framework adapts
       protocol-layer extensions (such as HTTP headers or context
       propagation tokens) to inject a common identifier across
       administrative boundaries.  This allows an independent auditor to
@@ -791,8 +791,8 @@ Table of Contents
 
    *  Independent Verifiability and Privacy-Preserving Logging: To
       transform standard operational telemetry into a tamper-evident
-      audit record, the architecture composes verifiable building blocks
-      like attestation (RATS) and transparency logging (SCITT).  Audit
+      AUDIT record, the architecture composes verifiable building blocks
+      like attestation (RATS) and transparency logging (SCITT).  AUDIT
       records are designed to be fully verifiable by a third party that
       trusts neither the agent nor its operator, utilizing strict
       selective disclosure mechanisms to omit sensitive prompt content
@@ -879,7 +879,7 @@ Table of Contents
       behaviour is entirely developer-constructed from framework-
       specific primitives.  There is no standard quality gate interface,
       no standard evaluation schema, no standard routing decision
-      vocabulary, and no standard audit record format.  A quality gate
+      vocabulary, and no standard AUDIT record format.  A quality gate
       implemented in LangGraph is architecturally incompatible with one
       implemented in CrewAI or AutoGen.  They cannot be governed,
       observed, or audited through common infrastructure.
@@ -959,23 +959,23 @@ Table of Contents
       should inherit, or what constraints should govern the delegated
       authority.
 
-5.7.  Gap in the Audit Architecture Approach
+5.7.  Gap in the AUDIT Architecture Approach
 
-   There are several areas where the audit framework, introduced in
+   There are several areas where the AUDIT framework, introduced in
    [I-D.kuehlewind-audit-architecture], cannot provide comprehensive
    operational control or real-time risk mitigation within autonomous
    network environments, based on its defined charter and design
    constraints:
 
    *  Exclusion of Internal Logic Assessment: The primary limitation of
-      the audit architecture is its strict focus on external, observable
+      the AUDIT architecture is its strict focus on external, observable
       behaviors and boundary interaction states.  It explicitly excludes
       the auditing of underlying Large Language Models (LLMs), training
       sets, or internal inference parameters.  Consequently, structural
       reasoning loops, hallucinations, or internal model drift remain
       completely invisible within the logged trajectory record.
 
-   *  Retrospective Rather Than Interceptive Control: The audit
+   *  Retrospective Rather Than Interceptive Control: The AUDIT
       framework is fundamentally optimized for cryptographic evidence
       collection and post-event verification across trust domains.  It
       completely lacks protocol-layer primitives to enforce inline
@@ -984,7 +984,7 @@ Table of Contents
       cannot be actively intercepted or suspended before the
       configuration changes damage the network infrastructure.
 
-   *  Absence of Active State Recovery & Rollback: While audit framework
+   *  Absence of Active State Recovery & Rollback: While AUDIT framework
       focuses heavily on recording time-evolving authorization
       transitions and chain-of-custody data across distributed
       workflows, it lacks execution awareness.  The framework specifies
