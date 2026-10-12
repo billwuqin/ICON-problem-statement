@@ -44,7 +44,6 @@ author:
     fullname: Daniel King
     organization: Lancaster University
     email: d.king@lancaster.ac.uk
-
 Contributor:
  -
     fullname: Qiufang Ma
