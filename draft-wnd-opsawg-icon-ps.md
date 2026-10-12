@@ -40,7 +40,7 @@ author:
    fullname: Luis. M. Contreras
    organization: Telefonica
    email: luismiguel.contrerasmurillo@telefonica.com
-  -
+ -
     fullname: Daniel King
     organization: Lancaster University
     email: d.king@lancaster.ac.uk
