@@ -708,26 +708,29 @@ From the I&C perspective following are some of the key limitations in incorporat
 There are several areas where the AUDIT framework, introduced in {{?I-D.kuehlewind-audit-architecture}}, cannot provide comprehensive
 operational control or real-time risk mitigation within autonomous network environments, based on its defined charter and design constraints:
 
-- Exclusion of Internal Logic Assessment: The primary limitation of the AUDIT architecture is its strict focus on external, observable
-  behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs),
-  training sets, or internal inference parameters. Consequently, structural reasoning loops, hallucinations, or internal model
-  drift remain completely invisible within the logged trajectory record.
+- Post-mortem Rather than Pre-Event Interceptive Control: The AUDIT framework is fundamentally optimized for
+  cryptographic evidence collection and post-event verification across trust domains. It completely lacks protocol-layer
+  primitives to enforce inline runtime policies or execute real-time task instructions such as risk control,access control
+  policy precedence control, etc. This means a misbehaving agent generating high-velocity loop mutations cannot be actively
+  intercepted or suspended before the configuration changes damage the network infrastructure.
 
-- Retrospective Rather Than Interceptive Control: The AUDIT framework is fundamentally optimized for cryptographic evidence
-  collection and post-event verification across trust domains. It completely lacks protocol-layer primitives to enforce
-  inline runtime policies or execute real-time task redirection. This means a misbehaving agent generating high-velocity
-  loop mutations cannot be actively intercepted or suspended before the configuration changes damage the network infrastructure.
+- Absence of In-Event Active State Recovery & Rollback: While AUDIT focuses heavily on recording time-evolving authorization
+  transitions and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no
+  mechanism to checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting
+  a partial network configuration to a last known safe state) interrupt execution, human escalation,failure correction when a
+  cross-domain policy violation occurs.
 
-- Absence of Active State Recovery & Rollback: While AUDIT framework focuses heavily on recording time-evolving authorization transitions
-  and chain-of-custody data across distributed workflows, it lacks execution awareness. The framework specifies no mechanism to
-  checkpoint active agent states, preserve runtime memory contexts, or trigger granular rollbacks (such as reverting a partial
-   network configuration to a last known safe state) when a cross-domain policy violation occurs.
+- Exclusion of Internal Reasoning Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
+  behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs) and internal
+  reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memeory retrieval
+  remain completely invisible within the logged trajectory record.
 
-- Heavy Core Primitive Dependencies: The framework does not design or standardize standalone identity, attestation, or tracking
-  primitives. Instead, it depends on the multi-group composition of external protocols (such as WIMSE, RATS, SCITT, and OAuth).
-  This introduces severe deployment and synchronization risks; any fragmentation or architectural mismatch in those baseline
-   blocks directly breaks the integrity of the end-to-end network automation audit trail.
-
+- OpenTelemetry gap: The core gap between OpenTelemetry and ICON metrics is domain-specific semantic awareness. OpenTelemetry functions
+  as a stateless data pipeline for internet application traces, token usage, and tool executions. However, it lacks standardized primitives
+  to capture an agent’s internal cognitive patterns like planning, chain of thoughts, and memory retrieval. Crucially, OpenTelemetry
+  cannot validate network state such as verifying if tools invocation caused a misconfiguration, nor can it natively keep track of
+  real-time human interventions (e.g., human approval). Bridging this gap requires auxiliary, semantic-aware validation layers to assess
+  actual operational safety.
 
 # Standardization Area
 
