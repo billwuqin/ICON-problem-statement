@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 15 April 2027                                             Cisco
+Expires: 17 April 2027                                             Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                  D. King
                                                     Lancaster University
-                                                         12 October 2026
+                                                         14 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 April 2027.
+   This Internet-Draft will expire on 17 April 2027.
 
 Copyright Notice
 
@@ -967,40 +967,46 @@ Table of Contents
    network environments, based on its defined charter and design
    constraints:
 
-   *  Exclusion of Internal Logic Assessment: The primary limitation of
-      the AUDIT architecture is its strict focus on external, observable
-      behaviors and boundary interaction states.  It explicitly excludes
-      the auditing of underlying Large Language Models (LLMs), training
-      sets, or internal inference parameters.  Consequently, structural
-      reasoning loops, hallucinations, or internal model drift remain
-      completely invisible within the logged trajectory record.
-
-   *  Retrospective Rather Than Interceptive Control: The AUDIT
+   *  Post-mortem Rather than Pre-Event Interceptive Control: The AUDIT
       framework is fundamentally optimized for cryptographic evidence
       collection and post-event verification across trust domains.  It
       completely lacks protocol-layer primitives to enforce inline
-      runtime policies or execute real-time task redirection.  This
+      runtime policies or execute real-time task instructions such as
+      risk control,access control policy precedence control, etc.  This
       means a misbehaving agent generating high-velocity loop mutations
       cannot be actively intercepted or suspended before the
       configuration changes damage the network infrastructure.
 
-   *  Absence of Active State Recovery & Rollback: While AUDIT framework
+   *  Absence of In-Event Active State Recovery & Rollback: While AUDIT
       focuses heavily on recording time-evolving authorization
       transitions and chain-of-custody data across distributed
       workflows, it lacks execution awareness.  The framework specifies
       no mechanism to checkpoint active agent states, preserve runtime
       memory contexts, or trigger granular rollbacks (such as reverting
-      a partial network configuration to a last known safe state) when a
+      a partial network configuration to a last known safe state)
+      interrupt execution, human escalation,failure correction when a
       cross-domain policy violation occurs.
 
-   *  Heavy Core Primitive Dependencies: The framework does not design
-      or standardize standalone identity, attestation, or tracking
-      primitives.  Instead, it depends on the multi-group composition of
-      external protocols (such as WIMSE, RATS, SCITT, and OAuth).  This
-      introduces severe deployment and synchronization risks; any
-      fragmentation or architectural mismatch in those baseline blocks
-      directly breaks the integrity of the end-to-end network automation
-      audit trail.
+   *  Exclusion of Internal Reasoning Assessment: The primary limitation
+      of the AUDIT approach is its strict focus on external, observable
+      behaviors and boundary interaction states.  It explicitly excludes
+      the auditing of underlying Large Language Models (LLMs) and
+      internal reasoning process.  Consequently, structural reasoning
+      loops related to planning, self-optimization, chain of
+      thoughts,memeory retrieval remain completely invisible within the
+      logged trajectory record.
+
+   *  OpenTelemetry gap: The core gap between OpenTelemetry and ICON
+      metrics is domain-specific semantic awareness.  OpenTelemetry
+      functions as a stateless data pipeline for internet application
+      traces, token usage, and tool executions.  However, it lacks
+      standardized primitives to capture an agent’s internal cognitive
+      patterns like planning, chain of thoughts, and memory retrieval.
+      Crucially, OpenTelemetry cannot validate network state such as
+      verifying if tools invocation caused a misconfiguration, nor can
+      it natively keep track of real-time human interventions (e.g.,
+      human approval).  Bridging this gap requires auxiliary, semantic-
+      aware validation layers to assess actual operational safety.
 
 6.  Standardization Area
 
