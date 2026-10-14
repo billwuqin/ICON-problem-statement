@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 11 April 2027                                             Cisco
+Expires: 17 April 2027                                             Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                  D. King
                                                     Lancaster University
-                                                          8 October 2026
+                                                         14 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 April 2027.
+   This Internet-Draft will expire on 17 April 2027.
 
 Copyright Notice
 
@@ -962,6 +962,26 @@ Table of Contents
    autonomous network environments, based on its defined charter and
    design constraints:
 
+   *  Post-mortem Rather Than pre-event Interceptive Control: The AUDIT
+      framework is fundamentally optimized for cryptographic evidence
+      collection and post-event verification across trust domains.  It
+      completely lacks protocol-layer primitives to enforce inline
+      runtime policies or execute real-time task instructions such as
+      risk control,access control policy precedence control, etc.  This
+      means a misbehaving agent generating high-velocity loop mutations
+      cannot be actively intercepted or suspended before the
+      configuration changes damage the network infrastructure.
+
+   *  Absence of in the event Active State Recovery & Rollback: While
+      AUDIT focuses heavily on recording time-evolving authorization
+      transitions and chain-of-custody data across distributed
+      workflows, it lacks execution awareness.  The framework specifies
+      no mechanism to checkpoint active agent states, preserve runtime
+      memory contexts, or trigger granular rollbacks (such as reverting
+      a partial network configuration to a last known safe state)
+      interrupt execution, human escalation,failure correction when a
+      cross-domain policy violation occurs.
+
    *  Exclusion of Internal Logic Assessment: The primary limitation of
       the AUDIT approach is its strict focus on external, observable
       behaviors and boundary interaction states.  It explicitly excludes
@@ -969,24 +989,6 @@ Table of Contents
       sets, or internal inference parameters.  Consequently, structural
       reasoning loops, hallucinations, or internal model drift remain
       completely invisible within the logged trajectory record.
-
-   *  Retrospective Rather Than Interceptive Control: The AUDIT
-      framework is fundamentally optimized for cryptographic evidence
-      collection and post-event verification across trust domains.  It
-      completely lacks protocol-layer primitives to enforce inline
-      runtime policies or execute real-time task redirection.  This
-      means a misbehaving agent generating high-velocity loop mutations
-      cannot be actively intercepted or suspended before the
-      configuration changes damage the network infrastructure.
-
-   *  Absence of Active State Recovery & Rollback: While AUDIT focuses
-      heavily on recording time-evolving authorization transitions and
-      chain-of-custody data across distributed workflows, it lacks
-      execution awareness.  The framework specifies no mechanism to
-      checkpoint active agent states, preserve runtime memory contexts,
-      or trigger granular rollbacks (such as reverting a partial network
-      configuration to a last known safe state) when a cross-domain
-      policy violation occurs.
 
    *  Heavy Core Primitive Dependencies: The framework does not design
       or standardize standalone identity, attestation, or tracking
