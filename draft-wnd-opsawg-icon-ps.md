@@ -12,9 +12,9 @@ v: 3
 # area: AREA
 # workgroup: WG Working Group
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - agent observability
+ - ai guardrail
+ - agent intervention and control
 venue:
 #  group: WG
 #  type: Working Group
@@ -716,15 +716,9 @@ mitigation within autonomous network environments, based on its defined charter 
 
 - Exclusion of Internal Reasoning Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
   behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs) and internal
-  reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memeory retrieval
+  reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memory retrieval
   remain completely invisible within the logged trajectory record.
 
-- OpenTelemetry gap: The core gap between OpenTelemetry and ICON metrics is domain-specific semantic awareness. OpenTelemetry functions
-  as a stateless data pipeline for internet application traces, token usage, and tool executions. However, it lacks standardized primitives
-  to capture an agent’s internal cognitive patterns like planning, chain of thoughts, and memory retrieval. Crucially, OpenTelemetry
-  cannot validate network state such as verifying if tools invocation caused a misconfiguration, nor can it natively keep track of
-  real-time human interventions (e.g., human approval). Bridging this gap requires auxiliary, semantic-aware validation layers to assess
-  actual operational safety.
 
 # Standardization Area
 
