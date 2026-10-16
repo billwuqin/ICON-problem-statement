@@ -1988,14 +1988,31 @@ an agent's permissions shift non-deterministically based on runtime execution co
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-gap-in-opentelemetry-for-ag" class="section-name selfRef">Gap in OpenTelemetry for Agent Observability</a>
         </h3>
 <p id="section-5.1-1">While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
-applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
-performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
-evaluate what an agent decides.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">Furthermore, OpenTelemetry only captures the execution process, not the operational motivation. It lacks native support for
-observing metrics such as an agent's reasoning logic and internal confidence levels. OpenTelemetry originated in cloud-native
-microservice architectures, its tracing lifecycle cannot represent asynchronous Human-in-the-Loop (HITL) workflows.
-Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action,
-has been suspended, and is currently awaiting human approval.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+applied to AI agent observability.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-5.1-2.1">
+            <p id="section-5.1-2.1.1">Continuous Monitoring and Proactive evaluation: The fundamental limitation is that OpenTelemetry functions as a passive data
+plane for system performance, not a proactive evaluation or guardrail engine for AI behavior. It can track how an application
+runs, but it struggles to evaluate what an agent decides based on network topology, network element and network resource
+context information, therefore it is hard to track network configuration enforcement confirmation and change impact assessment.<a href="#section-5.1-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.2">
+            <p id="section-5.1-2.2.1">Lack Evaluation Metrics: Furthermore, OpenTelemetry only captures the execution process, not objectives, constraints to drive
+the agent to perform a task. It lacks native support for bserving metrics such as internal confidence levels associated with
+an agent's reasoning logic.<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.3">
+            <p id="section-5.1-2.3.1">Human on the Loop Support: OpenTelemetry originated in cloud-native microservice architectures, its tracing lifecycle
+cannot represent asynchronous Human-in-the-Loop (HITL) workflows. Consequently, it provides no mechanism to signal
+within a trace that a specific step constitutes a high-risk action, has been suspended, and is currently awaiting
+human approval.<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-5.1-2.4">
+            <p id="section-5.1-2.4.1">Accountability Support: Without trajectory record information such as Who executed the network commands, when, based on
+what prompts/reasoning, and when, it is difficult to trace responsibility in the event of a network incident, e.g., whether
+it is ther responsbility of AI Agent or responsibility of Human operators.<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
 </section>
 </div>
 <div id="gap-in-ai-guardrails">
