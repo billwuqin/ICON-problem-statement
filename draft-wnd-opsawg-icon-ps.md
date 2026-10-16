@@ -730,8 +730,8 @@ operational control or real-time risk mitigation within autonomous network envir
   a partial network configuration to a last known safe state) interrupt execution, human escalation,failure correction when a
   cross-domain policy violation occurs.
 
-- Exclusion of Internal Reasoning Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
-  behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs) and internal
+- Exclusion of Internal Reasoning Evaluation: The primary limitation of the AUDIT approach is its strict focus on external, observable
+  behaviors and boundary interaction states. It explicitly excludes the evaluation of underlying Large Language Models (LLMs) and internal
   reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memory retrieval
   remain completely invisible within the logged trajectory record.
 
