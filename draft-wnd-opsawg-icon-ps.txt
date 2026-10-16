@@ -5,14 +5,14 @@
 Network Working Group                                              Q. Wu
 Internet-Draft                                                    Huawei
 Intended status: Informational                             D. Ceccarelli
-Expires: 17 April 2027                                             Cisco
+Expires: 19 April 2027                                             Cisco
                                                                    Z. Li
                                                                     CMCC
                                                          L. M. Contreras
                                                               Telefonica
                                                                  D. King
                                                     Lancaster University
-                                                         14 October 2026
+                                                         16 October 2026
 
 
  Problem Statement for Observability, Intervention and Control (I&C) in
@@ -68,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 April 2027.
+   This Internet-Draft will expire on 19 April 2027.
 
 Copyright Notice
 
@@ -988,20 +988,8 @@ Table of Contents
       the auditing of underlying Large Language Models (LLMs) and
       internal reasoning process.  Consequently, structural reasoning
       loops related to planning, self-optimization, chain of
-      thoughts,memeory retrieval remain completely invisible within the
+      thoughts,memory retrieval remain completely invisible within the
       logged trajectory record.
-
-   *  OpenTelemetry gap: The core gap between OpenTelemetry and ICON
-      metrics is domain-specific semantic awareness.  OpenTelemetry
-      functions as a stateless data pipeline for internet application
-      traces, token usage, and tool executions.  However, it lacks
-      standardized primitives to capture an agent’s internal cognitive
-      patterns like planning, chain of thoughts, and memory retrieval.
-      Crucially, OpenTelemetry cannot validate network state such as
-      verifying if tools invocation caused a misconfiguration, nor can
-      it natively keep track of real-time human interventions (e.g.,
-      human approval).  Bridging this gap requires auxiliary, semantic-
-      aware validation layers to assess actual operational safety.
 
 6.  Standardization Area
 
