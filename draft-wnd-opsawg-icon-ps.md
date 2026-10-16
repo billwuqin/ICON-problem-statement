@@ -604,7 +604,7 @@ mechanisms:
 While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
 applied to AI agent observability.
 
-- Continuous Monitoring and Proactive evaluation: The fundamental limitation is that OpenTelemetry functions as a passive data
+- Continuous Monitoring and Proactive Evaluation: The fundamental limitation is that OpenTelemetry functions as a passive data
   plane for system performance, not a proactive evaluation or guardrail engine for AI behavior. It can track how an application
   runs, but it struggles to evaluate what an agent decides based on network topology, network element and network resource
   context information, therefore it is hard to track network configuration enforcement confirmation and change impact assessment.
