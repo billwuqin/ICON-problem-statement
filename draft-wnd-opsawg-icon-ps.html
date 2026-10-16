@@ -14,7 +14,7 @@
        This document provides an overview of the issues associated with the
 deployment of the observability, intervention, and control of autonomous
 agent pipelines in large-scale heterogeneous network environments. The
-term "Intervention and Control" is used to describe a set of automated and
+term "Observability, Intervention and Control" is used to describe a set of automated and
 human-initiated mechanisms that guarantee the capability to observe, evaluate, constrain,
 correct, and terminate Autonomous agents at any point, for any reason, irrespective of
 their level of autonomy under which it operates, to ensure resilience, recovery,
@@ -1115,7 +1115,7 @@ svg {
 <p id="section-abstract-1">This document provides an overview of the issues associated with the
 deployment of the observability, intervention, and control of autonomous
 agent pipelines in large-scale heterogeneous network environments. The
-term "Intervention and Control" is used to describe a set of automated and
+term "Observability, Intervention and Control" is used to describe a set of automated and
 human-initiated mechanisms that guarantee the capability to observe, evaluate, constrain,
 correct, and terminate Autonomous agents at any point, for any reason, irrespective of
 their level of autonomy under which it operates, to ensure resilience, recovery,
@@ -1241,7 +1241,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-network-" class="internal xref">Solution Space for Network Management Agent Observability, Intervention and Control</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
-                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-opentelemetry-for-agent-obs" class="internal xref">Opentelemetry for Agent Observability and Drift Tracking</a></p>
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-opentelemetry-for-agent-obs" class="internal xref">OpenTelemetry for Agent Observability and Drift Tracking</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-context-aware-ai-guardrails" class="internal xref">Context-Aware AI Guardrails and Validation</a></p>
@@ -1261,12 +1261,12 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-existing-identity-access-ma" class="internal xref">Existing Identity &amp; Access Management Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
-                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-ietf-audit-for-cross-domain" class="internal xref">IETF AUDIT for Cross-Domain Interaction Traceability and Verification</a></p>
+                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-an-audit-architecture-for-c" class="internal xref">An AUDIT Architecture for Cross-Domain Interaction Traceability and Verification</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-gaps-in-the-current-approac" class="internal xref">Gaps in the Current Approaches</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-gap-analysis-of-the-current" class="internal xref">Gap Analysis of the Current Approaches</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-gap-in-opentelemetry-for-ag" class="internal xref">Gap in OpenTelemetry for Agent Observability</a></p>
@@ -1287,7 +1287,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
                 <p id="section-toc.1-1.5.2.6.1"><a href="#section-5.6" class="auto internal xref">5.6</a>.  <a href="#name-gap-in-the-existing-identit" class="internal xref">Gap in the existing Identity and Access Management Approaches</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.7">
-                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-gap-in-the-ietf-audit-appro" class="internal xref">Gap in the IETF AUDIT Approach</a></p>
+                <p id="section-toc.1-1.5.2.7.1"><a href="#section-5.7" class="auto internal xref">5.7</a>.  <a href="#name-gap-in-the-audit-architectu" class="internal xref">Gap in the AUDIT Architecture Approach</a></p>
 </li>
             </ul>
 </li>
@@ -1327,8 +1327,8 @@ architectural and protocol work and associated documents.<a href="#section-abstr
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">Network operations are increasingly autonomous with the growth of network
-management Agent applications at the network level and service level. The Agent lifecycle
-management comprise the following phases:<a href="#section-1-1" class="pilcrow">¶</a></p>
+management Agent applications at the network level and service level <span>[<a href="#IG1507" class="cite xref">IG1507</a>]</span>, <span>[<a href="#IG1251G" class="cite xref">IG1251G</a>]</span>.
+The Agent lifecycle management comprise the following phases:<a href="#section-1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-2.1">
           <p id="section-1-2.1.1">Agent Discovery: Discover capabilities and skills and onboard agent<a href="#section-1-2.1.1" class="pilcrow">¶</a></p>
@@ -1350,7 +1350,7 @@ the behavior of AI agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
-input and agent output and typically break down into input input guardrail, action guardrail,
+input and agent output and typically break down into input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action filter level with static boundary
 parameters. For example, image you have a network management agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
@@ -1385,8 +1385,8 @@ hinder timely risk mitigation and state recovery during boundary violations by a
 </li>
       </ul>
 <p id="section-1-7">This document provides a problem statement for protocol on continuous agent behavior observability, intervention and control.
-We list the properties the protocol should have, then explain why those properties are necessary. We describe why a
-new protocol is the best solution for the more general problem of identifying and characterizing trajectory records
+We list the properties the protocol should have, then explain why those properties are necessary. We explain why
+a new protocol can offer the optimal solution for the more general problem of identifying and characterizing trajectory records
 related to agent behavior or workflow operation, continuous monitoring and evaluation, enable human oversight, provide
 human and agent interaction for agent intervention and control at the service level and network level.<a href="#section-1-7" class="pilcrow">¶</a></p>
 <p id="section-1-8">Where possible, any solutions work will be built in a modular way using existing IETF protocols.
@@ -1424,7 +1424,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
   how to achieve it.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-2.5">
-          <p id="section-2-2.5.1">Agent Observability: The visibility into an agent's internal state, decision-making logic, and workflow execution from its
+          <p id="section-2-2.5.1">Observability: The visibility into an agent's internal state, decision-making logic, and workflow execution from its
  external telemetry outputs (e.g., logs, traces, metrics), enabling human   operators or monitoring systems to understand what
  the agent is doing and why it behaves in a specific manner.<a href="#section-2-2.5.1" class="pilcrow">¶</a></p>
 </li>
@@ -1455,6 +1455,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
                    or reasoning sequence the agent followed to reach its conclusion using a structured Thought,Action,Observation
                    loop.<a href="#section-2-2.11.1" class="pilcrow">¶</a></p>
 </li>
+        <li class="normal" id="section-2-2.12">
+          <p id="section-2-2.12.1">OpenTelemetry: also known as OTel, is a vendor-neutral open source Observability framework for instrumenting, generating, collecting,
+and exporting telemetry data such as traces, metrics, and logs ({OpenTelemetry}).<a href="#section-2-2.12.1" class="pilcrow">¶</a></p>
+</li>
       </ul>
 </section>
 </div>
@@ -1467,7 +1471,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 architectural challenges. Current network management paradigms are static rule driven and therefore are built on
 deterministic models that assume predictable, rule-based behaviors. The shift toward non-deterministic (probabilistic),
 AI-driven network operation architectures creates a structural mismatch between machine-speed execution and human-speed
-oversight. This gap manifests in the following three distinct aspects:<a href="#section-3-1" class="pilcrow">¶</a></p>
+oversight. This gap appears in the following three distinct aspects.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="the-observability-aspect">
 <section id="section-3.1">
         <h3 id="name-the-observability-aspect">
@@ -1642,8 +1646,8 @@ and Network Management domains must interact with a highly heterogeneous
 mix of legacy systems, modern APIs, and third-party platforms. Establishing
 consistent, operational and compliance boundaries across these disparate
 integration layers is exceptionally complex as agents may routinely validate intent,
-invoke actions or retrieve data through pathways (e.g. MCP/A2A etc.) that were never
-designed with network management automation we used today.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
+invoke actions or retrieve data through pathways, e.g. <span>[<a href="#MCP" class="cite xref">MCP</a>]</span> and <span>[<a href="#A2A" class="cite xref">A2A</a>]</span>,
+that were never designed with network management automation we used today.<a href="#section-3.2.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multi-vendor-dependency-risks">
@@ -1725,14 +1729,14 @@ changes.<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 <div id="opentelemetry-for-agent-observability-and-drift-tracking">
 <section id="section-4.1">
         <h3 id="name-opentelemetry-for-agent-obs">
-<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-opentelemetry-for-agent-obs" class="section-name selfRef">Opentelemetry for Agent Observability and Drift Tracking</a>
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-opentelemetry-for-agent-obs" class="section-name selfRef">OpenTelemetry for Agent Observability and Drift Tracking</a>
         </h3>
 <p id="section-4.1-1">Modern agents orchestrate complex workflows: reasoning chains, tool execution, knowledge
 retrieval, multi-agent collaboration. When things go wrong, or right, you need to understand
-exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push
-can't capture reasoning processes or decision context. Opentelemetry addresses this by utilizing
-unified GenAI and Agent Semantic Conventions to standardise how metrics, logs, and distributed
-traces are captured across multi-agent system.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG Push, IPFIX
+can't capture reasoning processes or decision context. OpenTelemetry {OpenTelemetry} addresses
+this by utilizing unified GenAI and Agent Semantic Conventions to standardise how metrics, logs,
+and distributed traces are captured across multi-agent system.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <p id="section-4.1-2">Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing and Context
 Monitoring to how an agent processes information, arrives at decisions, and executes tasks
 to establish baselines and identify drift early as follows:<a href="#section-4.1-2" class="pilcrow">¶</a></p>
@@ -1924,7 +1928,7 @@ Tokens (JWTs) with narrow scopes and rapid expirations, restricting tool access 
 temporal window.<a href="#section-4.5-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.5-3.3">
-            <p id="section-4.5-3.3.1">Cntext-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
+            <p id="section-4.5-3.3.1">Context-Aware and Dynamic Trust Level Assignment: Advanced emerging mechanisms move past static
 configurations by computing dynamic, behavior-driven trust scores in real time. Instead of labeling an
 agent as permanently trusted, frameworks (such as the Microsoft Agent Control Toolkit) dynamically
 track operational compliance; the score drops instantly upon policy violations, automatically shrinking
@@ -1933,20 +1937,20 @@ permission profiles or restricting the agent's active trust zone.<a href="#secti
         </ul>
 </section>
 </div>
-<div id="ietf-audit-for-cross-domain-interaction-traceability-and-verification">
+<div id="an-audit-architecture-for-cross-domain-interaction-traceability-and-verification">
 <section id="section-4.6">
-        <h3 id="name-ietf-audit-for-cross-domain">
-<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-ietf-audit-for-cross-domain" class="section-name selfRef">IETF AUDIT for Cross-Domain Interaction Traceability and Verification</a>
+        <h3 id="name-an-audit-architecture-for-c">
+<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-an-audit-architecture-for-c" class="section-name selfRef">An AUDIT Architecture for Cross-Domain Interaction Traceability and Verification</a>
         </h3>
 <p id="section-4.6-1">Modern agents orchestrate complex, long-running workflows that frequently span multiple administrative
 boundaries and invoke independent subagents or external tools without active human oversight at each step.
 When anomalies or compliance violations occur, local agent logs are insufficient because no single
 administrative party possesses full visibility over a multi-domain interaction chain. Traditional
 auditing and logging techniques lack the cryptographic primitives required to produce verifiable proof
-of execution to external, untrusted entities. The emerging IETF AUDIT approach addresses these limitations
-by introducing standard data models and protocol-layer extensions to securely record, correlate, and
-verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
-<p id="section-4.6-2">Implementing the IETF AUDIT framework focuses heavily on cross-domain correlation, dynamic authorization
+of execution to external, untrusted entities. The emerging approach in <span>[<a href="#I-D.kuehlewind-audit-architecture" class="cite xref">I-D.kuehlewind-audit-architecture</a>]</span>
+addresses these limitations by introducing standard data models and protocol-layer extensions to securely record,
+correlate, and verify the multi-domain provenance of agent interactions while enforcing strict user privacy boundaries.<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<p id="section-4.6-2">Implementing <span>[<a href="#I-D.kuehlewind-audit-architecture" class="cite xref">I-D.kuehlewind-audit-architecture</a>]</span> focuses heavily on cross-domain correlation, dynamic authorization
 tracking, and independent audit verifiability to track the entire action chain through the following
 mechanisms:<a href="#section-4.6-2" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1960,27 +1964,27 @@ downstream tool invocations—into a singular, chronologically ordered action ch
           <li class="normal" id="section-4.6-3.2">
             <p id="section-4.6-3.2.1">Time-Evolving Authorization and Identity Attestation: Unlike traditional static software processes,
 an agent's permissions shift non-deterministically based on runtime execution context and delegated
-  trust boundaries. AUDIT leverages standardized data representations to capture authorization transitions
-  as a continuous, time-evolving state, while cleanly differentiating between user, agent instance, and
-  target service identities across the transaction history.<a href="#section-4.6-3.2.1" class="pilcrow">¶</a></p>
+trust boundaries. The framework leverages standardized data representations to capture authorization transitions
+as a continuous, time-evolving state, while cleanly differentiating between user, agent instance, and
+target service identities across the transaction history.<a href="#section-4.6-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.6-3.3">
             <p id="section-4.6-3.3.1">Independent Verifiability and Privacy-Preserving Logging: To transform standard operational telemetry
- into a tamper-evident audit record, the architecture composes verifiable building blocks like
- attestation (RATS) and transparency logging (SCITT). Audit records are designed to be fully verifiable
- by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
- mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
- integrity.<a href="#section-4.6-3.3.1" class="pilcrow">¶</a></p>
+into a tamper-evident AUDIT record, the architecture composes verifiable building blocks like
+attestation (RATS) and transparency logging (SCITT). AUDIT records are designed to be fully verifiable
+by a third party that trusts neither the agent nor its operator, utilizing strict selective disclosure
+mechanisms to omit sensitive prompt content or personal data while maintaining total cryptographic
+integrity.<a href="#section-4.6-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 </section>
 </div>
-<div id="gaps-in-the-current-approaches">
+<div id="gap-analysis-of-the-current-approaches">
 <section id="section-5">
-      <h2 id="name-gaps-in-the-current-approac">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-gaps-in-the-current-approac" class="section-name selfRef">Gaps in the Current Approaches</a>
+      <h2 id="name-gap-analysis-of-the-current">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-gap-analysis-of-the-current" class="section-name selfRef">Gap Analysis of the Current Approaches</a>
       </h2>
 <div id="gap-in-opentelemetry-for-agent-observability">
 <section id="section-5.1">
@@ -2073,7 +2077,7 @@ potential direction is to leverage some of the techniques used in Anomaly manage
 <li class="normal" id="section-5.4-2.1">
             <p id="section-5.4-2.1.1">Implementation dependency on framework primitives. Quality gate behaviour is entirely developer-constructed from
 framework-specific primitives. There is no standard quality gate interface, no standard evaluation schema, no standard
-routing decision vocabulary, and no standard audit record format. A quality gate implemented in LangGraph is architecturally
+routing decision vocabulary, and no standard AUDIT record format. A quality gate implemented in LangGraph is architecturally
 incompatible with one implemented in CrewAI or AutoGen. They cannot be governed, observed, or audited through common
 infrastructure.<a href="#section-5.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
@@ -2150,13 +2154,13 @@ authority.<a href="#section-5.6-2.4.1" class="pilcrow">¶</a></p>
         </ul>
 </section>
 </div>
-<div id="gap-in-the-ietf-audit-approach">
+<div id="gap-in-the-audit-architecture-approach">
 <section id="section-5.7">
-        <h3 id="name-gap-in-the-ietf-audit-appro">
-<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-gap-in-the-ietf-audit-appro" class="section-name selfRef">Gap in the IETF AUDIT Approach</a>
+        <h3 id="name-gap-in-the-audit-architectu">
+<a href="#section-5.7" class="section-number selfRef">5.7. </a><a href="#name-gap-in-the-audit-architectu" class="section-name selfRef">Gap in the AUDIT Architecture Approach</a>
         </h3>
-<p id="section-5.7-1">There are several areas where the IETF AUDIT framework cannot provide comprehensive operational control or real-time risk
-mitigation within autonomous network environments, based on its defined charter and design constraints:<a href="#section-5.7-1" class="pilcrow">¶</a></p>
+<p id="section-5.7-1">There are several areas where the AUDIT framework, introduced in <span>[<a href="#I-D.kuehlewind-audit-architecture" class="cite xref">I-D.kuehlewind-audit-architecture</a>]</span>, cannot provide comprehensive
+operational control or real-time risk mitigation within autonomous network environments, based on its defined charter and design constraints:<a href="#section-5.7-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.7-2.1">
             <p id="section-5.7-2.1.1">Post-mortem Rather than Pre-Event Interceptive Control: The AUDIT framework is fundamentally optimized for
@@ -2260,21 +2264,29 @@ detecting, evaluating, interrupting, correcting, and recovering from agent behav
         <dd>
 <span class="refTitle">"Agent2Agent (A2A) protocol"</span>, <time datetime="2025-04" class="refDate">April 2025</time>, <span>&lt;<a href="https://google-a2a.github.io/A2A/#/documentation?id=agent2agent-protocol-a2a">https://google-a2a.github.io/A2A/#/documentation?id=agent2agent-protocol-a2a</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="I-D.kuehlewind-audit-architecture">[I-D.kuehlewind-audit-architecture]</dt>
+        <dd>
+<span class="refAuthor">Kühlewind, M.</span> and <span class="refAuthor">H. Birkholz</span>, <span class="refTitle">"An Architecture for Auditing Agent Delegation and Interactions"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-kuehlewind-audit-architecture-01</span>, <time datetime="2026-09-07" class="refDate">7 September 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-kuehlewind-audit-architecture-01">https://datatracker.ietf.org/doc/html/draft-kuehlewind-audit-architecture-01</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="I-D.wmz-nmrg-agent-ndt-arch">[I-D.wmz-nmrg-agent-ndt-arch]</dt>
         <dd>
 <span class="refAuthor">Wu, Q.</span>, <span class="refAuthor">Zhou, C.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Han, S.</span>, and <span class="refAuthor">Y. Hong</span>, <span class="refTitle">"Network Digital Twin and Agentic AI based Architecture for AI-driven Network Operations"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-wmz-nmrg-agent-ndt-arch-06</span>, <time datetime="2026-08-28" class="refDate">28 August 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-wmz-nmrg-agent-ndt-arch-06">https://datatracker.ietf.org/doc/html/draft-wmz-nmrg-agent-ndt-arch-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="IG1251G">[IG1251G]</dt>
         <dd>
-<span class="refTitle">"IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy"</span>, <time datetime="2026-05" class="refDate">May 2026</time>, <span>&lt;<a href="https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956">https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956</a>&gt;</span>. </dd>
+<span class="refTitle">"TM Forum, IG1251G IP Network AN Level 4 Agentic Architecture for Multi-Scenario Autonomy"</span>, <time datetime="2026-05" class="refDate">May 2026</time>, <span>&lt;<a href="https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956">https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=401824956</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="IG1507">[IG1507]</dt>
         <dd>
-<span class="refTitle">"IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT"</span>, <time datetime="2026-05" class="refDate">May 2026</time>, <span>&lt;<a href="https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744">https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744</a>&gt;</span>. </dd>
+<span class="refTitle">"TM Forum, IG1507 Intervention and Control for Agentic Operation V1.0.0 DRAFT"</span>, <time datetime="2026-05" class="refDate">May 2026</time>, <span>&lt;<a href="https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744">https://projects.tmforum.org/wiki/pages/viewpage.action?pageId=411641744</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="MCP">[MCP]</dt>
-      <dd>
+        <dd>
 <span class="refTitle">"Model Context Protocol"</span>, <time datetime="2024-11" class="refDate">November 2024</time>, <span>&lt;<a href="https://modelcontextprotocol.io/">https://modelcontextprotocol.io/</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="OpenTelemetry">[OpenTelemetry]</dt>
+      <dd>
+<span class="refTitle">"OpenTelemetry (OTel)"</span>, <span>n.d.</span>, <span>&lt;<a href="https://opentelemetry.io/">https://opentelemetry.io/</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
