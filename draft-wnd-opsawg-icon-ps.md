@@ -12,9 +12,9 @@ v: 3
 # area: AREA
 # workgroup: WG Working Group
 keyword:
- - Observability
- - Control
- - Intervention
+ - agent observability
+ - ai guardrail
+ - agent intervention and control
 venue:
 #  group: WG
 #  type: Working Group
@@ -601,16 +601,26 @@ mechanisms:
 
 ## Gap in OpenTelemetry for Agent Observability
 
-While OTel is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
-applied to AI agent observability. The fundamental limitation is that OpenTelemetry functions as a passive data plane for system
-performance, not an evaluation or guardrail engine for AI behavior. It can track how an application runs, but it struggles to
-evaluate what an agent decides.
+While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
+applied to AI agent observability.
 
-Furthermore, OpenTelemetry only captures the execution process, not the operational motivation. It lacks native support for
-observing metrics such as an agent's reasoning logic and internal confidence levels. OpenTelemetry originated in cloud-native
-microservice architectures, its tracing lifecycle cannot represent asynchronous Human-in-the-Loop (HITL) workflows.
-Consequently, it provides no mechanism to signal within a trace that a specific step constitutes a high-risk action,
-has been suspended, and is currently awaiting human approval.
+- Continuous Monitoring and Proactive evaluation: The fundamental limitation is that OpenTelemetry functions as a passive data
+  plane for system performance, not a proactive evaluation or guardrail engine for AI behavior. It can track how an application
+  runs, but it struggles to evaluate what an agent decides based on network topology, network element and network resource
+  context information, therefore it is hard to track network configuration enforcement confirmation and change impact assessment.
+
+- Lack Evaluation Metrics: Furthermore, OpenTelemetry only captures the execution process, not objectives, constraints to drive
+  the agent to perform a task. It lacks native support for bserving metrics such as internal confidence levels associated with
+  an agent's reasoning logic.
+
+- Human on the Loop Support: OpenTelemetry originated in cloud-native microservice architectures, its tracing lifecycle
+  cannot represent asynchronous Human-in-the-Loop (HITL) workflows. Consequently, it provides no mechanism to signal
+  within a trace that a specific step constitutes a high-risk action, has been suspended, and is currently awaiting
+  human approval.
+
+- Accountability Support: Without trajectory record information such as Who executed the network commands, when, based on
+  what prompts/reasoning, and when, it is difficult to trace responsibility in the event of a network incident, e.g., whether
+  it is ther responsbility of AI Agent or responsibility of Human operators.
 
 ## Gap in AI Guardrails
 
@@ -722,15 +732,9 @@ operational control or real-time risk mitigation within autonomous network envir
 
 - Exclusion of Internal Reasoning Assessment: The primary limitation of the AUDIT approach is its strict focus on external, observable
   behaviors and boundary interaction states. It explicitly excludes the auditing of underlying Large Language Models (LLMs) and internal
-  reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memeory retrieval
+  reasoning process. Consequently, structural reasoning loops related to planning, self-optimization, chain of thoughts,memory retrieval
   remain completely invisible within the logged trajectory record.
 
-- OpenTelemetry gap: The core gap between OpenTelemetry and ICON metrics is domain-specific semantic awareness. OpenTelemetry functions
-  as a stateless data pipeline for internet application traces, token usage, and tool executions. However, it lacks standardized primitives
-  to capture an agent’s internal cognitive patterns like planning, chain of thoughts, and memory retrieval. Crucially, OpenTelemetry
-  cannot validate network state such as verifying if tools invocation caused a misconfiguration, nor can it natively keep track of
-  real-time human interventions (e.g., human approval). Bridging this gap requires auxiliary, semantic-aware validation layers to assess
-  actual operational safety.
 
 # Standardization Area
 
