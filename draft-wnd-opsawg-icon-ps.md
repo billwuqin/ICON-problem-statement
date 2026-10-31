@@ -103,7 +103,7 @@ architectural and protocol work and associated documents.
 # Introduction
 
 Network operations are increasingly autonomous with the growth of network
-management Agent applications at the network level and service level {{IG1507}}, {{IG1251G}}.
+management Agent applications at both network level and service level {{IG1507}}, {{IG1251G}}.
 The Agent lifecycle management comprise the following phases:
 
 - Agent Discovery: Discover capabilities and skills and onboard agent
@@ -114,7 +114,8 @@ The Agent lifecycle management comprise the following phases:
 
 To help network operators manage Network management AI agents with more consistency,
 visibility and control, the observability component, intervention and control components
-need to work in a collaborate manner and are critical for the Agent lifecycle management.
+need to work in a collaborate manner and are critical to provide guardrail protection for
+the Agent lifecycle management.
 
 Since AI native operations may be non-deterministic, when network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
@@ -128,9 +129,9 @@ output guardrail and operate at the input/output/pre-action filter level with st
 parameters. For example, image you have a network management agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
-or performannce drifts produce harmful results, leading to high risk network operation failure.
-if the guardrail detects such operational anomalies, it can immediately raise an error and
-prevent harmful results of high risk network operators.
+or performannce drifts of agent behavior produce harmful results, leading to high risk network
+operation failure. If the guardrail detects such operational anomalies, it can immediately
+raise an error and prevent harmful results of high risk network operators.
 
 However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
@@ -140,7 +141,7 @@ full operational lifecycle, e.g.,
 
 - Network operators usually lack an equivalent infrastructure or platform for human oversight;
 
-- Provide continuous monitoring of an AI system's internal logic or its long-running
+- Unable to provide continuous monitoring of an AI system's internal logic or its long-running
   execution paths that match the speed and scale of the network management Agent applications,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
@@ -195,9 +196,10 @@ identify gaps that need to be filled.
           agent took the shortest sequence of actions or wasted resources on redundant tools or analyzing specific segments of the
           trajectory to see if the agent excels at information retrieval but struggles with mathematical synthesis.
 
-- Human Oversight: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents. In agent trajectory
-                   management, it ensures that network management agents do not go off the rails, violate safety protocols, or waste
-                   resources. It transforms a fully autonomous "black box" into a controllable and collaborative system.
+- Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
+                   In the agent trajectory management, itt ensures that network management agents do not go off the rails, violate
+                   safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
+                   collaborative system.
 
 - Behavior: pattern of reasoning, decisions, and actions an Autonomous agent takes to achieve a specific goal such as reasoning sequence,
             the sequence and logic of execution paths.
@@ -223,8 +225,8 @@ oversight. This gap appears in the following three distinct aspects.
 
 As agents increasingly execute complex operational tasks (e.g., service
 provisioning, fault diagnosis), they frequently delegate critical planning
-paths and execution decisions to the underlying Large Language Models (LLMs).
-This delegation creates an optimization barrier:
+paths and execution decisions to the underlying Large Language Models (LLMs)
+or sub-task agents. This delegation creates an optimization barrier:
 
 * **Lack of Trajectory Transparency:** Network operators cannot cannot
  validate the safety or intent of an agent's planned mutations and trace how
@@ -233,7 +235,7 @@ This delegation creates an optimization barrier:
  before or after execution. This may lead to unexpected consequence on the
  infrastructure.
 
-* **Ambiguity of Data Attribution:** There is no standard mechanism to observe
+* **Ambiguity of Data Attribution:** There is no standardized mechanism to observe
    where context or knowledge come from. Operators cannot verify which external
    knowledge base, version, or retrieval weight led an agent to make a
    high-risk operational decision.
@@ -272,7 +274,7 @@ of the data points involved in active agent pipelines:
  traces can lead to telemetry storms that overwhelm Agent Observability Data collectors, yet legacy pipelines
  lack adaptive backpressure or dynamic sampling mechanisms.
 
-* **Security vs. Auditing Trade-off:** Standard telemetry logging lacks context-aware, dynamic
+* **Security vs. accountability Trade-off:** Standard telemetry logging lacks context-aware, dynamic
  update. Network Operators are forced to choose between logging complete trajectories (risking
  the leakage of PII, credentials, or topology details) or omitting data (ruining post-incident
  accountability and cryptographic audit trails).
@@ -751,7 +753,7 @@ automation moving toward AI Driven Network Operation.
 - Agent Observability, Intervention and Control Network Management Architecture: Developing or selecting a framework for enforcing boundaries,
   detecting, evaluating, interrupting, correcting, and recovering from agent behavior within operational and compliance boundaries.
 
-- OpenTelemetry protocol extension Enabling network behavioral assessment through analysis of observed operational network data
+- Agent Observability Data Model: Enabling network behavioral assessment through analysis of observed operational network data
   (logs, metrics, traces, etc.)
 
 - Human and Agent Interaction protocol for Human Escalation/Intervention, Agent Intervention and Control
