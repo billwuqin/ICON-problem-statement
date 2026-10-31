@@ -41,11 +41,11 @@ architectural and protocol work and associated documents.
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.12.2
+    platformdirs 4.13.4
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.9.1
+    wcwidth 0.9.2
 -->
 <link href="draft-wnd-opsawg-icon-ps.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1065,7 +1065,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Wu, et al.</td>
-<td class="center">Expires 19 April 2027</td>
+<td class="center">Expires 4 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1078,12 +1078,12 @@ svg {
 <dd class="internet-draft">draft-wnd-opsawg-icon-ps-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-16" class="published">16 October 2026</time>
+<time datetime="2026-10-31" class="published">31 October 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-04-19">19 April 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-04">4 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1158,7 +1158,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 April 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 4 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1327,7 +1327,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">Network operations are increasingly autonomous with the growth of network
-management Agent applications at the network level and service level <span>[<a href="#IG1507" class="cite xref">IG1507</a>]</span>, <span>[<a href="#IG1251G" class="cite xref">IG1251G</a>]</span>.
+management Agent applications at both network level and service level <span>[<a href="#IG1507" class="cite xref">IG1507</a>]</span>, <span>[<a href="#IG1251G" class="cite xref">IG1251G</a>]</span>.
 The Agent lifecycle management comprise the following phases:<a href="#section-1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-2.1">
@@ -1342,7 +1342,8 @@ The Agent lifecycle management comprise the following phases:<a href="#section-1
       </ul>
 <p id="section-1-3">To help network operators manage Network management AI agents with more consistency,
 visibility and control, the observability component, intervention and control components
-need to work in a collaborate manner and are critical for the Agent lifecycle management.<a href="#section-1-3" class="pilcrow">¶</a></p>
+need to work in a collaborate manner and are critical to provide guardrail protection for
+the Agent lifecycle management.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">Since AI native operations may be non-deterministic, when network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
@@ -1355,9 +1356,9 @@ output guardrail and operate at the input/output/pre-action filter level with st
 parameters. For example, image you have a network management agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
-or performannce drifts produce harmful results, leading to high risk network operation failure.
-if the guardrail detects such operational anomalies, it can immediately raise an error and
-prevent harmful results of high risk network operators.<a href="#section-1-4" class="pilcrow">¶</a></p>
+or performannce drifts of agent behavior produce harmful results, leading to high risk network
+operation failure. If the guardrail detects such operational anomalies, it can immediately
+raise an error and prevent harmful results of high risk network operators.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">However, as Agentic AI systems are increasingly integrated into autonomous workflows and
 critical infrastructure, these static measures are proving insufficient for the
 full operational lifecycle, e.g.,<a href="#section-1-5" class="pilcrow">¶</a></p>
@@ -1369,7 +1370,7 @@ full operational lifecycle, e.g.,<a href="#section-1-5" class="pilcrow">¶</a></
           <p id="section-1-6.2.1">Network operators usually lack an equivalent infrastructure or platform for human oversight;<a href="#section-1-6.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-6.3">
-          <p id="section-1-6.3.1">Provide continuous monitoring of an AI system's internal logic or its long-running
+          <p id="section-1-6.3.1">Unable to provide continuous monitoring of an AI system's internal logic or its long-running
 execution paths that match the speed and scale of the network management Agent applications,
 e.g., network failure or security risk is hard to detect and control, occurring at machine speed.<a href="#section-1-6.3.1" class="pilcrow">¶</a></p>
 </li>
@@ -1442,9 +1443,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         trajectory to see if the agent excels at information retrieval but struggles with mathematical synthesis.<a href="#section-2-2.8.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-2.9">
-          <p id="section-2-2.9.1">Human Oversight: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents. In agent trajectory
-                 management, it ensures that network management agents do not go off the rails, violate safety protocols, or waste
-                 resources. It transforms a fully autonomous "black box" into a controllable and collaborative system.<a href="#section-2-2.9.1" class="pilcrow">¶</a></p>
+          <p id="section-2-2.9.1">Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
+                 In the agent trajectory management, itt ensures that network management agents do not go off the rails, violate
+                 safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
+                 collaborative system.<a href="#section-2-2.9.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-2.10">
           <p id="section-2-2.10.1">Behavior: pattern of reasoning, decisions, and actions an Autonomous agent takes to achieve a specific goal such as reasoning sequence,
@@ -1484,8 +1486,8 @@ oversight. This gap appears in the following three distinct aspects.<a href="#se
           </h4>
 <p id="section-3.1.1-1">As agents increasingly execute complex operational tasks (e.g., service
 provisioning, fault diagnosis), they frequently delegate critical planning
-paths and execution decisions to the underlying Large Language Models (LLMs).
-This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
+paths and execution decisions to the underlying Large Language Models (LLMs)
+or sub-task agents. This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.1.1-2.1">
               <p id="section-3.1.1-2.1.1"><strong>Lack of Trajectory Transparency:</strong> Network operators cannot cannot
@@ -1496,7 +1498,7 @@ This delegation creates an optimization barrier:<a href="#section-3.1.1-1" class
  infrastructure.<a href="#section-3.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.1-2.2">
-              <p id="section-3.1.1-2.2.1"><strong>Ambiguity of Data Attribution:</strong> There is no standard mechanism to observe
+              <p id="section-3.1.1-2.2.1"><strong>Ambiguity of Data Attribution:</strong> There is no standardized mechanism to observe
  where context or knowledge come from. Operators cannot verify which external
  knowledge base, version, or retrieval weight led an agent to make a
  high-risk operational decision.<a href="#section-3.1.1-2.2.1" class="pilcrow">¶</a></p>
@@ -1549,7 +1551,7 @@ of the data points involved in active agent pipelines:<a href="#section-3.1.3-1"
  lack adaptive backpressure or dynamic sampling mechanisms.<a href="#section-3.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
             <li class="normal" id="section-3.1.3-2.3">
-              <p id="section-3.1.3-2.3.1"><strong>Security vs. Auditing Trade-off:</strong> Standard telemetry logging lacks context-aware, dynamic
+              <p id="section-3.1.3-2.3.1"><strong>Security vs. accountability Trade-off:</strong> Standard telemetry logging lacks context-aware, dynamic
  update. Network Operators are forced to choose between logging complete trajectories (risking
  the leakage of PII, credentials, or topology details) or omitting data (ruining post-incident
  accountability and cryptographic audit trails).<a href="#section-3.1.3-2.3.1" class="pilcrow">¶</a></p>
@@ -2206,7 +2208,7 @@ automation moving toward AI Driven Network Operation.<a href="#section-6-2" clas
 detecting, evaluating, interrupting, correcting, and recovering from agent behavior within operational and compliance boundaries.<a href="#section-6-3.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-6-3.2">
-          <p id="section-6-3.2.1">OpenTelemetry protocol extension Enabling network behavioral assessment through analysis of observed operational network data
+          <p id="section-6-3.2.1">Agent Observability Data Model: Enabling network behavioral assessment through analysis of observed operational network data
 (logs, metrics, traces, etc.)<a href="#section-6-3.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-6-3.3">
