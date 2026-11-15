@@ -103,8 +103,8 @@ architectural and protocol work and associated documents.
 
 # Introduction
 
-Network operations are increasingly autonomous with the growth of network
-management Agent applications at both network level and service level {{IG1507}}, {{IG1251G}}.
+Network operations are increasingly autonomous with the growth of AI Agent
+applications at both network level and service level {{IG1507}}, {{IG1251G}}.
 The Agent lifecycle management comprise the following phases:
 
 - Agent Discovery: Discover capabilities and skills and onboard agent
@@ -113,7 +113,7 @@ The Agent lifecycle management comprise the following phases:
 
 - Agent Upgrade: Large language model, tools, prompts, memory related software update
 
-To help network operators manage Network management AI agents with more consistency,
+To help network operators manage AI agents with more consistency,
 visibility and control, the observability component, intervention and control components
 need to work in a collaborate manner and are critical to provide guardrail protection for
 the Agent lifecycle management.
