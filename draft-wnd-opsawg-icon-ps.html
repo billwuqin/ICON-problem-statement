@@ -27,25 +27,25 @@ to tools, agent to human interaction and service and network policy.
 Intervention and Control group will investigate to guide its
 architectural and protocol work and associated documents. 
     ' name="description">
-<meta content="xml2rfc 3.34.1" name="generator">
+<meta content="xml2rfc 3.35.0" name="generator">
 <meta content="agent observability" name="keyword">
 <meta content="ai guardrail" name="keyword">
 <meta content="agent intervention and control" name="keyword">
 <meta content="draft-wnd-opsawg-icon-ps-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.1
-    Python 3.14.8
-    ConfigArgParse 1.8.0
+  xml2rfc 3.35.0
+    Python 3.14.10
+    ConfigArgParse 1.9.0
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.13.4
+    platformdirs 4.14.3
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.9.2
+    wcwidth 0.9.4
 -->
 <link href="draft-wnd-opsawg-icon-ps.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1046,7 +1046,7 @@ svg {
   & :is([stroke="white"], [stroke^="#fff"]) {
     stroke: var(--background-color);
   }
-  & :is([fill="black"], [fill^="#000"], :not([fill])) {
+  & :is([fill="black"], [fill^="#000"], :not([fill], [fill] *)) {
     fill: var(--text-color);
   }
   & :is([fill="white"], [fill^="#fff"]) {
@@ -1061,11 +1061,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Observability and I&amp;C</td>
-<td class="right">October 2026</td>
+<td class="right">November 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Wu, et al.</td>
-<td class="center">Expires 4 May 2027</td>
+<td class="center">Expires 19 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1078,12 +1078,12 @@ svg {
 <dd class="internet-draft">draft-wnd-opsawg-icon-ps-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-10-31" class="published">31 October 2026</time>
+<time datetime="2026-11-15" class="published">15 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-04">4 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-19">19 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1158,7 +1158,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 19 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1238,7 +1238,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-network-" class="internal xref">Solution Space for Network Management Agent Observability, Intervention and Control</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-ai-agent" class="internal xref">Solution Space for AI Agent Observability, Intervention and Control</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-opentelemetry-for-agent-obs" class="internal xref">OpenTelemetry for Agent Observability and Drift Tracking</a></p>
@@ -1344,7 +1344,7 @@ The Agent lifecycle management comprise the following phases:<a href="#section-1
 visibility and control, the observability component, intervention and control components
 need to work in a collaborate manner and are critical to provide guardrail protection for
 the Agent lifecycle management.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">Since AI native operations may be non-deterministic, when network management agents
+<p id="section-1-4">Since AI native operations may be non-deterministic, when AI Agents such as network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
@@ -1353,7 +1353,7 @@ to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action filter level with static boundary
-parameters. For example, image you have a network management agent that uses network active
+parameters. For example, image you have a AI agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts of agent behavior produce harmful results, leading to high risk network
@@ -1371,7 +1371,7 @@ full operational lifecycle, e.g.,<a href="#section-1-5" class="pilcrow">¶</a></
 </li>
         <li class="normal" id="section-1-6.3">
           <p id="section-1-6.3.1">Unable to provide continuous monitoring of an AI system's internal logic or its long-running
-execution paths that match the speed and scale of the network management Agent applications,
+execution paths that match the speed and scale of the AI Agent applications,
 e.g., network failure or security risk is hard to detect and control, occurring at machine speed.<a href="#section-1-6.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-6.4">
@@ -1419,7 +1419,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
  agent propagates across multi-agent boundaries.<a href="#section-2-2.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-2.4">
-          <p id="section-2-2.4.1">Human to Agent Communication: The interaction between human users and network management Agent designed to perform tasks, solve
+          <p id="section-2-2.4.1">Human to Agent Communication: The interaction between human users and AI Agent designed to perform tasks, solve
   problems, or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
   task, human-agent communication involves delegation, where the human provides a goal and the agent autonomously figures out
   how to achieve it.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
@@ -1444,7 +1444,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </li>
         <li class="normal" id="section-2-2.9">
           <p id="section-2-2.9.1">Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
-                 In the agent trajectory management, itt ensures that network management agents do not go off the rails, violate
+                 In the agent trajectory management, itt ensures that AI agents do not go off the rails, violate
                  safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
                  collaborative system.<a href="#section-2-2.9.1" class="pilcrow">¶</a></p>
 </li>
@@ -1580,7 +1580,7 @@ outcomes significantly less predictable during runtime execution, leading to
 multi-step execution risks:<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.2.1-2.1">
-              <p id="section-3.2.1-2.1.1"><strong>Implicit Impact Evaluation:</strong> Network management agents lack a standardized
+              <p id="section-3.2.1-2.1.1"><strong>Implicit Impact Evaluation:</strong> AI agents lack a standardized
  protocol to evaluate and classify the risk tier (e.g., Low, Medium, High, Critical)
  or estimate the potential blast radius (affected devices, link traffic, customer
  scope) of an action sequence before deploying in production network.<a href="#section-3.2.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1723,10 +1723,10 @@ changes.<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 </div>
 </section>
 </div>
-<div id="solution-space-for-network-management-agent-observability-intervention-and-control">
+<div id="solution-space-for-ai-agent-observability-intervention-and-control">
 <section id="section-4">
-      <h2 id="name-solution-space-for-network-">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-solution-space-for-network-" class="section-name selfRef">Solution Space for Network Management Agent Observability, Intervention and Control</a>
+      <h2 id="name-solution-space-for-ai-agent">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-solution-space-for-ai-agent" class="section-name selfRef">Solution Space for AI Agent Observability, Intervention and Control</a>
       </h2>
 <div id="opentelemetry-for-agent-observability-and-drift-tracking">
 <section id="section-4.1">
@@ -1772,7 +1772,7 @@ approaches currently realized in the industry operate at defined transition poin
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
 bad input or bad output — without necessarily involving your selected large language model(expensive or cheap).
-For example, image you have a network management agent that uses network active
+For example, image you have a AI agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts produce harmful results, leading to high risk network operation failure.
@@ -2196,10 +2196,10 @@ remain completely invisible within the logged trajectory record.<a href="#sectio
       </h2>
 <p id="section-6-1">This section outlines key areas where standardization is required to support the design, implementation, and operation of Network
 Management Agent Observability, Intervention and Control in Agent Fabric networks. In the Agent Fabric Network,
-- Two or multiple scenario specifc network management agents can work together to support multi-scenario autonomy or close loop management.
-- Two or muitiple scenario specific network management agents can work together to support cross domain collaboration.
-- Two or mutiple sceanrio specific network management agents can work together to support collaboration between service layer and network layer.
-the agent gateway can be used to collect metric, log, audit information from each network management agents.<a href="#section-6-1" class="pilcrow">¶</a></p>
+- Two or multiple scenario specific AI Agents such as network management agents can work together to support multi-scenario autonomy or close loop management.
+- Two or muitiple scenario specific AI Agents such as network management agents can work together to support cross domain collaboration.
+- Two or mutiple sceanrio specific AI Agents such as network management agents can work together to support collaboration between service layer and network layer.
+the agent gateway can be used to collect metric, log, audit information from each AI agents.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">The intent is to identify foundational areas that require align with network management technologies developed in IETF OPS Area and drive network
 automation moving toward AI Driven Network Operation.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <ul class="normal">
