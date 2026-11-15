@@ -118,7 +118,7 @@ visibility and control, the observability component, intervention and control co
 need to work in a collaborate manner and are critical to provide guardrail protection for
 the Agent lifecycle management.
 
-Since AI native operations may be non-deterministic, when network management agents
+Since AI native operations may be non-deterministic, when AI Agents such as network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
 the behavior of AI agents within operational and compliance boundaries, prevent
@@ -127,7 +127,7 @@ to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action filter level with static boundary
-parameters. For example, image you have a network management agent that uses network active
+parameters. For example, image you have a AI agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts of agent behavior produce harmful results, leading to high risk network
@@ -143,7 +143,7 @@ full operational lifecycle, e.g.,
 - Network operators usually lack an equivalent infrastructure or platform for human oversight;
 
 - Unable to provide continuous monitoring of an AI system's internal logic or its long-running
-  execution paths that match the speed and scale of the network management Agent applications,
+  execution paths that match the speed and scale of the AI Agent applications,
   e.g., network failure or security risk is hard to detect and control, occurring at machine speed.
 
 - When a violation related to input/output filter is suspected, there are currently no standardized
@@ -178,7 +178,7 @@ identify gaps that need to be filled.
 -  Cascading Failure: A scenario where a failure in one downstream
     agent propagates across multi-agent boundaries.
 
-- Human to Agent Communication: The interaction between human users and network management Agent designed to perform tasks, solve
+- Human to Agent Communication: The interaction between human users and AI Agent designed to perform tasks, solve
     problems, or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
     task, human-agent communication involves delegation, where the human provides a goal and the agent autonomously figures out
     how to achieve it.
@@ -198,7 +198,7 @@ identify gaps that need to be filled.
           trajectory to see if the agent excels at information retrieval but struggles with mathematical synthesis.
 
 - Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
-                   In the agent trajectory management, itt ensures that network management agents do not go off the rails, violate
+                   In the agent trajectory management, itt ensures that AI agents do not go off the rails, violate
                    safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
                    collaborative system.
 
@@ -292,7 +292,7 @@ that fail to account for real-time contextual adaptation and makes operational
 outcomes significantly less predictable during runtime execution, leading to
 multi-step execution risks:
 
-* **Implicit Impact Evaluation:** Network management agents lack a standardized
+* **Implicit Impact Evaluation:** AI agents lack a standardized
    protocol to evaluate and classify the risk tier (e.g., Low, Medium, High, Critical)
    or estimate the potential blast radius (affected devices, link traffic, customer
    scope) of an action sequence before deploying in production network.
@@ -394,7 +394,7 @@ can not ensure any disruptions or degradations are promptly addressed
 which lead to harmful outcome for high risk network configuration
 changes.
 
-# Solution Space for Network Management Agent Observability, Intervention and Control
+# Solution Space for AI Agent Observability, Intervention and Control
 
 ## OpenTelemetry for Agent Observability and Drift Tracking
 
@@ -429,7 +429,7 @@ approaches currently realized in the industry operate at defined transition poin
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
 bad input or bad output — without necessarily involving your selected large language model(expensive or cheap).
-For example, image you have a network management agent that uses network active
+For example, image you have a AI agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts produce harmful results, leading to high risk network operation failure.
@@ -743,10 +743,10 @@ operational control or real-time risk mitigation within autonomous network envir
 
 This section outlines key areas where standardization is required to support the design, implementation, and operation of Network
 Management Agent Observability, Intervention and Control in Agent Fabric networks. In the Agent Fabric Network,
-- Two or multiple scenario specifc network management agents can work together to support multi-scenario autonomy or close loop management.
-- Two or muitiple scenario specific network management agents can work together to support cross domain collaboration.
-- Two or mutiple sceanrio specific network management agents can work together to support collaboration between service layer and network layer.
-the agent gateway can be used to collect metric, log, audit information from each network management agents.
+- Two or multiple scenario specific AI Agents such as network management agents can work together to support multi-scenario autonomy or close loop management.
+- Two or muitiple scenario specific AI Agents such as network management agents can work together to support cross domain collaboration.
+- Two or mutiple sceanrio specific AI Agents such as network management agents can work together to support collaboration between service layer and network layer.
+the agent gateway can be used to collect metric, log, audit information from each AI agents.
 
 The intent is to identify foundational areas that require align with network management technologies developed in IETF OPS Area and drive network
 automation moving toward AI Driven Network Operation.
