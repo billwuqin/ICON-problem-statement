@@ -135,10 +135,10 @@ Table of Contents
 
 1.  Introduction
 
-   Network operations are increasingly autonomous with the growth of
-   network management Agent applications at both network level and
-   service level [IG1507], [IG1251G].  The Agent lifecycle management
-   comprise the following phases:
+   Network operations are increasingly autonomous with the growth of AI
+   Agent applications at both network level and service level [IG1507],
+   [IG1251G].  The Agent lifecycle management comprise the following
+   phases:
 
    *  Agent Discovery: Discover capabilities and skills and onboard
       agent
@@ -149,11 +149,11 @@ Table of Contents
    *  Agent Upgrade: Large language model, tools, prompts, memory
       related software update
 
-   To help network operators manage Network management AI agents with
-   more consistency, visibility and control, the observability
-   component, intervention and control components need to work in a
-   collaborate manner and are critical to provide guardrail protection
-   for the Agent lifecycle management.
+   To help network operators manage AI agents with more consistency,
+   visibility and control, the observability component, intervention and
+   control components need to work in a collaborate manner and are
+   critical to provide guardrail protection for the Agent lifecycle
+   management.
 
    Since AI native operations may be non-deterministic, when AI Agents
    such as network management agents misbehave or deviate from what
