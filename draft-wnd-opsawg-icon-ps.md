@@ -38,7 +38,7 @@ author:
     organization: Lancaster University
     email: d.king@lancaster.ac.uk
 
-Contributor:
+contributor:
 -
     fullname: Swamynathan Balasundaram
     organization: Nokia
