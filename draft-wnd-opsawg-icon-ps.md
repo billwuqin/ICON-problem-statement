@@ -18,8 +18,8 @@ keyword:
 venue:
 #  group: WG
 #  type: Working Group
-#  mail: WG@example.com
-#  arch: https://example.com/WG
+#  mail: opsawg@ietf.org
+#  arch: https://datatracker.ietf.org/wg
   github: "billwuqin/ICON-problem-statement"
   latest: "https://billwuqin.github.io/ICON-problem-statement/draft-wnd-opsawg-icon-ps.html"
 
@@ -44,20 +44,6 @@ author:
    fullname: Daniel King
    organization: Lancaster University
    email: d.king@lancaster.ac.uk
-
-Contributor:
--
-   fullname: Swamynathan Balasundaram
-   organization: Nokia
-   email: swamynathan.b@nokia.com
--
-   fullname: Qiufang Ma
-   organization: Huawei
-   email: maqiufang1@huawei.com
--
-  fullname: Giuseppe Fioccola
-  organization: Huawei
-  email: giuseppe.fioccola@huawei.com
 
 normative:
 
