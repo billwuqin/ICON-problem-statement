@@ -46,15 +46,15 @@ author:
    email: d.king@lancaster.ac.uk
 
 Contributor:
- -
+-
    fullname: Swamynathan Balasundaram
    organization: Nokia
    email: swamynathan.b@nokia.com
- -
+-
    fullname: Qiufang Ma
    organization: Huawei
    email: maqiufang1@huawei.com
- -
+-
   fullname: Giuseppe Fioccola
   organization: Huawei
   email: giuseppe.fioccola@huawei.com
