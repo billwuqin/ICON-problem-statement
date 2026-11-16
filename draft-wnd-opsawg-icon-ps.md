@@ -56,7 +56,7 @@ Contributor:
    email: maqiufang1@huawei.com
  -
   fullname: Giuseppe Fioccola
-  organization Huawei
+  organization: Huawei
   email: giuseppe.fioccola@huawei.com
 
 normative:
