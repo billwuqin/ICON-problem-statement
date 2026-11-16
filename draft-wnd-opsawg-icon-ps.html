@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</title>
+<title>Problem Statement for Autonomous Agent Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</title>
 <meta content="Qin Wu" name="author">
 <meta content="Daniele Ceccarelli" name="author">
 <meta content="Zhenqiang Li" name="author">
@@ -1065,7 +1065,7 @@ svg {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Wu, et al.</td>
-<td class="center">Expires 19 May 2027</td>
+<td class="center">Expires 20 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1078,12 +1078,12 @@ svg {
 <dd class="internet-draft">draft-wnd-opsawg-icon-ps-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-11-15" class="published">15 November 2026</time>
+<time datetime="2026-11-16" class="published">16 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-05-19">19 May 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-20">20 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1109,7 +1109,7 @@ svg {
 </dd>
 </dl>
 </div>
-<h1 id="title">Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</h1>
+<h1 id="title">Problem Statement for Autonomous Agent Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">This document provides an overview of the issues associated with the
@@ -1158,7 +1158,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 20 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1238,7 +1238,7 @@ architectural and protocol work and associated documents.<a href="#section-abstr
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-ai-agent" class="internal xref">Solution Space for AI Agent Observability, Intervention and Control</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-solution-space-for-autonomo" class="internal xref">Solution Space for Autonomous Agent Observability, Intervention and Control</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-opentelemetry-for-agent-obs" class="internal xref">OpenTelemetry for Agent Observability and Drift Tracking</a></p>
@@ -1340,20 +1340,20 @@ The Agent lifecycle management comprise the following phases:<a href="#section-1
           <p id="section-1-2.3.1">Agent Upgrade: Large language model, tools, prompts, memory related software update<a href="#section-1-2.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-1-3">To help network operators manage AI agents with more consistency,
+<p id="section-1-3">To help network operators manage Autonomous Agents with more consistency,
 visibility and control, the observability component, intervention and control components
 need to work in a collaborate manner and are critical to provide guardrail protection for
 the Agent lifecycle management.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">Since AI native operations may be non-deterministic, when AI Agents such as network management agents
+<p id="section-1-4">Since AI native operations may be non-deterministic, when Autonomous Agents such as network management agents
 misbehave or deviate from what Agents are expected to do, current AI control
 technologies (often referred to as "AI guardrails") are introduced to constrain
-the behavior of AI agents within operational and compliance boundaries, prevent
+the behavior of Autonomous Agents within operational and compliance boundaries, prevent
 AI from producing harmful results or taking wrong actions, e.g., escalate a decision
 to a human for a high-risk network operation, defend against malicious attacks,
 e.g., prompt injection. These AI guardrails enable you to do checks and validations of user
 input and agent output and typically break down into input guardrail, action guardrail,
 output guardrail and operate at the input/output/pre-action filter level with static boundary
-parameters. For example, image you have a AI agent that uses network active
+parameters. For example, image you have an Autonomous Agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts of agent behavior produce harmful results, leading to high risk network
@@ -1371,7 +1371,7 @@ full operational lifecycle, e.g.,<a href="#section-1-5" class="pilcrow">¶</a></
 </li>
         <li class="normal" id="section-1-6.3">
           <p id="section-1-6.3.1">Unable to provide continuous monitoring of an AI system's internal logic or its long-running
-execution paths that match the speed and scale of the AI Agent applications,
+execution paths that match the speed and scale of the Autonomous Agent applications,
 e.g., network failure or security risk is hard to detect and control, occurring at machine speed.<a href="#section-1-6.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-1-6.4">
@@ -1419,7 +1419,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
  agent propagates across multi-agent boundaries.<a href="#section-2-2.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-2-2.4">
-          <p id="section-2-2.4.1">Human to Agent Communication: The interaction between human users and AI Agent designed to perform tasks, solve
+          <p id="section-2-2.4.1">Human to Agent Communication: The interaction between human users and Autonomous Agent designed to perform tasks, solve
   problems, or provide information. Unlike standard human-to-machine interaction where a human drives every step of a
   task, human-agent communication involves delegation, where the human provides a goal and the agent autonomously figures out
   how to achieve it.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
@@ -1444,7 +1444,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </li>
         <li class="normal" id="section-2-2.9">
           <p id="section-2-2.9.1">Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
-                 In the agent trajectory management, itt ensures that AI agents do not go off the rails, violate
+                 In the agent trajectory management, itt ensures that Autonomous Agents do not go off the rails, violate
                  safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
                  collaborative system.<a href="#section-2-2.9.1" class="pilcrow">¶</a></p>
 </li>
@@ -1580,7 +1580,7 @@ outcomes significantly less predictable during runtime execution, leading to
 multi-step execution risks:<a href="#section-3.2.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-3.2.1-2.1">
-              <p id="section-3.2.1-2.1.1"><strong>Implicit Impact Evaluation:</strong> AI agents lack a standardized
+              <p id="section-3.2.1-2.1.1"><strong>Implicit Impact Evaluation:</strong> Autonomous Agents lack a standardized
  protocol to evaluate and classify the risk tier (e.g., Low, Medium, High, Critical)
  or estimate the potential blast radius (affected devices, link traffic, customer
  scope) of an action sequence before deploying in production network.<a href="#section-3.2.1-2.1.1" class="pilcrow">¶</a></p>
@@ -1723,10 +1723,10 @@ changes.<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 </div>
 </section>
 </div>
-<div id="solution-space-for-ai-agent-observability-intervention-and-control">
+<div id="solution-space-for-autonomous-agent-observability-intervention-and-control">
 <section id="section-4">
-      <h2 id="name-solution-space-for-ai-agent">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-solution-space-for-ai-agent" class="section-name selfRef">Solution Space for AI Agent Observability, Intervention and Control</a>
+      <h2 id="name-solution-space-for-autonomo">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-solution-space-for-autonomo" class="section-name selfRef">Solution Space for Autonomous Agent Observability, Intervention and Control</a>
       </h2>
 <div id="opentelemetry-for-agent-observability-and-drift-tracking">
 <section id="section-4.1">
@@ -1739,7 +1739,7 @@ exactly what happened. Traditional network monitoring such as gRPC, SNMP, YANG P
 can't capture reasoning processes or decision context. OpenTelemetry {OpenTelemetry} addresses
 this by utilizing unified GenAI and Agent Semantic Conventions to standardise how metrics, logs,
 and distributed traces are captured across multi-agent system.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.1-2">Implementing OpenTelemetry for AI agents focuses heavily on distributed tracing and Context
+<p id="section-4.1-2">Implementing OpenTelemetry for Autonomous Agents focuses heavily on distributed tracing and Context
 Monitoring to how an agent processes information, arrives at decisions, and executes tasks
 to establish baselines and identify drift early as follows:<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
@@ -1772,7 +1772,7 @@ approaches currently realized in the industry operate at defined transition poin
 prompt filtering at the LLM input boundary, response validation at the LLM output boundary, and access control
 restrictions on tool invocation boundary. Currently, AI Guardrails are checks that run alongside your agents to catch
 bad input or bad output — without necessarily involving your selected large language model(expensive or cheap).
-For example, image you have a AI agent that uses network active
+For example, image you have an Autonomous Agent that uses network active
 and reactive assurance component to identify and resolve network issues, ensuring that any
 disruption or degradations are promptly addressed. You wouldn't expect operational anomalies
 or performannce drifts produce harmful results, leading to high risk network operation failure.
@@ -1873,7 +1873,7 @@ to step in and pause, correct, or safely redirect the agent. Traditional infrast
 kills or API credential revocations) cannot gracefully manage context state, leaving network configurations partially applied.
 Existing intervention mechanisms address this by establishing structured Human-in-the-Loop (HITL) communication models to
 bridge the gap between autonomous task execution and external human oversight.<a href="#section-4.4.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.4.1-2">Implementing intervention approaches for AI agents focuses heavily on task suspension, state-aware recovery, and runtime
+<p id="section-4.4.1-2">Implementing intervention approaches for Autonomous Agents focuses heavily on task suspension, state-aware recovery, and runtime
 command injection to intercept failures early through the following mechanisms:<a href="#section-4.4.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.4.1-3.1">
@@ -1913,7 +1913,7 @@ cannot securely map to these systems, as they assume deterministic software proc
 with pre-provisioned metadata. Existing identity and access mechanisms address this mismatch by introducing
 sandboxed runtime environments, short-lived tokens, and behavior-driven trust tracking to defend against malicious
 input manipulation and unauthorized tool execution boundaries.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
-<p id="section-4.5-2">Implementing Identity &amp; Access Management for AI agents focuses heavily on sandboxing, adaptive credentialing,
+<p id="section-4.5-2">Implementing Identity &amp; Access Management for Autonomous Agents focuses heavily on sandboxing, adaptive credentialing,
 and runtime trust metrics to establish security boundaries and mitigate execution risks early as follows:<a href="#section-4.5-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.5-3.1">
@@ -1994,7 +1994,7 @@ integrity.<a href="#section-4.6-3.3.1" class="pilcrow">¶</a></p>
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-gap-in-opentelemetry-for-ag" class="section-name selfRef">Gap in OpenTelemetry for Agent Observability</a>
         </h3>
 <p id="section-5.1-1">While OpenTelemetry (OTel) is the industry standard for collecting traces, metrics, and logs, it has critical limitations when
-applied to AI agent observability.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+applied to Autonomous Agent observability.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5.1-2.1">
             <p id="section-5.1-2.1.1">Continuous Monitoring and Proactive Evaluation: The fundamental limitation is that OpenTelemetry functions as a passive data
@@ -2016,7 +2016,7 @@ human approval.<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
           <li class="normal" id="section-5.1-2.4">
             <p id="section-5.1-2.4.1">Accountability Support: Without trajectory record information such as Who executed the network commands, when, based on
 what prompts/reasoning, and when, it is difficult to trace responsibility in the event of a network incident, e.g., whether
-it is ther responsbility of AI Agent or responsibility of Human operators.<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
+it is ther responsbility of Autonomous Agent or responsibility of Human operators.<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2196,10 +2196,10 @@ remain completely invisible within the logged trajectory record.<a href="#sectio
       </h2>
 <p id="section-6-1">This section outlines key areas where standardization is required to support the design, implementation, and operation of Network
 Management Agent Observability, Intervention and Control in Agent Fabric networks. In the Agent Fabric Network,
-- Two or multiple scenario specific AI Agents such as network management agents can work together to support multi-scenario autonomy or close loop management.
-- Two or muitiple scenario specific AI Agents such as network management agents can work together to support cross domain collaboration.
-- Two or mutiple sceanrio specific AI Agents such as network management agents can work together to support collaboration between service layer and network layer.
-the agent gateway can be used to collect metric, log, audit information from each AI agents.<a href="#section-6-1" class="pilcrow">¶</a></p>
+- Two or multiple scenario specific Autonomous Agents such as network management agents can work together to support multi-scenario autonomy or close loop management.
+- Two or muitiple scenario specific Autonomous Agents such as network management agents can work together to support cross domain collaboration.
+- Two or mutiple sceanrio specific Autonomous Agents such as network management agents can work together to support collaboration between service layer and network layer.
+the agent gateway can be used to collect metric, log, audit information from each Autonomous Agent.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <p id="section-6-2">The intent is to identify foundational areas that require align with network management technologies developed in IETF OPS Area and drive network
 automation moving toward AI Driven Network Operation.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <ul class="normal">
