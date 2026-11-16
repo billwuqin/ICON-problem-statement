@@ -1,6 +1,6 @@
 <!-- regenerate: on (set to off if you edit this file) -->
 
-# Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks
+# Problem Statement for Autonomous Agent Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks
 
 This is the working area for the individual Internet-Draft, "Problem Statement for Observability, Intervention and Control (I&amp;C) in Multi-Agent Autonomous Networks".
 
