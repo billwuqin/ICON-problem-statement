@@ -119,6 +119,7 @@ Table of Contents
      9.1.  Normative References
      9.2.  Informative References
    Acknowledgments
+   Contributors
    Authors' Addresses
 
 1.  Introduction
@@ -1098,6 +1099,23 @@ Acknowledgments
 
    The authors of this document would also like to thank Benoit Claise,
    Daniele Ceccarelli for review and comments.
+
+Contributors
+
+   Swamynathan Balasundaram
+   Nokia
+   Email: swamynathan.b@nokia.com
+
+
+   Qiufang Ma
+   Huawei
+   Email: maqiufang1@huawei.com
+
+
+   Giuseppe Fioccola
+   Huawei
+   Email: giuseppe.fioccola@huawei.com
+
 
 Authors' Addresses
 
