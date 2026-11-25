@@ -198,10 +198,14 @@ identify gaps that need to be filled.
           agent took the shortest sequence of actions or wasted resources on redundant tools or analyzing specific segments of the
           trajectory to see if the agent excels at information retrieval but struggles with mathematical synthesis.
 
-- Human Oversight/Human on the Loop: The practice of keeping humans actively involved in continuously monitoring of Autonomous agents.
-                   In the agent trajectory management, itt ensures that Autonomous Agents do not go off the rails, violate
-                   safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable and
-                   collaborative system.
+- Human Oversight/Human on the Loop: The practice of delegating authority to autonomous agents with guardaril policies or constraints
+          and keeping humans away from being actively involved in continuously monitoring of Autonomous agents and provide on demand
+          intervention or control on the Autonmous Agents if needed. This practice prevent Humans suffering from alert fatigue if
+          forced to watch every routine step. In the agent trajectory management, it ensures that Autonomous Agents do not go off
+          the rails, violate safety protocols, or waste resources. It transforms a fully autonomous "black box" into a controllable
+          and collaborative system.
+
+- Human in the Loop: Human-in-the-Loop (HITL) requires explicit human approval before an agent can execute an action or the next action.
 
 - Behavior: pattern of reasoning, decisions, and actions an Autonomous agent takes to achieve a specific goal such as reasoning sequence,
             the sequence and logic of execution paths.
